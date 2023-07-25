@@ -1,0 +1,29 @@
+{
+  "name": "repertoire",
+  "version": "1.0.0",
+  "description": "",
+  "private": false,
+  "scripts": {
+
+  },
+  "keywords": [],
+  "author": "Tim DeCillis",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",
+    "chai": "^4.3.7",
+    "supertest": "^6.3.3",
+    "jest": "^29.6.1",
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
+  }
+}

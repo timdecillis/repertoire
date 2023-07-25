@@ -6,8 +6,8 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.static('/src'));
-
+app.use(express.static('client/dist'));
+app.use('/', router);
 router.get(get);
 router.post(post);
 

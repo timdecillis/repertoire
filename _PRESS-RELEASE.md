@@ -22,31 +22,31 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-  Aspiring or even professional musicians get a fun and easy way to keep track of music they are learning.
+  Aspiring or even professional musicians get a way to keep track of music they are learning.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-  To-Eat will provide a fun and easy way to keep track of restaurants to try, as well as offering features around sorting, rating, sharing, and providing suggestions.
+  Repetoire will provide a fun and easy way for music learners to organize their practice methods by offering a variety of different features, including storing songs and related practice info, as well as searching for new songs.
 
 ## Problem ##
   > Describe the problem your product solves.
-  User's will never have to spend time trying to think of where they should eat at any given time, they can simply consult To-Eat.
+  Having a strategic, organized approach is the best way to progress, and Repertoire will offer an easy-to-use solution.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-  To-Eat provides a repository for keeping track of places that have come across the user's radar, as well as new ones that they may not yet be aware of.
+  Musicians will have all that they need when it's time for a practice session, or when it's time to move on to a new challenge.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-  "To-Eat will change your life. I guarantee it. "
+  "Repetoire will make you the musician you always wanted to be."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-  All you need to do is create a username and password, and then you can start adding restaurants to your list immediately.
+  All you need to do is create a username and password, and then you can start adding songs immediately.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-  "In the past I would sometimes end up spending so much time trying to figure out where to eat, that by the time I decided, the restaurants were all closed! Now I don't even have to think about it, and I can spend my time focusing on other things."
+  "Repetoire made me the musician I am today!"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.

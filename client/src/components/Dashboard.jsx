@@ -1,11 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const Dashboard = ({handleSubmit, setBand}) => {
+const Dashboard = ({ handleSearch, choices, setChoices}) => {
+  const [band, setBand] = useState('');
+
 
   return (
-    <div>
-      <input placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
-      <button onClick={handleSubmit}>Search</button>
+    <div className="dashboard">
+      <div className="search">
+        <input placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
+        <button onClick={() => {
+          handleSearch(band);
+        }}>Search</button>
+      </div>
+      <div className="choices">
+        {choices.length > 0 && <div>{choices.map((choice, i) => <div key={i}>{choice}</div>)}</div>}
+      </div>
     </div>
   );
 };

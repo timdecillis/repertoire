@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dashboard = ({ handleSearch, choices, setChoices}) => {
+const Dashboard = ({ handleSearch, choices, songs, setSongs}) => {
   const [band, setBand] = useState('');
 
 
@@ -13,7 +13,9 @@ const Dashboard = ({ handleSearch, choices, setChoices}) => {
         }}>Search</button>
       </div>
       <div className="choices">
-        {choices.length > 0 && <div>{choices.map((choice, i) => <div key={i}>{choice}</div>)}</div>}
+        {choices.length > 0 && <div>{choices.map((choice, i) => <div onClick={() => {
+          setSongs([...songs, choice]);
+        }} key={i}>{choice}</div>)}</div>}
       </div>
     </div>
   );

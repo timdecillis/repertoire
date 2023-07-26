@@ -27,13 +27,15 @@ const findBand = async (req, res) => {
   }
 
   try {
-    const completion = await openai.createCompletion({
-      model: 'text-davinci-003',
-      prompt: generatePrompt(band),
-      temperature: 0,
-      fullText: true
+    const completion = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'You are a helpful assistant.' },
+        { role: 'user', content: generatePrompt(band) },
+      ],
+      temperature: 0
     });
-    res.status(200).json(completion.data.choices[0].text);
+    res.status(200).json(JSON.parse(completion.data.choices[0].message.content));
   } catch (error) {
     if (error.response) {
       console.error(error.response.status, error.response.data);
@@ -52,7 +54,7 @@ const findBand = async (req, res) => {
 const generatePrompt = (band, level = 'beginner', instrument = 'drums') => {
   const capitalizedBand =
     band[0].toUpperCase() + band.slice(1).toLowerCase();
-  return `I would like a list of 3 songs by ${band} for a ${level}-level player to learn on the ${instrument}. Return just the song names, as a comma separated list.`;
+  return `I would like 3 songs by ${band} for a ${level}-level player to learn on the ${instrument}. Return only a JSON object, with this format: {artist: ${band}, songs: ['song 1', 'song 2', 'song 3']}.`;
 };
 
 module.exports = findBand;

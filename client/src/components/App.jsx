@@ -5,15 +5,13 @@ const axios = require('axios');
 
 const App = () => {
 
-
   const [songs, setSongs] = useState([]);
   const [choices, setChoices] = useState([]);
 
   const handleSearch = (band) => {
     return axios.post('/findBand', {band: band})
       .then(({data}) => {
-        console.log(data)
-        // setChoices(prevSongs => [...prevSongs, newSong]);
+        setChoices(data.songs);
       });
   };
 
@@ -24,8 +22,8 @@ const App = () => {
         <button className="user-button">Sign In</button>
         <button className="user-button">Create Account</button>
       </div>
-      <SongList songs={songs}/>
-      <Dashboard setChoices={setChoices} choices={choices} handleSearch={handleSearch}/>
+      <SongList songs={songs} setSongs={setSongs}/>
+      <Dashboard songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch}/>
     </div>
   );
 };

@@ -3,7 +3,8 @@
 # Logs
 logs
 *.log
-
+config.js
+*.env
 # Runtime data
 pids
 *.pid
@@ -33,3 +34,4 @@ bower_components/
 .floobit
 .floo
 .flooignore
+

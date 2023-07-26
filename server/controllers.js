@@ -1,5 +1,4 @@
 const { Configuration, OpenAIApi } = require ('openai');
-const {key} = require('../config.js');
 const {get, post} = require('./models.js');
 
 

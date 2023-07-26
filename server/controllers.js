@@ -16,7 +16,6 @@ const findBand = async (req, res) => {
     });
     return;
   }
-  console.log('req:', req.body);
   const band = req.body.band || '';
   if (band.trim().length === 0) {
     res.status(400).json({
@@ -33,11 +32,8 @@ const findBand = async (req, res) => {
       prompt: generatePrompt(band),
       temperature: .7,
     });
-    console.log('completing:', completion.data.choices[0]);
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error) {
-    console.log('erroring');
-    // Consider adjusting the error handling logic for your use case
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);

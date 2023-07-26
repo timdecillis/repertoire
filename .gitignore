@@ -4,7 +4,7 @@
 logs
 *.log
 config.js
-*.env
+.env
 # Runtime data
 pids
 *.pid

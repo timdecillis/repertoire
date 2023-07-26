@@ -1,19 +1,10 @@
 import React, {useState} from 'react';
-const axios = require('axios');
 
-const Dashboard = () => {
-  const [band, setBand] = useState('');
-  const handleSubmit = () => {
-    return axios.post('/findBand', {band: band})
-      .then((res) => {
-        console.log('response:', res);
-      });
-  };
+const Dashboard = ({handleSubmit, setBand}) => {
+
   return (
     <div>
-      <h2>Current Songs</h2>
-      <div>Find new songs</div>
-      <textarea onChange={e => setBand(e.target.value)}></textarea>
+      <input placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
       <button onClick={handleSubmit}>Search</button>
     </div>
   );

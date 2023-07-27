@@ -1,45 +1,45 @@
-
-
 const database = require('./database.js');
-
-module.exports = {
-  get: () => {},
-  post: () => {}
-};
-
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/fetcher');
+mongoose.connect('mongodb://127.0.0.1:27017/repertoire');
 
-const glossarySchema = new mongoose.Schema({
-  word: {type: String, unique: true},
-  definition: String
+const repertoireSchema = new mongoose.Schema({
+  song: {name: String, artist: String},
+  completed: Boolean,
+  notes: String
 });
 
-const Entry = mongoose.model('Entry', glossarySchema);
+const Song = mongoose.model('Song', repertoireSchema);
 
 module.exports = {
-  save: (entry) => {
-    return new Entry({word: entry.word.toLowerCase(), definition: entry.definition.toLowerCase()}).save();
+  saveSong: (song) => {
+    return new Song({
+      song: {name: song.song, artist: song.artist},
+      completed: false,
+      notes: ''
+    }).save();
   },
-  getAll: () => {
-    return Entry.find({})
-      .sort({word: 1 })
+  getSongs: () => {
+    return Song.find({})
       .exec();
   },
-  search: ({word}) => {
-    let lowerWord = word.toLowerCase();
-    return Entry.find({word: {$regex: lowerWord}})
+  deleteSong: (song, artist) => {
+    return Song.findOneAndRemove({ 'song.name': song, 'song.artist': artist })
       .exec();
-
   },
-  deleteWord: ({word}) => {
-    return Entry.deleteOne({word: word})
-      .exec();
+  updateSong: (song, artist) => {
+    return Song.findOne({ 'song.name': song, 'song.artist': artist })
+      .then((foundSong) => {
+        foundSong.completed = !foundSong.completed;
+        return foundSong.save();
+      });
+  },
+  updateNotes: (song, artist, notes) => {
+    return Song.findOne({ 'song.name': song, 'song.artist': artist })
+      .then((foundSong) => {
+        console.log(notes)
+        foundSong.notes = notes;
+        return foundSong.save();
+      });
   }
 };
-
-// 1. Use mongoose to establish a connection to MongoDB
-// 2. Set up any schema and models needed by the app
-// 3. Export the models
-// 4. Import the models into any modules that need them

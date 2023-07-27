@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SongList = ({ songs, setSongs }) => {
+const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNotes }) => {
   const [notes, setNotes] = useState('');
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState('');
@@ -10,27 +10,29 @@ const SongList = ({ songs, setSongs }) => {
       {songs.length > 0 && <div>
         {songs.map((song, i) =>
           <div key={i}>
-            <div>{song}</div>
-            <input type="checkbox" name="completed"></input>
+            <div>{song.song.name} by {song.song.artist}</div>
+            <input onClick={() =>
+              handleCompleted(song.song.name, song.song.artist)
+            } type="checkbox" name="completed" defaultChecked={song.completed}></input>
             <label htmlFor="completed">Completed</label>
             <button onClick={() => {
-              let array = songs.filter(tune => tune !== song);
-              setSongs(array);
+              deleteSong(song.song.name, song.song.artist);
             }} >X
             </button>
             {draftOpen && <div>
-              <textarea onChange ={(e) => setDraft(e.target.value)} ></textarea>
+              <textarea onChange={(e) => setDraft(e.target.value)} ></textarea>
               <button onClick={() => {
-                setNotes(draft);
+                handleNotes(song.song.name, song.song.artist, draft);
                 setDraftOpen(false);
               }}>
                 Add</button>
             </div>}
             {!draftOpen &&
               <div>
-                <div>{notes}</div>
+                <h4>Notes:</h4>
+                <div>{song.notes}</div>
                 <button onClick={() => setDraftOpen(true)}>
-                  Add/Update</button>
+                  Add/Update notes</button>
               </div>
             }
           </div>)}

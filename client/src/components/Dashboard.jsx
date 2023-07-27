@@ -9,6 +9,7 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
   return (
     <div className="dashboard">
       <div className="instrument">
+        <h2>Add a song</h2>
         <h3>Instrument</h3>
         <input onClick={(e) => setInstrument(e.target.value)} type="radio" name="instrument" value="guitar"></input>
         <label htmlFor="instrument">Guitar</label>
@@ -33,7 +34,7 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
         }}>Search</button>
       </div>
       <div className="choices">
-        {choices.length > 0 && <div>{choices.map((choice, i) => <div onClick={() => {
+        {choices.length > 0 && <div>{choices.map((choice, i) => <div className="choice" onClick={() => {
           addSong(choice);
         }} key={i}>{choice}</div>)}</div>}
       </div>

@@ -5,12 +5,12 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState('');
   return (
-    <div>
+    <div className="songlist">
       <h2>Current Songs</h2>
       {songs.length > 0 && <div>
         {songs.map((song, i) =>
-          <div key={i}>
-            <div>{song.song.name} by {song.song.artist}</div>
+          <div className="song" key={i}>
+            <div className="song-name">{song.song.name} by {song.song.artist}</div>
             <input onClick={() =>
               handleCompleted(song.song.name, song.song.artist)
             } type="checkbox" name="completed" defaultChecked={song.completed}></input>

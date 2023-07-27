@@ -37,7 +37,6 @@ module.exports = {
   updateNotes: (song, artist, notes) => {
     return Song.findOne({ 'song.name': song, 'song.artist': artist })
       .then((foundSong) => {
-        console.log(notes)
         foundSong.notes = notes;
         return foundSong.save();
       });

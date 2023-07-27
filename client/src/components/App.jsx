@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Dashboard from './Dashboard.jsx';
 import SongList from './SongList.jsx';
 const axios = require('axios');
@@ -15,14 +15,14 @@ const App = () => {
 
   const getSongs = () => {
     return axios.get('/getSongs')
-      .then(({data}) => {
+      .then(({ data }) => {
         setSongs(data);
       });
   };
 
   const handleSearch = (band, instrument, difficulty) => {
-    return axios.post('/findBand', {band: band, instrument: instrument, difficulty: difficulty})
-      .then(({data}) => {
+    return axios.post('/findBand', { band: band, instrument: instrument, difficulty: difficulty })
+      .then(({ data }) => {
         if (data.songs[0] === 'song 1') {
           setChoices(['Your search did not match any results :(']);
         } else {
@@ -33,27 +33,27 @@ const App = () => {
   };
 
   const addSong = (song) => {
-    return axios.post('/addSong', {song: song, artist: band})
+    return axios.post('/addSong', { song: song, artist: band })
       .then(() => {
         getSongs();
       });
   };
 
   const deleteSong = (song, artist) => {
-    return axios.delete('/deleteSong', {data: {song: song, artist: artist}})
+    return axios.delete('/deleteSong', { data: { song: song, artist: artist } })
       .then(() => {
         getSongs();
       });
   };
 
   const handleCompleted = (song, artist) => {
-    return axios.put('/updateSong', {song: song, artist: artist})
+    return axios.put('/updateSong', { song: song, artist: artist })
       .then(() => {
         getSongs();
       });
   };
   const handleNotes = (song, artist, notes) => {
-    return axios.put('/updateNotes', {song: song, artist: artist, notes: notes})
+    return axios.put('/updateNotes', { song: song, artist: artist, notes: notes })
       .then(() => {
         getSongs();
       });
@@ -62,14 +62,22 @@ const App = () => {
 
 
   return (
+
     <div className="container">
-      <h1>Repertoire</h1>
-      <div>
-        <button className="user-button">Sign In</button>
-        <button className="user-button">Create Account</button>
+
+      <div className="banner">
+        <h1 className="header">Repertoire</h1>
+        <div className="button-container">
+          <button className="user-button">Sign In</button>
+          <button className="user-button">Create Account</button>
+        </div>
       </div>
-      <SongList handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs}/>
-      <Dashboard addSong={addSong} band={band} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch}/>
+
+      <div className="list-and-dash">
+        <Dashboard addSong={addSong} band={band} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />
+        <SongList handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs} />
+      </div>
+
     </div>
   );
 };

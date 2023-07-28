@@ -74,8 +74,8 @@ const App = () => {
       </div>
 
       <div className="list-and-dash">
-        <Dashboard addSong={addSong} band={band} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />
         <SongList handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs} />
+        <Dashboard addSong={addSong} band={band} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />
       </div>
 
     </div>

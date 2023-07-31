@@ -4,41 +4,55 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/repertoire');
 
 const repertoireSchema = new mongoose.Schema({
-  song: {name: String, artist: String},
-  completed: Boolean,
-  notes: String
+  email: String,
+  password: String,
+  songs: []
 });
 
-const Song = mongoose.model('Song', repertoireSchema);
+const User = mongoose.model('User', repertoireSchema);
 
 module.exports = {
-  saveSong: (song) => {
-    return new Song({
-      song: {name: song.song, artist: song.artist},
-      completed: false,
-      notes: ''
-    }).save();
+
+  createUser: (email, password) => {
+    return new User({ email: email, password: password })
+      .save();
   },
-  getSongs: () => {
-    return Song.find({})
-      .exec();
-  },
-  deleteSong: (song, artist) => {
-    return Song.findOneAndRemove({ 'song.name': song, 'song.artist': artist })
-      .exec();
-  },
-  updateSong: (song, artist) => {
-    return Song.findOne({ 'song.name': song, 'song.artist': artist })
-      .then((foundSong) => {
-        foundSong.completed = !foundSong.completed;
-        return foundSong.save();
+  saveSong: (req) => {
+    let { email, song, artist } = req;
+    return User.findOne({ email: email })
+      .then((foundUser) => {
+        foundUser.songs.push({
+          name: song,
+          artist: artist,
+          completed: false,
+          notes: ''
+        });
+        return foundUser.save();
       });
   },
-  updateNotes: (song, artist, notes) => {
-    return Song.findOne({ 'song.name': song, 'song.artist': artist })
-      .then((foundSong) => {
-        foundSong.notes = notes;
-        return foundSong.save();
+  getSongs: (email) => {
+    return User.findOne({ email: email })
+      .exec()
+      .then((foundUser) => {
+        return foundUser;
       });
+  },
+  deleteSong: (email, song, artist) => {
+    return User.findOne({ email: email })
+      .then((foundUser) => {
+        foundUser.songs = foundUser.songs.filter((s) => !(s.name === song && s.artist === artist));
+        return foundUser.save();
+      });
+  },
+  updateSong: (email, song, artist) => {
+    const query = {email: email, 'songs.name': song, 'songs.artist': artist};
+    const update = {$set: {'songs.$.completed': {$not: '$songs.$.completed'}}};
+    return User.findOneAndUpdate(query, update, {new: true});
+  },
+  updateNotes: (email, song, artist, notes) => {
+    const query = { email: email, 'songs.name': song, 'songs.artist': artist };
+    const update = { $set: { 'songs.$.notes': notes } };
+
+    return User.findOneAndUpdate(query, update, { new: true });
   }
 };

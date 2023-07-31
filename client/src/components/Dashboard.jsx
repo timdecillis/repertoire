@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addSong }) => {
+const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addSong, signedIn, authUser }) => {
 
   const [instrument, setInstrument] = useState('');
   const [difficulty, setDifficulty] = useState('');
 
+  if (!signedIn) {
+    return null;
+  }
 
   return (
     <div className="dashboard">
@@ -35,7 +38,7 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
       </div>
       <div className="choices">
         {choices.length > 0 && <div>{choices.map((choice, i) => <div className="choice" onClick={() => {
-          addSong(choice);
+          addSong(authUser, choice, band);
         }} key={i}>{choice}</div>)}</div>}
       </div>
     </div>

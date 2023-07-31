@@ -1,5 +1,5 @@
 const { Configuration, OpenAIApi } = require('openai');
-const {getSongs, saveSong, deleteSong, updateSong, updateNotes} = require('./models.js');
+const { getSongs, saveSong, deleteSong, updateSong, updateNotes, createUser } = require('./models.js');
 
 const configuration = new Configuration({
   apiKey: process.env.API_KEY,
@@ -51,9 +51,20 @@ module.exports = {
       }
     }
   },
+  createUser: (req, res) => {
+    let {email, password} = req.body;
+    createUser(email, password)
+      .then(() => {
+        res.status(201).send();
+      })
+      .catch((err) => {
+        console.log('Error adding user:', err);
+      });
+  },
   getSongs: (req, res) => {
-    getSongs()
-      .then((songs) => {
+    let {email} = req.query;
+    getSongs(email)
+      .then(({songs}) => {
         res.status(200).send(songs);
       })
       .catch((err) => {
@@ -70,7 +81,7 @@ module.exports = {
       });
   },
   deleteSong: (req, res) => {
-    deleteSong(req.body.song, req.body.artist)
+    deleteSong(req.body.email, req.body.song, req.body.artist)
       .then(() => {
         res.status(203).send();
       })
@@ -79,7 +90,7 @@ module.exports = {
       });
   },
   updateSong: (req, res) => {
-    updateSong(req.body.song, req.body.artist)
+    updateSong(req.body.email, req.body.song, req.body.artist)
       .then(() => {
         res.status(202).send();
       })
@@ -88,7 +99,7 @@ module.exports = {
       });
   },
   updateNotes: (req, res) => {
-    updateNotes(req.body.song, req.body.artist, req.body.notes)
+    updateNotes(req.body.email, req.body.song, req.body.artist, req.body.notes)
       .then(() => {
         res.status(202).send();
       })
@@ -101,7 +112,6 @@ module.exports = {
 const generatePrompt = (band, instrument = 'guitar', difficulty = 'beginner') => {
   const capitalizedBand =
     band[0].toUpperCase() + band.slice(1).toLowerCase();
-  console.log(band, difficulty, instrument);
   return `I would like 3 songs by ${band} for a ${difficulty}-level player to learn on the ${instrument}. Return only a JSON object, with this format: {artist: ${band}, songs: ['song 1', 'song 2', 'song 3']}.`;
 };
 

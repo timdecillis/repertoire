@@ -11,7 +11,7 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
 
   return (
     <div className="songlist">
-      <h3 className="your-song">Your Songs</h3>
+      <div className="your-song">My songbook</div>
       {songs.length > 0 && <div>
         {songs.map((song, i) =>
           <div key={i} className="song-border">
@@ -42,7 +42,7 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
                   </div>
 
                   <button className="add-notes" onClick={() => setDraftOpen(true)}>
-                    Add/Update</button>
+                    Add a note</button>
                 </div>
               }
               <div className="completed">

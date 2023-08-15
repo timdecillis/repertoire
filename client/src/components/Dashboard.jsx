@@ -11,7 +11,7 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
 
   return (
     <div className="dashboard">
-      <h3 className="add-song" >Add a song</h3>
+      <div className="add-song" >Find a song</div>
       <div className="instrument">
         <div className="dash-option" >Instrument</div>
         <input onClick={(e) => setInstrument(e.target.value)} type="radio" name="instrument" value="guitar"></input>
@@ -31,8 +31,8 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
         <label className="radio-button" htmlFor="difficulty">Advanced</label>
       </div>
       <div className="search">
-        <input className="search-input" placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
-        <button className="search-button" onClick={() => {
+        <input className="input" placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
+        <button className="sign-in-button" onClick={() => {
           handleSearch(band, instrument, difficulty);
         }}>Search</button>
       </div>

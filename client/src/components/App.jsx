@@ -7,9 +7,6 @@ import SignIn from './SignIn.jsx';
 import CreateUser from './CreateUser.jsx';
 import HomeButtons from './HomeButtons.jsx';
 
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../../firebase.js';
-
 const App = () => {
 
   const [songs, setSongs] = useState([]);
@@ -22,18 +19,6 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [oneOpen, setOneOpen] = useState(true);
   const [authUser, setAuthUser] = useState(null);
-
-  // useEffect(() => {
-  //   const listen = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       console.log(user);
-  //       setAuthUser(user);
-  //     } else {
-  //       setAuthUser(null);
-  //     }
-  //   });
-  //   return listen();
-  // }, []);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -94,45 +79,40 @@ const App = () => {
       });
   };
 
-  const signInFunc = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-
-
   return (
 
     <div className="container">
       <div className="banner">
-        <h1 className="header">Repertoire</h1>
 
-
-        {!signedIn ? <HomeButtons oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} setCreateOpen={setCreateOpen} /> : <button onClick={userSignOut}>Sign Out</button>}
-
-        <CreateUser setAuthUser={setAuthUser} setCreateOpen={setCreateOpen} createOpen={createOpen} setOneOpen={setOneOpen} setSignedIn={setSignedIn} />
-
-
-        <SignIn authUser={authUser} getSongs={getSongs} email={email} password={password} setAuthUser={setAuthUser} setSignedIn={setSignedIn} setEmail={setEmail}
-          setPassword={setPassword} signInOpen={signInOpen}
-          setSignInOpen={setSignInOpen} signInFunc={signInFunc} />
-
-        <div className="list-and-dash">
-
-          <SongList authUser={authUser} signedIn={signedIn} handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs} />
-
-          <Dashboard signedIn={signedIn} addSong={addSong} band={band} authUser={authUser} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />
+        <div className="header">Repertoire</div>
+      </div>
+      {!signedIn ?
+        <div className="landing">
+          <img className="painting" src="https://media.istockphoto.com/id/1220009855/vector/a-young-man-playing-guitar-at-home-guitarist-musician-is-sitting-in-quarantine-alone-flat.jpg?s=612x612&w=0&k=20&c=p9bINE_TxSd4G4VRkvaHffh5vZjUdVUQvXGcqBlDrSs="></img>
+          <HomeButtons oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} setCreateOpen={setCreateOpen} />
 
         </div>
+        :
+        <button className="sign-in-button" onClick={userSignOut}>Sign Out</button>}
 
+      <CreateUser setAuthUser={setAuthUser} setCreateOpen={setCreateOpen} createOpen={createOpen} setOneOpen={setOneOpen} setSignedIn={setSignedIn} />
+
+
+      <SignIn authUser={authUser} getSongs={getSongs} email={email} password={password} setAuthUser={setAuthUser} setSignedIn={setSignedIn} setEmail={setEmail}
+        setPassword={setPassword} signInOpen={signInOpen}
+        setSignInOpen={setSignInOpen} />
+
+      <div className="list-and-dash">
+
+        <Dashboard signedIn={signedIn} addSong={addSong} band={band} authUser={authUser} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />
+
+        {songs.length > 0 && <SongList authUser={authUser} signedIn={signedIn} handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs} />}
 
 
       </div>
+
+
+
     </div>
   );
 };

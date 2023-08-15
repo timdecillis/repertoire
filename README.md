@@ -3,8 +3,8 @@ A web application for musicians to build their own personal songbook.
 
 > # Table of Contents
 1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Features](#features)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
 4. [Tech Stack](#tech-stack)
 
 ## Overview

@@ -112,7 +112,7 @@ module.exports = {
 const generatePrompt = (band, instrument = 'guitar', difficulty = 'beginner') => {
   const capitalizedBand =
     band[0].toUpperCase() + band.slice(1).toLowerCase();
-  return `I would like 3 songs by ${band} for a ${difficulty}-level player to learn on the ${instrument}. Return only a JSON object, with this format: {artist: ${band}, songs: ['song 1', 'song 2', 'song 3']}.`;
+  return `You are an expert music teacher. You have been asked to provide 3 songs by ${band} for a ${difficulty}-level player to learn on the ${instrument}. Take into consideration tempo, song complexity, and technical difficulty. Return only a JSON object, with this format: {artist: ${band}, songs: ['song 1', 'song 2', 'song 3']}.`;
 };
 
 

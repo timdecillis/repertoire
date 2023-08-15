@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SignIn = ({ setSignedIn, signInFunc, setEmail, setSignInOpen, setPassword, signInOpen, setAuthUser, email, password, getSongs, authUser }) => {
+const SignIn = ({ setSignedIn, setEmail, setSignInOpen, setPassword, signInOpen, setAuthUser, email, password, getSongs, authUser }) => {
 
   useEffect(() => {
     if (authUser !== null) {

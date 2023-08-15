@@ -1,0 +1,268 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+body {
+  background-color: rgb(3, 1, 9);
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Helvetica Neue';
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+
+}
+
+.banner {
+  background-color: darkcyan;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1%;
+  width: 100%;
+  max-height: 7.7em;
+  min-height: 7.7em;
+  align-items: center;
+}
+
+.header {
+  font-weight: 100%;
+  font-size: 6em;
+  font-weight: lighter;
+  color: whitesmoke;
+  max-height: 1em;
+}
+
+.button-container {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.landing {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.painting {
+  max-width: 60%;
+  max-height: 70%;
+}
+
+.user-button {
+  min-height: 2em;
+  border: none;
+  background-color: darkcyan;
+  color: whitesmoke;
+  border-radius: .15em;
+  margin-top: .35em;
+  cursor: pointer;
+  max-width: 8em;
+}
+
+.list-and-dash {
+  margin-top: .2em;
+  min-width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.dashboard {
+  min-height: 21.5em;
+  display: flex;
+  flex-direction: column;
+  padding: 4%;
+  max-height: 22em;
+  min-width: 40%;
+  border: solid;
+  border-radius: .3em;
+  background-color: whitesmoke;
+  overflow: scroll;
+  margin-bottom: 1em;
+}
+.songlist {
+  min-height: 21.5em;
+  max-height: 40em;
+  padding: 4%;
+  border: solid;
+  min-width: 40%;
+  border-radius: .3em;
+
+  background-color: whitesmoke;
+  overflow: scroll;
+}
+
+.difficulty {
+  margin-bottom: 1em;
+}
+
+.song-border {
+  min-height: 14em;
+  max-height: 14em;
+  margin-bottom: .75em;
+  border: solid;
+  border-radius: .3em;
+  border-color: darkcyan;
+
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  overflow: scroll;
+}
+
+.choice {
+  color: whitesmoke;
+  background-color: darkcyan;
+  border-radius: .25em;
+  border: solid;
+  border-color: black;
+  margin-top: .5em;
+  cursor: pointer;
+  min-height: 1.5em;
+  border-width: .1em;
+  text-align: center;
+  padding-top: .2em;
+}
+
+.add-song {
+  font-weight: bold;
+  text-align: center;
+  min-height: 2em;
+  min-width: 8.5em;
+  align-self: center;
+  border-radius: .3em;
+
+}
+
+.radio-button {
+  font-size: .9em;
+}
+
+.dash-option {
+  font-weight: 550;
+  font-size: 1em;
+  margin-bottom: .3em;
+  margin-top: .5em;
+}
+
+.your-song {
+  font-weight: bold;
+  text-align: center;
+  min-height: 2em;
+  min-width: 8.5em;
+  align-self: center;
+  border-radius: .3em;
+
+}
+
+.song-name {
+  font-weight: bold;
+}
+.artist {
+  font-size: .85em;
+  margin-bottom: .5em;
+}
+
+.remove-song {
+  border-radius: 0;
+  min-height: 2em;
+  max-height: 2em;
+  max-width: 8em;
+  font-size: .7em;
+  margin-bottom: 0;
+}
+
+.notes-container {
+  margin-bottom: .5em;
+}
+
+.notes-heading {
+  font-weight: bold;
+  font-size: .8em;
+  margin-bottom: .2em;
+}
+
+.notes {
+  font-size: .8em;
+  min-height: 8 em;
+  max-height: 8em;
+  overflow: scroll;
+  margin-bottom: 1.5em;
+}
+
+.add-notes {
+  border-radius: 0;
+  font-size: .7em;
+  min-height: 2em;
+  max-height: 2em;
+  max-width: 8em;
+  min-width: 8em;
+  margin-bottom: 1.5em;
+}
+.draft-buttons {
+  border-radius: 0;
+  margin-right: .2em;
+}
+
+.completed {
+  margin-bottom: .5em;
+}
+
+.search-input {
+  margin-left: 0;
+}
+
+.search-button {
+  border-radius: 0;
+  margin-left: 1em;
+}
+
+.draft {
+  font-size: .7em;
+  margin-bottom: 1.5em;
+}
+
+.sign-in {
+  margin-top: .6em;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  font-size: 1em;
+  min-height: 1em;
+  border-radius: .1em;
+  border-width: .1em;
+  margin-bottom: .3em;
+}
+
+.sign-in-button {
+  margin-left: 1em;
+  min-height: 2em;
+  max-height: 2em;
+  max-width: 8em;
+  background-color: darkcyan;
+  color: whitesmoke;
+  align-self: center;
+  border-radius: .2em;
+  border-style: solid;
+  border-color: black;
+  border-width: .1em;
+}
+
+
+

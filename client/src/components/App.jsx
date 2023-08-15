@@ -7,9 +7,6 @@ import SignIn from './SignIn.jsx';
 import CreateUser from './CreateUser.jsx';
 import HomeButtons from './HomeButtons.jsx';
 
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../../firebase.js';
-
 const App = () => {
 
   const [songs, setSongs] = useState([]);
@@ -22,18 +19,6 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [oneOpen, setOneOpen] = useState(true);
   const [authUser, setAuthUser] = useState(null);
-
-  // useEffect(() => {
-  //   const listen = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       console.log(user);
-  //       setAuthUser(user);
-  //     } else {
-  //       setAuthUser(null);
-  //     }
-  //   });
-  //   return listen();
-  // }, []);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -94,18 +79,6 @@ const App = () => {
       });
   };
 
-  const signInFunc = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-
-
   return (
 
     <div className="container">
@@ -127,7 +100,7 @@ const App = () => {
 
       <SignIn authUser={authUser} getSongs={getSongs} email={email} password={password} setAuthUser={setAuthUser} setSignedIn={setSignedIn} setEmail={setEmail}
         setPassword={setPassword} signInOpen={signInOpen}
-        setSignInOpen={setSignInOpen} signInFunc={signInFunc} />
+        setSignInOpen={setSignInOpen} />
 
       <div className="list-and-dash">
 

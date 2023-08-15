@@ -1,4 +1,5 @@
 const { Configuration, OpenAIApi } = require('openai');
+
 const { getSongs, saveSong, deleteSong, updateSong, updateNotes, createUser } = require('./models.js');
 
 const configuration = new Configuration({
@@ -114,7 +115,3 @@ const generatePrompt = (band, instrument = 'guitar', difficulty = 'beginner') =>
     band[0].toUpperCase() + band.slice(1).toLowerCase();
   return `You are an expert music teacher. You have been asked to provide 3 songs by ${band} for a ${difficulty}-level player to learn on the ${instrument}. Take into consideration tempo, song complexity, and technical difficulty. Return only a JSON object, with this format: {artist: ${band}, songs: ['song 1', 'song 2', 'song 3']}.`;
 };
-
-
-
-

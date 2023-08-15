@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase.js';
 const axios = require('axios');
 
 const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => {
@@ -21,8 +19,6 @@ const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => 
       <button className="sign-in-button" onClick={
         () => {
           return axios.post('/users', {email: email, password: password})
-          // createUserWithEmailAndPassword(auth, email, password)
-          //   .then((userCredential) => console.log(userCredential))
             .then(() => setCreateOpen(false))
             .then(() => setSignedIn(true))
             .then(() => setAuthUser(email))
@@ -30,7 +26,6 @@ const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => 
         }}>Submit</button>
     </div>
   );
-
 };
 
 export default CreateUser;

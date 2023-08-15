@@ -1,8 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const router = require('express').Router();
-const {findBand, getSongs, addSong, deleteSong, updateSong, updateNotes, createUser} = require('./controllers.js');
 const app = express();
+
+const {findBand, getSongs, addSong, deleteSong, updateSong, updateNotes, createUser} = require('./controllers.js');
 
 app.use(morgan('dev'));
 app.use(express.json());

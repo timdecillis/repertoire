@@ -28,7 +28,6 @@ const App = () => {
 
   };
 
-
   // useEffect(() => {
   //   getSongs();
   // }, []);
@@ -80,7 +79,6 @@ const App = () => {
   };
 
   return (
-
     <div className="container">
       <div className="banner">
 
@@ -108,11 +106,7 @@ const App = () => {
 
         {songs.length > 0 && <SongList authUser={authUser} signedIn={signedIn} handleNotes={handleNotes} handleCompleted={handleCompleted} deleteSong={deleteSong} band={band} songs={songs} setSongs={setSongs} />}
 
-
       </div>
-
-
-
     </div>
   );
 };

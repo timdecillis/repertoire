@@ -20,7 +20,6 @@ const HomeButtons = ({ setSignInOpen, setCreateOpen, setOneOpen, oneOpen }) => {
       }} className="user-button">Create Account</button>
     </div>
   );
-
 };
 
 export default HomeButtons;

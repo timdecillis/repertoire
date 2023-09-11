@@ -24,10 +24,11 @@ export const songChoicesAdded = songs => ({
     songs
   }
 });
-export const songChoicesUpdated = songs => ({
+export const songChoicesUpdated = (choices, artist) => ({
   type: types.SONG_CHOICES_UPDATED,
   payload: {
-    songs
+    choices,
+    artist
   }
 });
 export const songAdded = song => ({
@@ -49,7 +50,7 @@ export const songCompleted = song => ({
   }
 });
 export const notesAdded = (song, notes) => ({
-  type: types.NOTES_ADDED,
+  type: types.NOTES_UPDATED,
   payload: {
     song: song,
     notes: notes

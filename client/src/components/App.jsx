@@ -12,12 +12,12 @@ const App = () => {
   const [songs, setSongs] = useState([]);
   const [choices, setChoices] = useState([]);
   const [band, setBand] = useState('');
-  const [signedIn, setSignedIn] = useState(false);
-  const [signInOpen, setSignInOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false); //todo
+  const [signInOpen, setSignInOpen] = useState(false); //todo
   const [createOpen, setCreateOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [oneOpen, setOneOpen] = useState(true);
+  const [oneOpen, setOneOpen] = useState(true); //todo
   const [authUser, setAuthUser] = useState(null);
 
   const userSignOut = () => {

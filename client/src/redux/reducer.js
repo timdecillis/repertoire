@@ -2,11 +2,20 @@ import * as types from './actionTypes';
 
 const initialState = {
   authUser: null,
+  signedIn: false,
+  signInOpen: false,
+  createOpen: false,
+  landingOpen: true,
   email: null,
   password: null,
+  newEmail: null,
+  newPassword: null,
   songs: [],
   choices: [],
-  artist: null
+  artist: null,
+  notes: '',
+  draft: '',
+  draftOpen: false
 };
 
 export default function reducer(state = initialState, action) {

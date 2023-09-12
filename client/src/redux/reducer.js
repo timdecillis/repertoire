@@ -1,10 +1,12 @@
 import * as types from './actionTypes';
 
 const initialState = {
-  user: null,
+  authUser: null,
+  email: null,
+  password: null,
   songs: [],
   choices: [],
-  choiceArtist: null
+  artist: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,7 +14,7 @@ export default function reducer(state = initialState, action) {
     return {
       ...state,
       choices: action.payload.choices,
-      choiceArtist: actio.payload.artist,
+      artist: actio.payload.artist,
     };
   } else if (action.type === types.SONG_ADDED) {
     return {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-const axios = require('axios');
 
 import Button from './Button.jsx';
 
@@ -18,7 +17,7 @@ const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => 
         <input onChange={(e) => setEmail(e.target.value)} type="email" className="input" placeholder="email"></input>
         <input onChange={(e) => setPassword(e.target.value)} type="password" className="input" placeholder="password"></input>
       </div>
-      <Button setCreateOpen={setCreateOpen} setSignedIn={setSignedIn} setAuthUser={setAuthUser} />
+      <Button setCreateOpen={setCreateOpen} setSignedIn={setSignedIn} setAuthUser={setAuthUser} email={email} password={password} />
     </div>
   );
 };

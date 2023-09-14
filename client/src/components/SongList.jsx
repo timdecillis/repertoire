@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Draft from './Draft.jsx';
+
 const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNotes, signedIn, authUser }) => {
   const [notes, setNotes] = useState('');
   const [draftOpen, setDraftOpen] = useState(false);
@@ -12,30 +14,21 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
   return (
     <div className="songlist">
       <div className="your-song">My songbook</div>
+
       {songs.length > 0 && <div>
         {songs.map((song, i) =>
+
           <div key={i} className="song-border">
             <div className="song">
 
               <div className="song-name">{song.name}</div>
               <div className="artist">by {song.artist}</div>
 
-
-
               <div className="notes-heading">Notes</div>
-              {draftOpen && <div className="draft">
-                <textarea onChange={(e) => setDraft(e.target.value)} ></textarea>
-                <div>
-                  <button className="draft-buttons" onClick={() => setDraftOpen(false)} >cancel</button>
-                  <button className="draft-buttons" onClick={() => {
-                    handleNotes(authUser, song.name, song.artist, draft);
-                    setDraftOpen(false);
-                  }}>
-                    add</button>
-                </div>
-              </div>}
 
-              {!draftOpen &&
+              {draftOpen ? <Draft setDraft={setDraft} setDraftOpen={setDraftOpen} handleNotes={handleNotes} authUser={authUser} draft={draft} song={song}/>
+
+                :
                 <div>
                   <div className="notes-container">
                     <div className="notes">{song.notes}</div>
@@ -45,6 +38,8 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
                     Add a note</button>
                 </div>
               }
+
+
               <div className="completed">
                 <input onClick={() =>
                   handleCompleted(authUser, song.name, song.artist)

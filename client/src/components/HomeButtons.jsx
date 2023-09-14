@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import store from '../redux/store.js';
+
 const HomeButtons = ({ setSignInOpen, setCreateOpen, setOneOpen, oneOpen }) => {
 
   const [email, setEmail] = useState('');

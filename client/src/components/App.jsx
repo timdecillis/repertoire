@@ -3,6 +3,7 @@ import Dashboard from './Dashboard.jsx';
 import SongList from './SongList.jsx';
 const axios = require('axios');
 
+import store from '../redux/store.js';
 import SignIn from './SignIn.jsx';
 import CreateUser from './CreateUser.jsx';
 import HomeButtons from './HomeButtons.jsx';

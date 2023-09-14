@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Draft from './Draft.jsx';
+import Notes from './Notes.jsx';
 
 const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNotes, signedIn, authUser }) => {
   const [notes, setNotes] = useState('');
@@ -29,14 +30,8 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
               {draftOpen ? <Draft setDraft={setDraft} setDraftOpen={setDraftOpen} handleNotes={handleNotes} authUser={authUser} draft={draft} song={song}/>
 
                 :
-                <div>
-                  <div className="notes-container">
-                    <div className="notes">{song.notes}</div>
-                  </div>
+                <Notes song={song} setDraftOpen={setDraftOpen}/>
 
-                  <button className="add-notes" onClick={() => setDraftOpen(true)}>
-                    Add a note</button>
-                </div>
               }
 
 

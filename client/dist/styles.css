@@ -262,7 +262,5 @@ body {
   border-style: solid;
   border-color: black;
   border-width: .1em;
+  cursor: pointer;
 }
-
-
-

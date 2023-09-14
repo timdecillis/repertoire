@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import Instrument from './Instrument.jsx';
+import Difficulty from './Difficulty.jsx';
+import Search from './Search.jsx';
 
 const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addSong, signedIn, authUser }) => {
 
@@ -17,26 +19,17 @@ const Dashboard = ({ handleSearch, choices, songs, setSongs, band, setBand, addS
 
       <Instrument instrument={instrument} setInstrument={setInstrument}></Instrument>
 
-      <div className="difficulty">
-        <div className="dash-option">Difficulty</div>
-        <input onClick={(e) => setDifficulty(e.target.value)} type="radio" name="difficulty" value="beginner"></input>
-        <label className="radio-button" htmlFor="difficulty">Beginner</label>
-        <input onClick={(e) => setDifficulty(e.target.value)} type="radio" name="difficulty" value="intermediate"></input>
-        <label className="radio-button" htmlFor="difficulty">Intermediate</label>
-        <input onClick={(e) => setDifficulty(e.target.value)} type="radio" name="difficulty" value="advanced"></input>
-        <label className="radio-button" htmlFor="difficulty">Advanced</label>
-      </div>
-      <div className="search">
-        <input className="input" placeholder="Enter an artist or band" onChange={e => setBand(e.target.value)}></input>
-        <button className="sign-in-button" onClick={() => {
-          handleSearch(band, instrument, difficulty);
-        }}>Search</button>
-      </div>
+      <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
+
+      <Search band={band} setBand={setBand} instrument={instrument} difficulty={difficulty} handleSearch={handleSearch} />
+
+
       <div className="choices">
         {choices.length > 0 && <div>{choices.map((choice, i) => <div className="choice" onClick={() => {
           addSong(authUser, choice, band);
         }} key={i}>{choice}</div>)}</div>}
       </div>
+
     </div>
   );
 };

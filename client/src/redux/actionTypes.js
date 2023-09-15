@@ -1,3 +1,4 @@
+export const SIGNED_IN = 'userChanged';
 export const USER_CHANGED = 'userChanged';
 export const SONG_ADDED = 'songAdded';
 export const SONG_REMOVED = 'songRemoved';

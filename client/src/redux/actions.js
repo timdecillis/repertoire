@@ -56,3 +56,10 @@ export const notesAdded = (song, notes) => ({
     notes: notes
   }
 });
+export const signedIn = (email, password) => ({
+  type: types.SIGNED_IN,
+  payload: {
+    email,
+    password
+  }
+});

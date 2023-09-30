@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 const axios = require('axios');
 
-
-import store from '../redux/store.js';
-
 const Button = ({ setSignedIn, setCreateOpen, setAuthUser, email, password }) => {
 
   return (

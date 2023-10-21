@@ -4,10 +4,8 @@ import os
 app = Flask(__name__)
 
 
-# Import the Python functions that correspond to your controllers.js
 from controllers import find_band, get_songs, add_song, delete_song, update_song, update_notes, create_user
 
-# Use the 'morgue' Python equivalent for logging (optional)
 import logging
 logger = logging.getLogger(__name__)
 
@@ -16,7 +14,6 @@ logger = logging.getLogger(__name__)
 def send_static(filename):
     return send_from_directory('client/dist', filename)
 
-# Define the routes for your application
 @app.route('/findBand', methods=['POST'])
 def find_band():
     try:

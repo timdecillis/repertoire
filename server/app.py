@@ -1,15 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import os
 
-app = Flask(__name)
+app = Flask(__name__)
 
 
 # Import the Python functions that correspond to your controllers.js
-from controllers import findBand, getSongs, addSong, deleteSong, updateSong, updateNotes, createUser
+from controllers import find_band, get_songs, add_song, delete_song, update_song, update_notes, create_user
 
 # Use the 'morgue' Python equivalent for logging (optional)
-from flask.logging import create_logger
-logger = create_logger(app)
+import logging
+logger = logging.getLogger(__name__)
 
 # Serve static files from the 'client/dist' directory
 @app.route('/static/<path:filename>')
@@ -21,7 +21,7 @@ def send_static(filename):
 def find_band():
     try:
         data = request.get_json()
-        result = findBand(data)
+        result = find_band(data)
         return jsonify(result)
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -30,7 +30,7 @@ def find_band():
 def create_user():
     try:
         data = request.get_json()
-        createUser(data)
+        create_user(data)
         return '', 201  # HTTP 201 Created
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -39,7 +39,7 @@ def create_user():
 def add_song():
     try:
         data = request.get_json()
-        addSong(data)
+        add_song(data)
         return '', 201  # HTTP 201 Created
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -47,7 +47,7 @@ def add_song():
 @app.route('/getSongs', methods=['GET'])
 def get_songs():
     try:
-        result = getSongs()
+        result = get_songs()
         return jsonify(result)
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -56,7 +56,7 @@ def get_songs():
 def delete_song():
     try:
         data = request.get_json()
-        deleteSong(data)
+        delete_song(data)
         return '', 203  # HTTP 203 Non-Authoritative Information
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -65,7 +65,7 @@ def delete_song():
 def update_song():
     try:
         data = request.get_json()
-        updateSong(data)
+        update_song(data)
         return '', 202  # HTTP 202 Accepted
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -74,10 +74,10 @@ def update_song():
 def update_notes():
     try:
         data = request.get_json()
-        updateNotes(data)
+        update_notes(data)
         return '', 202  # HTTP 202 Accepted
     except Exception as e:
-        return jsonify({'error': str(e})
+        return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
     app.run()

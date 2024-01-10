@@ -36,12 +36,14 @@ const SignIn = ({
     //   </div>
     //   <button className="sign-in-button" onClick={handleSignIn}>Submit</button>
     // </div>
-    <form>
-      <label htmlFor="email">Please enter your email</label>
-      <input id="email" type="text" name="email" />
-      <label htmlFor="password">Please enter your password</label>
-      <input id="password" type="text" name="password" />
-      <input type="submit" value="login"/>
+    <form className="sign-in">
+      <div className="inputs">
+        <label className="input" htmlFor="email">Please enter your email</label>
+        <input onChange={(e) => setEmail(e.target.value)} className="input" id="email" type="text" name="email" />
+        <label className="input" htmlFor="password">Please enter your password</label>
+        <input onChange={(e) => setPassword(e.target.value)} className="input" id="password" type="text" name="password" />
+        <input className="input" type="submit" value="login" />
+      </div>
     </form>
   );
 };

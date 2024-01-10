@@ -26,12 +26,7 @@ const App = () => {
     setOneOpen(true);
     setSignedIn(false);
     setChoices([]);
-
   };
-
-  // useEffect(() => {
-  //   getSongs();
-  // }, []);
 
   const getSongs = () => {
     return axios.get('/getSongs', { params: { email: authUser } })

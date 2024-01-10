@@ -24,19 +24,13 @@ const SignIn = ({
     return null;
   }
 
-  const handleSignIn = () => {
+  const handleSignIn = (e) => {
+    e.preventDefault();
     setAuthUser(email);
   };
 
   return (
-    // <div className="sign-in" >
-    //   <div className="inputs">
-    //     <input onChange={(e) => setEmail(e.target.value)} type="email" className="input" placeholder="email"></input>
-    //     <input onChange={(e) => setPassword(e.target.value)} type="password" className="input" placeholder="password"></input>
-    //   </div>
-    //   <button className="sign-in-button" onClick={handleSignIn}>Submit</button>
-    // </div>
-    <form className="sign-in">
+    <form onSubmit={handleSignIn} className="sign-in">
       <div className="inputs">
         <label className="input" htmlFor="email">Please enter your email</label>
         <input onChange={(e) => setEmail(e.target.value)} className="input" id="email" type="text" name="email" />

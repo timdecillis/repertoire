@@ -28,7 +28,8 @@ const Dashboard = ({
       <div className="dashboard">
         <div className="add-song">Find a song</div>
         <form
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             handleSearch(band, instrument, difficulty);
           }}
         >

@@ -12,8 +12,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20%;
-
 }
 
 .banner {
@@ -24,7 +22,7 @@ body {
   width: 100%;
   max-height: 7.7em;
   min-height: 7.7em;
-  align-items: center;
+  padding-left: 1em;
 }
 
 .header {

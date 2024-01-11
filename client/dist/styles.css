@@ -4,8 +4,7 @@
 body {
   background-color: hsl(0, 0%, 90%);
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: 'Helvetica Neue';
-
+  font-family: "Helvetica Neue";
 }
 .container {
   display: flex;
@@ -50,18 +49,19 @@ body {
 }
 
 .user-button {
-  min-height: 2em;
+  font-family: "Helvetica Neue";
+  min-height: 4em;
   border: none;
-  background-color: darkcyan;
-  color: whitesmoke;
-  border-radius: .15em;
-  margin-top: .35em;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 0.35em;
+  margin-top: 0.35em;
   cursor: pointer;
-  max-width: 8em;
+  max-width: 10em;
 }
 
 .list-and-dash {
-  margin-top: .2em;
+  margin-top: 0.2em;
   min-width: 35%;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ body {
   max-height: 22em;
   min-width: 40%;
   border: solid;
-  border-radius: .3em;
+  border-radius: 0.3em;
   background-color: whitesmoke;
   overflow: scroll;
   margin-bottom: 1em;
@@ -87,7 +87,7 @@ body {
   padding: 4%;
   border: solid;
   min-width: 40%;
-  border-radius: .3em;
+  border-radius: 0.3em;
 
   background-color: whitesmoke;
   overflow: scroll;
@@ -100,11 +100,10 @@ body {
 .song-border {
   min-height: 14em;
   max-height: 14em;
-  margin-bottom: .75em;
+  margin-bottom: 0.75em;
   border: solid;
-  border-radius: .3em;
+  border-radius: 0.3em;
   border-color: darkcyan;
-
 }
 
 .song {
@@ -117,15 +116,15 @@ body {
 .choice {
   color: whitesmoke;
   background-color: darkcyan;
-  border-radius: .25em;
+  border-radius: 0.25em;
   border: solid;
   border-color: black;
-  margin-top: .5em;
+  margin-top: 0.5em;
   cursor: pointer;
   min-height: 1.5em;
-  border-width: .1em;
+  border-width: 0.1em;
   text-align: center;
-  padding-top: .2em;
+  padding-top: 0.2em;
 }
 
 .add-song {
@@ -134,19 +133,18 @@ body {
   min-height: 2em;
   min-width: 8.5em;
   align-self: center;
-  border-radius: .3em;
-
+  border-radius: 0.3em;
 }
 
 .radio-button {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .dash-option {
   font-weight: 550;
   font-size: 1em;
-  margin-bottom: .3em;
-  margin-top: .5em;
+  margin-bottom: 0.3em;
+  margin-top: 0.5em;
 }
 
 .your-song {
@@ -155,16 +153,15 @@ body {
   min-height: 2em;
   min-width: 8.5em;
   align-self: center;
-  border-radius: .3em;
-
+  border-radius: 0.3em;
 }
 
 .song-name {
   font-weight: bold;
 }
 .artist {
-  font-size: .85em;
-  margin-bottom: .5em;
+  font-size: 0.85em;
+  margin-bottom: 0.5em;
 }
 
 .remove-song {
@@ -172,22 +169,22 @@ body {
   min-height: 2em;
   max-height: 2em;
   max-width: 8em;
-  font-size: .7em;
+  font-size: 0.7em;
   margin-bottom: 0;
 }
 
 .notes-container {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .notes-heading {
   font-weight: bold;
-  font-size: .8em;
-  margin-bottom: .2em;
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
 }
 
 .notes {
-  font-size: .8em;
+  font-size: 0.8em;
   min-height: 8 em;
   max-height: 8em;
   overflow: scroll;
@@ -196,7 +193,7 @@ body {
 
 .add-notes {
   border-radius: 0;
-  font-size: .7em;
+  font-size: 0.7em;
   min-height: 2em;
   max-height: 2em;
   max-width: 8em;
@@ -205,11 +202,11 @@ body {
 }
 .draft-buttons {
   border-radius: 0;
-  margin-right: .2em;
+  margin-right: 0.2em;
 }
 
 .completed {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .search-input {
@@ -222,12 +219,12 @@ body {
 }
 
 .draft {
-  font-size: .7em;
+  font-size: 0.7em;
   margin-bottom: 1.5em;
 }
 
 .sign-in {
-  margin-top: .6em;
+  margin-top: 0.6em;
   display: flex;
   flex-direction: column;
 }
@@ -240,9 +237,9 @@ body {
 .input {
   font-size: 1em;
   min-height: 1em;
-  border-radius: .1em;
-  border-width: .1em;
-  margin-bottom: .3em;
+  border-radius: 0.1em;
+  border-width: 0.1em;
+  margin-bottom: 0.3em;
 }
 
 .sign-in-button {
@@ -250,12 +247,12 @@ body {
   min-height: 2em;
   max-height: 2em;
   max-width: 8em;
-  background-color: darkcyan;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: black;
   align-self: center;
-  border-radius: .2em;
+  border-radius: 0.2em;
   border-style: solid;
-  border-color: black;
-  border-width: .1em;
+  border-color: darkcyan;
+  border-width: 0.1em;
   cursor: pointer;
 }

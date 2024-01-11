@@ -35,7 +35,7 @@ const SignIn = ({
         <label className="input" htmlFor="email">Please enter your email</label>
         <input onChange={(e) => setEmail(e.target.value)} className="input" id="email" type="text" name="email" />
         <label className="input" htmlFor="password">Please enter your password</label>
-        <input onChange={(e) => setPassword(e.target.value)} className="input" id="password" type="text" name="password" />
+        <input onChange={(e) => setPassword(e.target.value)} className="input" id="password" type="password" name="password" />
         <input className="input" type="submit" value="login" />
       </div>
     </form>

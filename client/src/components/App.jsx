@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
 import Dashboard from './Dashboard.jsx';
 import SongList from './SongList.jsx';
 const axios = require('axios');

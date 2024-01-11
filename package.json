@@ -4,7 +4,7 @@
   "description": "",
   "private": false,
   "scripts": {
-    "server-dev": "npx nodemon --watch server server/index.js",
+    "server-dev": "npx nodemon --inspect --watch server server/index.js",
     "build": "npx webpack",
     "client-dev": "npx webpack --watch"
   },

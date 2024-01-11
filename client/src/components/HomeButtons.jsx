@@ -10,14 +10,15 @@ const HomeButtons = ({ setSignInOpen, setCreateOpen, setOneOpen, oneOpen }) => {
   }
   return (
     <div className="button-container">
-      <button onClick={() => {
+      <Link to="/signin" className="user-button">Sign In</Link>
+      {/* <button onClick={() => {
         setOneOpen(false);
         setSignInOpen(true);
       }} className="user-button">Sign In</button>
       <button onClick={() => {
         setOneOpen(false);
         setCreateOpen(true);
-      }} className="user-button">Create Account</button>
+      }} className="user-button">Create Account</button> */}
     </div>
   );
 };

@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities; */
 body {
-  background-color: hsl(0, 0%, 90%);
+  background-color: #cdd8dc;
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+  font-size: x-small;
 }
 .container {
   display: flex;
@@ -33,35 +35,38 @@ body {
 
 .button-container {
   padding: 1%;
-  font-size: 3em;
+  font-size: 6em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .landing {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .painting {
   max-width: 60%;
   max-height: 70%;
-  align-self: flex-start;
+  margin-top: 0;
 }
 
 .user-button {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: bolder;
-  min-height: 4.5em;
-  min-width: 10em;
-  max-width: 10em;
-  max-height: 4.5em;
-  font-size: .5em;
+  min-height: 3.5em;
+  min-width: 8em;
+  max-width: 8em;
+  max-height: 3.5em;
+  font-size: 0.5em;
   border: none;
   background-color: whitesmoke;
   color: darkcyan;
   border-radius: 0.45em;
-  margin-top: 0.35em;
+  margin: 0.5em;
   cursor: pointer;
   max-width: 10em;
 }
@@ -230,9 +235,11 @@ body {
 }
 
 .sign-in {
-  margin-top: 0.6em;
   display: flex;
   flex-direction: column;
+  font-size: 2em;
+  max-height: 14em;
+  min-height: 14em;
 }
 
 .inputs {
@@ -240,12 +247,22 @@ body {
   flex-direction: column;
 }
 
-.input {
+.first-input {
+  text-align: center;
   font-size: 1em;
   min-height: 1em;
   border-radius: 0.1em;
   border-width: 0.1em;
   margin-bottom: 0.3em;
+}
+
+.input {
+  font-size: 1em;
+  padding: 0.5em;
+  min-height: 1em;
+  border-radius: 0.8em;
+  margin-bottom: 0.3em;
+  border: none;
 }
 
 .sign-in-button {

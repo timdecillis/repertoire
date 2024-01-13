@@ -5,7 +5,7 @@ import SignIn from './SignIn.jsx';
 import CreateUser from './CreateUser.jsx';
 
 const LandingPage = ({
-  email,
+  setSignedIn,
   getSongs,
   authUser,
   createOpen,
@@ -14,6 +14,7 @@ const LandingPage = ({
   setSignInOpen,
   setCreateOpen,
   signInOpen,
+  setAuthUser
 }) => {
   return (
     <div className="landing">
@@ -34,12 +35,8 @@ const LandingPage = ({
         <SignIn
           authUser={authUser}
           getSongs={getSongs}
-          email={email}
-          password={password}
           setAuthUser={setAuthUser}
           setSignedIn={setSignedIn}
-          setEmail={setEmail}
-          setPassword={setPassword}
           signInOpen={signInOpen}
           setSignInOpen={setSignInOpen}
         />

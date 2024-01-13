@@ -7,10 +7,6 @@ const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  if (!createOpen) {
-    return null;
-  }
-
   return (
     <div className="sign-in" >
       <div className="inputs">

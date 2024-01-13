@@ -82,7 +82,7 @@ const App = () => {
       </div>
 
       {!signedIn ?
-        <LandingPage email={email} getSongs={getSongs} authUser={authUser} signInOpen={signInOpen} oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} createOpen={createOpen} setCreateOpen={setCreateOpen}/>
+        <LandingPage setSignedIn={setSignedIn} email={email} getSongs={getSongs} setAuthUser={setAuthUser} authUser={authUser} signInOpen={signInOpen} oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} createOpen={createOpen} setCreateOpen={setCreateOpen}/>
         :
         <button className="sign-in-button" onClick={userSignOut}>Sign Out</button>}
 

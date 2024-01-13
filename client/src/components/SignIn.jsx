@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 
 const SignIn = ({
   setSignedIn,
-  setEmail,
   setSignInOpen,
-  setPassword,
   signInOpen,
   setAuthUser,
-  email,
-  password,
   getSongs,
   authUser,
 }) => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (authUser !== null) {

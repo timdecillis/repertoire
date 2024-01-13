@@ -82,15 +82,9 @@ const App = () => {
       </div>
 
       {!signedIn ?
-        <LandingPage signInOpen={signInOpen} oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} createOpen={createOpen} setCreateOpen={setCreateOpen}/>
+        <LandingPage email={email} getSongs={getSongs} authUser={authUser} signInOpen={signInOpen} oneOpen={oneOpen} setOneOpen={setOneOpen} setSignInOpen={setSignInOpen} createOpen={createOpen} setCreateOpen={setCreateOpen}/>
         :
         <button className="sign-in-button" onClick={userSignOut}>Sign Out</button>}
-
-      <CreateUser setAuthUser={setAuthUser} setCreateOpen={setCreateOpen} createOpen={createOpen} setOneOpen={setOneOpen} setSignedIn={setSignedIn} />
-
-      <SignIn authUser={authUser} getSongs={getSongs} email={email} password={password} setAuthUser={setAuthUser} setSignedIn={setSignedIn} setEmail={setEmail}
-        setPassword={setPassword} signInOpen={signInOpen}
-        setSignInOpen={setSignInOpen} />
 
       <div className="list-and-dash">
         <Dashboard signedIn={signedIn} addSong={addSong} band={band} authUser={authUser} setBand={setBand} songs={songs} setSongs={setSongs} choices={choices} handleSearch={handleSearch} />

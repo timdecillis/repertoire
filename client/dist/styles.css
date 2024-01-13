@@ -4,7 +4,7 @@
 body {
   background-color: hsl(0, 0%, 90%);
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: "Helvetica Neue";
+  font-family: 'Work Sans', sans-serif;
 }
 .container {
   display: flex;
@@ -33,9 +33,9 @@ body {
 
 .button-container {
   padding: 1%;
+  font-size: 3em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .landing {
@@ -46,15 +46,21 @@ body {
 .painting {
   max-width: 60%;
   max-height: 70%;
+  align-self: flex-start;
 }
 
 .user-button {
-  font-family: "Helvetica Neue";
-  min-height: 4em;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+  min-height: 4.5em;
+  min-width: 10em;
+  max-width: 10em;
+  max-height: 4.5em;
+  font-size: .5em;
   border: none;
   background-color: whitesmoke;
-  color: black;
-  border-radius: 0.35em;
+  color: darkcyan;
+  border-radius: 0.45em;
   margin-top: 0.35em;
   cursor: pointer;
   max-width: 10em;

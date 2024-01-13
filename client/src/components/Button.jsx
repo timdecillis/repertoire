@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 const axios = require('axios');
 
-const Button = ({ setSignedIn, setCreateOpen, setAuthUser, email, password }) => {
+const Button = ({ setSignedIn, set, setAuthUser, email, password }) => {
 
   return (
     <div>

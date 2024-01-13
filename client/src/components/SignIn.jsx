@@ -12,6 +12,7 @@ const SignIn = ({
   getSongs,
   authUser,
 }) => {
+
   useEffect(() => {
     if (authUser !== null) {
       setSignInOpen(false);

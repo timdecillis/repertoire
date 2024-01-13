@@ -7,14 +7,19 @@ const CreateUser = ({ setAuthUser, setSignedIn, createOpen, setCreateOpen }) => 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleSubmit = () => {
+
+  };
+
   return (
-    <div className="sign-in" >
+    <form onSubmit={handleSubmit} className="sign-in" >
       <div className="inputs">
-        <input onChange={(e) => setEmail(e.target.value)} type="email" className="input" placeholder="email"></input>
-        <input onChange={(e) => setPassword(e.target.value)} type="password" className="input" placeholder="password"></input>
+        <input type="text" onChange={(e) => setEmail(e.target.value)} type="email" className="input" placeholder="email"/>
+        <input type="text" onChange={(e) => setPassword(e.target.value)} type="password" className="input" placeholder="password"/>
       </div>
+      <input type="submit"/>
       <Button setCreateOpen={setCreateOpen} setSignedIn={setSignedIn} setAuthUser={setAuthUser} email={email} password={password} />
-    </div>
+    </form>
   );
 };
 

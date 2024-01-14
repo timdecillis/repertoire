@@ -240,6 +240,7 @@ body {
   font-size: 2em;
   max-height: 14em;
   min-height: 14em;
+  margin: 3em;
 }
 
 .inputs {

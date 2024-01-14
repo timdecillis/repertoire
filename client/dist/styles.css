@@ -17,7 +17,6 @@ body {
 .banner {
   background-color: darkcyan;
   display: flex;
-  flex-direction: column;
   margin-bottom: 1%;
   width: 100%;
   max-height: 7.7em;
@@ -241,6 +240,11 @@ body {
   max-height: 14em;
   min-height: 14em;
   margin: 3em;
+}
+
+.sign-out-button {
+  text-decoration: underline;
+  color: whitesmoke;
 }
 
 .inputs {

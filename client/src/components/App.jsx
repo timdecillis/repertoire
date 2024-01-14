@@ -118,6 +118,8 @@ const App = () => {
           setCreateOpen={setCreateOpen}
         />
       )}
+
+      <div className="list-and-dash">
         {songs.length > 0 && (
           <SongList
             authUser={authUser}

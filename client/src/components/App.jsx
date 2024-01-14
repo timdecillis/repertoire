@@ -90,11 +90,17 @@ const App = () => {
       });
   };
 
+  const handleSignOut = () => {
+    setSignedIn(false);
+    setAuthUser(null);
+    setSongs([]);
+  };
+
   return (
     <div className="container">
       <div className="banner">
         <div className="header">Repertoire</div>
-        {signedIn && <span className="sign-out-button">Sign Out</span>}
+        {signedIn && <span onClick={handleSignOut} className="sign-out-button">Sign Out</span>}
       </div>
 
       {!signedIn && (

@@ -23,7 +23,7 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
           <div key={i} className="song-border">
             <div className="song">
               <div className="song-name">{song.name}</div>
-              <div className="artist">by {song.artist}</div>
+              {/* <div className="artist">by {song.artist}</div>
               <div className="notes-heading">Notes</div>
               {draftOpen ?
                 <Draft setDraft={setDraft} setDraftOpen={setDraftOpen} handleNotes={handleNotes} authUser={authUser} draft={draft} song={song} />
@@ -31,7 +31,7 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
                 <Notes song={song} setDraftOpen={setDraftOpen} />
               }
               <Completed handleCompleted={handleCompleted} authUser={authUser} song={song}/>
-              <RemoveButton deleteSong={deleteSong} authUser={authUser} song={song}/>
+              <RemoveButton deleteSong={deleteSong} authUser={authUser} song={song}/> */}
             </div>
           </div>)}
       </div>}

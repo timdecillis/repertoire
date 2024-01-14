@@ -118,20 +118,6 @@ const App = () => {
           setCreateOpen={setCreateOpen}
         />
       )}
-
-      <div className="list-and-dash">
-        <Dashboard
-          signedIn={signedIn}
-          addSong={addSong}
-          band={band}
-          authUser={authUser}
-          setBand={setBand}
-          songs={songs}
-          setSongs={setSongs}
-          choices={choices}
-          handleSearch={handleSearch}
-        />
-
         {songs.length > 0 && (
           <SongList
             authUser={authUser}

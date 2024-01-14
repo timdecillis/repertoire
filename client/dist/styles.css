@@ -16,6 +16,7 @@ body {
 
 .banner {
   background-color: darkcyan;
+  background-image: linear-gradient(to right, darkcyan, #cdd8dc);
   display: flex;
   margin-bottom: 1%;
   align-items: center;

@@ -18,6 +18,8 @@ body {
   background-color: darkcyan;
   display: flex;
   margin-bottom: 1%;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   max-height: 7.7em;
   min-height: 7.7em;
@@ -245,6 +247,8 @@ body {
 .sign-out-button {
   text-decoration: underline;
   color: whitesmoke;
+  margin-right: 1em;
+  cursor: pointer;
 }
 
 .inputs {

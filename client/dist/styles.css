@@ -117,6 +117,7 @@ body {
   border: solid;
   border-radius: 0.3em;
   border-color: darkcyan;
+  border-width: 0.05em
 }
 
 .song {
@@ -166,6 +167,7 @@ body {
   min-width: 8.5em;
   align-self: center;
   border-radius: 0.3em;
+  font-size: 1.7em;
 }
 
 .song-name {

@@ -30,25 +30,6 @@ const CreateUser = ({
   };
 
   return (
-    // <form onSubmit={handleSubmit} className="sign-in">
-    //   <div className="inputs">
-    //     <input
-    //       type="text"
-    //       onChange={(e) => setEmail(e.target.value)}
-    //       type="email"
-    //       className="input"
-    //       placeholder="email"
-    //     />
-    //     <input
-    //       type="text"
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       type="password"
-    //       className="input"
-    //       placeholder="password"
-    //     />
-    //   </div>
-    //   <input className="sign-in-button" type="submit" value="submit" />
-    // </form>
     <form onSubmit={handleSubmit} className="sign-in">
       <div className="inputs">
         <div className="first-input" htmlFor="email">Create Account</div>

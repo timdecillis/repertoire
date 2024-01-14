@@ -79,6 +79,7 @@ const App = () => {
 
       <div className="banner">
         <div className="header">Repertoire</div>
+        <span className="sign-out-button">Sign Out</span>
       </div>
 
       {!signedIn ?

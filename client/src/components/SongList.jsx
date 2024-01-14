@@ -16,7 +16,7 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
 
   return (
     <div className="songlist">
-      <div className="your-song">My songbook</div>
+      <div className="your-song">Songbook</div>
 
       {songs.length > 0 && <div>
         {songs.map((song, i) =>

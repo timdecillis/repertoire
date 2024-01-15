@@ -3,10 +3,14 @@ import RemoveButton from './RemoveButton.jsx';
 import Completed from './Completed.jsx';
 import Draft from './Draft.jsx';
 
-const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted }) => {
+const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted, authUser, deleteSong, handleNotes }) => {
+
+  const [draft, setDraft] = useState('');
+
   return (
     <div>Notes
-      {/* <div className="artist">by {song.artist}</div>
+      <div className="artist">{song.name}</div>
+      <div className="artist">by {song.artist}</div>
       <div className="notes-heading">Notes</div>
       {draftOpen ? (
         <Draft
@@ -31,7 +35,7 @@ const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted }) => {
       </div>
       <button className="add-notes" onClick={() => setDraftOpen(true)}>
         Add a note
-      </button> */}
+      </button>
     </div>
   );
 };

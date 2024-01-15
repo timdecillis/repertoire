@@ -16,7 +16,7 @@ const SongList = ({
   signedIn,
   authUser,
   dashOpen,
-  setDashOpen
+  setDashOpen,
 }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
@@ -24,20 +24,30 @@ const SongList = ({
 
   return (
     <div className="songlist">
-
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
-        <span onClick={() => setDashOpen(true)} style={{textDecoration: 'underline', cursor: 'pointer'}} >+Add a Song</span>
+        <span
+          onClick={() => setDashOpen(true)}
+          style={{ textDecoration: "underline", cursor: "pointer" }}
+        >
+          +Add a Song
+        </span>
       </div>
 
       {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
-            <SongCard key={i} song={song} handleCompleted={handleCompleted} />
+            <SongCard
+              deleteSong={deleteSong}
+              authUser={authUser}
+              handleNotes={handleNotes}
+              key={i}
+              song={song}
+              handleCompleted={handleCompleted}
+            />
           ))}
         </div>
       )}
-
     </div>
   );
 };

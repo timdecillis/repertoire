@@ -28,7 +28,7 @@ const SongList = ({
     <div className="songlist">
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
-        <span style={{textDecoration: 'underline'}} >+Add a Song</span>
+        <span style={{textDecoration: 'underline', cursor: 'pointer'}} >+Add a Song</span>
       </div>
 
       {songs.length > 0 && (

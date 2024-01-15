@@ -118,6 +118,11 @@ body {
   border-width: 0.05em;
 }
 
+.song-border:hover {
+  background-image: linear-gradient(to right, darkcyan, #cdd8dc);
+  cursor: pointer;
+}
+
 .song {
   display: flex;
   flex-direction: column;
@@ -170,6 +175,7 @@ body {
 
 .song-name {
   font-weight: bold;
+  font-size: 1.5em;
 }
 .artist {
   font-size: 0.85em;

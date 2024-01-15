@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-import Draft from "./Draft.jsx";
 import Notes from "./Notes.jsx";
 import Completed from "./Completed.jsx";
 import RemoveButton from "./RemoveButton.jsx";
 
-const SongCard = ({ song }) => {
+const SongCard = ({ song, handleCompleted }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
@@ -18,7 +17,7 @@ const SongCard = ({ song }) => {
           <div className="song-name">&#10003;</div>
         </div>
       ) : (
-        <Draft />
+        <Notes setDraftOpen={setDraftOpen} song={song} draftOpen={draftOpen} handleCompleted={handleCompleted} />
       )}
     </div>
   );

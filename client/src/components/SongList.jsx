@@ -22,10 +22,6 @@ const SongList = ({
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
 
-  // if (songs.length < 1) {
-  //   return null;
-  // }
-
   return (
     <div className="songlist">
 
@@ -35,9 +31,9 @@ const SongList = ({
       </div>
 
       {songs.length > 0 && (
-        <div>
+        <div>Songlist
           {songs.map((song, i) => (
-            <SongCard key={i} />
+            <SongCard key={i} song={song} />
           ))}
         </div>
       )}

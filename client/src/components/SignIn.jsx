@@ -24,7 +24,6 @@ const SignIn = ({
   const handleSignIn = (e) => {
     e.preventDefault();
     setAuthUser(email);
-    setSignedIn(true);
   };
 
   const handleOpenCreate = () => {

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import RemoveButton from './RemoveButton.jsx';
+import Completed from './Completed.jsx';
+import Draft from './Draft.jsx';
 
-const Notes = ({ setDraftOpen, song }) => {
+const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted }) => {
   return (
-    <div>
-      <div className="artist">by {song.artist}</div>
+    <div>Notes
+      {/* <div className="artist">by {song.artist}</div>
       <div className="notes-heading">Notes</div>
       {draftOpen ? (
         <Draft
@@ -29,7 +31,7 @@ const Notes = ({ setDraftOpen, song }) => {
       </div>
       <button className="add-notes" onClick={() => setDraftOpen(true)}>
         Add a note
-      </button>
+      </button> */}
     </div>
   );
 };

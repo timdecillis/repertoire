@@ -125,9 +125,9 @@ body {
 
 .song {
   display: flex;
-  flex-direction: column;
   padding: 3%;
   overflow: scroll;
+  justify-content: space-between;
 }
 
 .choice {

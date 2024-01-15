@@ -23,6 +23,9 @@ const SongList = ({ songs, setSongs, band, deleteSong, handleCompleted, handleNo
           <div key={i} className="song-border">
             <div className="song">
               <div className="song-name">{song.name}</div>
+
+              <div className="song-name">&#10003;</div>
+
               {/* <div className="artist">by {song.artist}</div>
               <div className="notes-heading">Notes</div>
               {draftOpen ?

@@ -4,7 +4,7 @@ const Draft = ({ setDraft, setDraftOpen, handleNotes, authUser, draft, song }) =
 
   return (
     <div className="draft">
-      <textarea onChange={(e) => setDraft(e.target.value)} ></textarea>
+      {/* <textarea onChange={(e) => setDraft(e.target.value)} ></textarea>
       <div>
         <button className="draft-buttons" onClick={() => setDraftOpen(false)} >cancel</button>
         <button className="draft-buttons" onClick={() => {
@@ -12,7 +12,7 @@ const Draft = ({ setDraft, setDraftOpen, handleNotes, authUser, draft, song }) =
           setDraftOpen(false);
         }}>
           add</button>
-      </div>
+      </div> */}
     </div>
   );
 };

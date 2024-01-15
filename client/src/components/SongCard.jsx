@@ -12,12 +12,14 @@ const SongCard = ({ song }) => {
 
   return (
     <div className="song-border">
-      <div className="song">
-        <div className="song-name">{song.name}</div>
-
-        <div className="song-name">&#10003;</div>
-        {/* <Notes song={song} draftOpen={draftOpen} /> */}
-      </div>
+      {!draftOpen ? (
+        <div className="song">
+          <div className="song-name">{song.name}</div>
+          <div className="song-name">&#10003;</div>
+        </div>
+      ) : (
+        <Draft />
+      )}
     </div>
   );
 };

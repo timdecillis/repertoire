@@ -20,12 +20,13 @@ const SongList = ({
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
 
-  if (!signedIn) {
+  if (songs.length < 1) {
     return null;
   }
 
   return (
     <div className="songlist">
+
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
         <span style={{textDecoration: 'underline', cursor: 'pointer'}} >+Add a Song</span>
@@ -34,10 +35,11 @@ const SongList = ({
       {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
-            <SongCard />
+            <SongCard key={i} />
           ))}
         </div>
       )}
+
     </div>
   );
 };

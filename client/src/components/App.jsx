@@ -19,6 +19,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [oneOpen, setOneOpen] = useState(true);
   const [authUser, setAuthUser] = useState(null);
+  const [dashOpen, setDashOpen] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -98,7 +99,6 @@ const App = () => {
 
   return (
     <div className="container">
-
       <div className="banner">
         <div className="header">Repertoire</div>
         {signedIn && (
@@ -123,7 +123,9 @@ const App = () => {
           setCreateOpen={setCreateOpen}
         />
       )}
-      {songs.length > 0 && (
+      {dashOpen ? (
+        <Dashboard />
+      ) : (
         <SongList
           authUser={authUser}
           signedIn={signedIn}

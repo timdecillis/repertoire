@@ -31,7 +31,7 @@ const SongList = ({
       </div>
 
       {songs.length > 0 && (
-        <div>Songlist
+        <div>
           {songs.map((song, i) => (
             <SongCard key={i} song={song} />
           ))}

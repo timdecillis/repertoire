@@ -16,7 +16,7 @@ const SongCard = ({ song }) => {
         <div className="song-name">{song.name}</div>
 
         <div className="song-name">&#10003;</div>
-        <Notes song={song} draftOpen={draftOpen} />
+        {/* <Notes song={song} draftOpen={draftOpen} /> */}
       </div>
     </div>
   );

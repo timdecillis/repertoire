@@ -74,14 +74,6 @@ body {
   max-width: 10em;
 }
 
-.list-and-dash {
-  margin-top: 0.2em;
-  min-width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
 .dashboard {
   min-height: 21.5em;
   display: flex;
@@ -101,7 +93,6 @@ body {
   padding: 4%;
   min-width: 40%;
   border-radius: 0.3em;
-
   background-color: whitesmoke;
   overflow: scroll;
 }
@@ -294,4 +285,9 @@ body {
   border-color: darkcyan;
   border-width: 0.1em;
   cursor: pointer;
+}
+
+.songlist-heading {
+  display: flex;
+  flex-direction: space-between;
 }

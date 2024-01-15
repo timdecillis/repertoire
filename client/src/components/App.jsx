@@ -98,9 +98,14 @@ const App = () => {
 
   return (
     <div className="container">
+
       <div className="banner">
         <div className="header">Repertoire</div>
-        {signedIn && <span onClick={handleSignOut} className="sign-out-button">Sign Out</span>}
+        {signedIn && (
+          <span onClick={handleSignOut} className="sign-out-button">
+            Sign Out
+          </span>
+        )}
       </div>
 
       {!signedIn && (
@@ -118,21 +123,18 @@ const App = () => {
           setCreateOpen={setCreateOpen}
         />
       )}
-
-      <div className="list-and-dash">
-        {songs.length > 0 && (
-          <SongList
-            authUser={authUser}
-            signedIn={signedIn}
-            handleNotes={handleNotes}
-            handleCompleted={handleCompleted}
-            deleteSong={deleteSong}
-            band={band}
-            songs={songs}
-            setSongs={setSongs}
-          />
-        )}
-      </div>
+      {songs.length > 0 && (
+        <SongList
+          authUser={authUser}
+          signedIn={signedIn}
+          handleNotes={handleNotes}
+          handleCompleted={handleCompleted}
+          deleteSong={deleteSong}
+          band={band}
+          songs={songs}
+          setSongs={setSongs}
+        />
+      )}
     </div>
   );
 };

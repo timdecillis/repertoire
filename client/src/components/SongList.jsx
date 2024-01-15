@@ -15,21 +15,23 @@ const SongList = ({
   handleNotes,
   signedIn,
   authUser,
+  dashOpen,
+  setDashOpen
 }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
 
-  if (songs.length < 1) {
-    return null;
-  }
+  // if (songs.length < 1) {
+  //   return null;
+  // }
 
   return (
     <div className="songlist">
 
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
-        <span style={{textDecoration: 'underline', cursor: 'pointer'}} >+Add a Song</span>
+        <span onClick={() => setDashOpen(true)} style={{textDecoration: 'underline', cursor: 'pointer'}} >+Add a Song</span>
       </div>
 
       {songs.length > 0 && (

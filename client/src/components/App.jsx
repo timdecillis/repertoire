@@ -124,18 +124,33 @@ const App = () => {
         />
       )}
       {dashOpen ? (
-        <Dashboard />
-      ) : (
-        <SongList
-          authUser={authUser}
-          signedIn={signedIn}
-          handleNotes={handleNotes}
-          handleCompleted={handleCompleted}
-          deleteSong={deleteSong}
-          band={band}
+        <Dashboard
+          handleSearch={handleSearch}
+          choices={choices}
           songs={songs}
           setSongs={setSongs}
+          band={band}
+          setBand={setBand}
+          addSong={addSong}
+          signedIn={signedIn}
+          authUser={authUser}
+          setDashOpen={setDashOpen}
         />
+      ) : (
+        signedIn && (
+          <SongList
+            authUser={authUser}
+            signedIn={signedIn}
+            handleNotes={handleNotes}
+            handleCompleted={handleCompleted}
+            deleteSong={deleteSong}
+            band={band}
+            songs={songs}
+            setSongs={setSongs}
+            dashOpen={dashOpen}
+            setDashOpen={setDashOpen}
+          />
+        )
       )}
     </div>
   );

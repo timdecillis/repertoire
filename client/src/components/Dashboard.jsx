@@ -15,6 +15,7 @@ const Dashboard = ({
   addSong,
   signedIn,
   authUser,
+  setDashOpen
 }) => {
   const [instrument, setInstrument] = useState("");
   const [difficulty, setDifficulty] = useState("");
@@ -104,6 +105,7 @@ const Dashboard = ({
           </div>
           <input className="sign-in-button" type="submit" value="Search" />
         </form>
+        <button onClick={() => setDashOpen(false)}>Back</button>
 
         {/* <Instrument instrument={instrument} setInstrument={setInstrument}></Instrument>
 

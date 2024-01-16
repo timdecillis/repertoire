@@ -12,7 +12,7 @@ This fullstack web application was part of a 2-day sprint to create a minimum vi
 
 ## Demo
 
- ![ Alt text](Repertoire Demo. gif) / ! []
+ ![repertoire-demo](https://github.com/timdecillis/repertoire/blob/master/Repertoire%20Demo.gif)
 
 ## Features
 * Landing Page

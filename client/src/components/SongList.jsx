@@ -44,6 +44,7 @@ const SongList = ({
               key={i}
               song={song}
               handleCompleted={handleCompleted}
+              setDashOpen={setDashOpen}
             />
           ))}
         </div>

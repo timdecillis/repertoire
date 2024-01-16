@@ -6,6 +6,8 @@ import Search from "./Search.jsx";
 import Choices from "./Choices.jsx";
 
 const Dashboard = ({
+  loading,
+  setLoading,
   handleSearch,
   choices,
   songs,
@@ -19,7 +21,7 @@ const Dashboard = ({
 }) => {
   const [instrument, setInstrument] = useState("");
   const [difficulty, setDifficulty] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [currentBand, setCurrentBand] = useState('');
 
   if (!signedIn) {
     return null;
@@ -32,7 +34,8 @@ const Dashboard = ({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            handleSearch(band, instrument, difficulty);
+            handleSearch(currentBand, instrument, difficulty);
+            setCurrentBand('');
           }}
         >
           <div className="instrument">
@@ -111,14 +114,22 @@ const Dashboard = ({
             <input
               className="search-input"
               placeholder="Enter an artist or band"
-              onChange={(e) => setBand(e.target.value)}
-              value={band}
+              onChange={(e) => setCurrentBand(e.target.value)}
+              // value={band}
               onClick={(e) => (e.target.placeholder = "")}
             ></input>
-            <input disabled={loading} className="find-button" type="submit" value="Find Songs!" />
+            <input
+              value={currentBand}
+              disabled={loading}
+              className="find-button"
+              type="submit"
+              value="Find Songs!"
+            />
           </div>
         </form>
-        <button className="back-button" onClick={() => setDashOpen(false)}>Back</button>
+        <button className="back-button" onClick={() => setDashOpen(false)}>
+          Back
+        </button>
 
         {/* <Instrument instrument={instrument} setInstrument={setInstrument}></Instrument>
 
@@ -126,12 +137,17 @@ const Dashboard = ({
 
       <Search band={band} setBand={setBand} instrument={instrument} difficulty={difficulty} handleSearch={handleSearch} /> */}
 
-        <Choices
-          choices={choices}
-          addSong={addSong}
-          band={band}
-          authUser={authUser}
-        />
+        {loading ? (
+          <div>Please wait a moment...</div>
+        ) : (
+          <Choices
+            choices={choices}
+            addSong={addSong}
+            band={band}
+            authUser={authUser}
+            setDashOpen={setDashOpen}
+          />
+        )}
       </div>
     </>
   );

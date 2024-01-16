@@ -22,6 +22,11 @@ const Notes = ({
     }, 1500);
   };
 
+  const handDeleted = () => {
+    deleteSong(authUser, song.name, song.artist);
+    setDraft(false);
+  };
+
   return (
     <div className="notes">
       <div className="notes-heading">
@@ -51,7 +56,7 @@ const Notes = ({
           </button>
           {success && <div style={{fontSize: '.8em', marginLeft: '.5em'}} >Song upated!</div>}
         </div>
-        <button onClick={handCompleted} className="note-button">
+        <button onClick={handDeleted} className="note-button">
           Delete Song
         </button>
         <button className="note-button" onClick={() => setDraftOpen(false)}>

@@ -4,7 +4,7 @@ import Notes from "./Notes.jsx";
 import Completed from "./Completed.jsx";
 import RemoveButton from "./RemoveButton.jsx";
 
-const SongCard = ({ song, handleCompleted, handleNotes, authUser, deleteSong }) => {
+const SongCard = ({ song, handleCompleted, handleNotes, authUser, deleteSong, setDashOpen }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
 

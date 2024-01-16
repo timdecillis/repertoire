@@ -20,6 +20,7 @@ const App = () => {
   const [oneOpen, setOneOpen] = useState(true);
   const [authUser, setAuthUser] = useState(null);
   const [dashOpen, setDashOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -37,6 +38,7 @@ const App = () => {
   };
 
   const handleSearch = (band, instrument, difficulty) => {
+    setLoading(true);
     return axios
       .post("/findBand", {
         band: band,
@@ -49,6 +51,7 @@ const App = () => {
         } else {
           setChoices(data.songs);
           setBand(data.artist);
+          setLoading(false);
         }
       });
   };
@@ -72,7 +75,6 @@ const App = () => {
   };
 
   const handleCompleted = (authUser, song, artist) => {
-    console.log('handling!')
     return axios
       .put("/updateSong", { email: authUser, song: song, artist: artist })
       .then(() => {
@@ -136,6 +138,8 @@ const App = () => {
           signedIn={signedIn}
           authUser={authUser}
           setDashOpen={setDashOpen}
+          loading={loading}
+          setLoading={setLoading}
         />
       ) : (
         signedIn && (

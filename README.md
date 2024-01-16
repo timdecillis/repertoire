@@ -3,16 +3,17 @@ A web application for musicians to build their own personal songbook.
 
 > # Table of Contents
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Getting Started](#getting-started)
-4. [Tech Stack](#tech-stack)
+2. [Demo](#demo)
+3. [Features](#features)
+4. [Getting Started](#getting-started)
+5. [Tech Stack](#tech-stack)
 
 ## Overview
 This fullstack web application was part of a 2-day sprint to create a minimum viable product, using React, Express, MongoDB, and OpenAI API.
 
 ## Demo
 
- ![repertoire-demo](https://github.com/timdecillis/repertoire/blob/master/Repertoire%20Demo.gif)
+https://github.com/timdecillis/repertoire/assets/120437574/29b06ca8-5b1a-4761-be66-8b9f1951aefe
 
 ## Features
 * Landing Page

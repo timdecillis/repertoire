@@ -12,7 +12,7 @@ This fullstack web application was part of a 2-day sprint to create a minimum vi
 
 ## Demo
 
- ![ Alt text](Repertoire Demo. gif) / ! [](Repertoire Demo. gif)
+ ![ Alt text](Repertoire Demo. gif) / ! []
 
 ## Features
 * Landing Page

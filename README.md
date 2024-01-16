@@ -8,7 +8,11 @@ A web application for musicians to build their own personal songbook.
 4. [Tech Stack](#tech-stack)
 
 ## Overview
-This fullstack web application was part of a 2-day sprint to create a minimum viable product, using React, Express, MongoDB, and OpenAI API. 
+This fullstack web application was part of a 2-day sprint to create a minimum viable product, using React, Express, MongoDB, and OpenAI API.
+
+## Demo
+
+ ![ Alt text](Repertoire Demo. gif) / ! [](Repertoire Demo. gif)
 
 ## Features
 * Landing Page

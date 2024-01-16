@@ -123,7 +123,7 @@ const Dashboard = ({
               disabled={loading}
               className="find-button"
               type="submit"
-              value="Find Songs!"
+              value="Search"
             />
           </div>
         </form>

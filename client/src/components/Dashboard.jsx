@@ -35,7 +35,7 @@ const Dashboard = ({
           }}
         >
           <div className="instrument">
-            <div className="dash-option">Instrument</div>
+            <div className="dash-option">Select Instrument</div>
             <input
               onClick={(e) => setInstrument(e.target.value)}
               type="radio"
@@ -66,7 +66,7 @@ const Dashboard = ({
           </div>
 
           <div className="difficulty">
-            <div className="dash-option">Difficulty</div>
+            <div className="dash-option">Select Difficulty</div>
             <input
               onClick={(e) => setDifficulty(e.target.value)}
               type="radio"
@@ -103,7 +103,7 @@ const Dashboard = ({
               onChange={(e) => setBand(e.target.value)}
             ></input>
           </div>
-          <input className="sign-in-button" type="submit" value="Search" />
+          <input className="notes-button" type="submit" value="Find Songs!" />
         </form>
         <button onClick={() => setDashOpen(false)}>Back</button>
 

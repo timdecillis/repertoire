@@ -72,6 +72,7 @@ const App = () => {
   };
 
   const handleCompleted = (authUser, song, artist) => {
+    console.log('handling!')
     return axios
       .put("/updateSong", { email: authUser, song: song, artist: artist })
       .then(() => {

@@ -24,11 +24,6 @@ const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted, authUser, delet
       ) : (
         <Notes song={song} setDraftOpen={setDraftOpen} />
       )}
-      <Completed
-        handleCompleted={handleCompleted}
-        authUser={authUser}
-        song={song}
-      />
       <RemoveButton deleteSong={deleteSong} authUser={authUser} song={song} />
       <div className="notes-container">
 

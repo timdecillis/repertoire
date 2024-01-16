@@ -8,7 +8,7 @@ const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted, authUser, delet
   const [draft, setDraft] = useState('');
 
   return (
-    <div>Notes
+    <div className="notes">
       <div className="artist">{song.name}</div>
       <div className="artist">by {song.artist}</div>
       <div className="notes-heading">Notes</div>
@@ -31,11 +31,12 @@ const Notes = ({ setDraftOpen, song, draftOpen, handleCompleted, authUser, delet
       />
       <RemoveButton deleteSong={deleteSong} authUser={authUser} song={song} />
       <div className="notes-container">
-        <div className="notes">{song.notes}</div>
+
       </div>
       <button className="add-notes" onClick={() => setDraftOpen(true)}>
         Add a note
       </button>
+      <button onClick={() => setDraftOpen(false)}>Close</button>
     </div>
   );
 };

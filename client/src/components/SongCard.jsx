@@ -9,11 +9,11 @@ const SongCard = ({ song, handleCompleted, handleNotes, authUser, deleteSong }) 
   const [draftOpen, setDraftOpen] = useState(false);
 
   return (
-    <div className="song-border">
+    <div className="song">
       {!draftOpen ? (
-        <div onClick={() => setDraftOpen(true)} className="song">
-          <div className="song-name">{song.name}</div>
-          <div className="song-name">&#10003;</div>
+        <div onClick={() => setDraftOpen(true)} className="song-name">
+          <div>{song.name}</div>
+          {song.completed && <div>&#10003;</div>}
         </div>
       ) : (
         <Notes

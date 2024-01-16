@@ -70,17 +70,6 @@ body {
   overflow: scroll;
   margin-bottom: 1em;
 }
-.songlist {
-  min-height: 21.5em;
-  max-height: 40em;
-  padding: 4%;
-  min-width: 40%;
-  border-radius: 0.3em;
-  background-color: whitesmoke;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-}
 
 .difficulty {
   margin-bottom: 1em;
@@ -163,14 +152,20 @@ body {
 .inputs {
   display: flex;
   flex-direction: column;
+  font-size: .7em;
 }
 
 .notes {
-  font-size: 0.8em;
   min-height: 8 em;
   max-height: 8em;
   overflow: scroll;
-  margin-bottom: 1.5em;
+  border-bottom: solid;
+  border-top: solid;
+  border-top-width: .01em;
+  border-bottom-width: .01em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  min-height: 18em;
 }
 .notes-container {
   margin-bottom: 0.5em;
@@ -234,35 +229,36 @@ body {
   cursor: pointer;
 }
 
-.song-border {
+.song {
   margin-bottom: 0.75em;
-  border: solid;
-  border-radius: 1.6em;
-  border-color: darkcyan;
-  border-width: 0.05em;
+  font-size: 1.45em;
 }
 
-.song-border:hover {
+.song-name:hover {
   background-image: linear-gradient(to right, darkcyan, #cdd8dc);
   cursor: pointer;
 }
 
-.song {
+.song-name {
   display: flex;
   padding: 3%;
   overflow: scroll;
   justify-content: space-between;
 }
-
+.songlist {
+  max-height: 40em;
+  padding: 4%;
+  min-width: 40%;
+  border-radius: 0.3em;
+  background-color: whitesmoke;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
 
 .songlist-heading {
   display: flex;
   justify-content: space-between;
-}
-
-.song-name {
-  font-weight: bold;
-  font-size: 1.5em;
 }
 
 .user-button {

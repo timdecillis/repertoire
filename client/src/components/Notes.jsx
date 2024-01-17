@@ -14,6 +14,8 @@ const Notes = ({
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
+  
+
   const handCompleted = () => {
     handleCompleted(authUser, song.name, song.artist);
     setSuccess(true);

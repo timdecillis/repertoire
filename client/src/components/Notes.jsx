@@ -52,11 +52,6 @@ const Notes = ({
           Back
         </button>
       </div>
-      {/* <RemoveButton deleteSong={deleteSong} authUser={authUser} song={song} />
-      <div className="notes-container"></div>
-      <button className="add-notes" onClick={() => setDraftOpen(true)}>
-        Add a note
-      </button> */}
     </div>
   );
 };

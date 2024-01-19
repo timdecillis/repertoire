@@ -14,7 +14,7 @@ const Notes = ({
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
-  
+
 
   const handCompleted = () => {
     handleCompleted(authUser, song.name, song.artist);
@@ -38,19 +38,6 @@ const Notes = ({
         </div>
       </div>
 
-      {/* <div className="notes-notes">Notes</div> */}
-      {/* {draftOpen ? (
-        <Draft
-          setDraft={setDraft}
-          setDraftOpen={setDraftOpen}
-          handleNotes={handleNotes}
-          authUser={authUser}
-          draft={draft}
-          song={song}
-        />
-      ) : (
-        <div>{song.notes}</div>
-      )} */}
       <div className="notes-buttons">
         <div style={{display: 'flex'}} >
           <button onClick={handCompleted} className="note-button">

@@ -14,11 +14,9 @@ Repertoire
   Having a strategic, organized approach is the best way to progress, and Repertoire will offer an easy-to-use solution.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
   Musicians will have all that they need when it's time for a practice session, or when it's time to move on to a new challenge.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
   "Repetoire will make you the musician you always wanted to be."
 
 ## How to Get Started ##

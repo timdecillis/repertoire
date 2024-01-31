@@ -14,8 +14,6 @@ const Notes = ({
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
-
-
   const handCompleted = () => {
     handleCompleted(authUser, song.name, song.artist);
     setSuccess(true);
@@ -39,11 +37,15 @@ const Notes = ({
       </div>
 
       <div className="notes-buttons">
-        <div style={{display: 'flex'}} >
+        <div style={{ display: "flex" }}>
           <button onClick={handCompleted} className="note-button">
             {!song.completed ? "Mark Completed" : "Mark Uncompleted"}
           </button>
-          {success && <div style={{fontSize: '.8em', marginLeft: '.5em'}} >Song upated!</div>}
+          {success && (
+            <div style={{ fontSize: ".8em", marginLeft: ".5em" }}>
+              Song upated!
+            </div>
+          )}
         </div>
         <button onClick={handDeleted} className="note-button">
           Delete Song

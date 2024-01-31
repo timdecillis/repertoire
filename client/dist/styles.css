@@ -99,7 +99,6 @@ body {
   max-height: 1.8em;
   font-size: 1.58em;
   min-height: 1.8em;
-
 }
 
 .find-button {
@@ -240,7 +239,7 @@ body {
   padding-bottom: 0.4em;
   cursor: pointer;
   max-height: 1.8em;
-  font-size: .75em;
+  font-size: 0.75em;
   min-height: 1.8em;
 }
 

@@ -8,11 +8,9 @@ Repertoire
   Aspiring or even professional musicians get a way to keep track of music they are learning.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
   Repetoire will provide a fun and easy way for music learners to organize their practice methods by offering a variety of different features, including storing songs and related practice info, as well as searching for new songs.
 
 ## Problem ##
-  > Describe the problem your product solves.
   Having a strategic, organized approach is the best way to progress, and Repertoire will offer an easy-to-use solution.
 
 ## Solution ##

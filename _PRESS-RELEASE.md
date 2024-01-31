@@ -5,7 +5,6 @@ Repertoire
   Repertoire
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
   Aspiring or even professional musicians get a way to keep track of music they are learning.
 
 ## Summary ##

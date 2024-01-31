@@ -20,13 +20,10 @@ Repertoire
   "Repetoire will make you the musician you always wanted to be."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
   All you need to do is create a username and password, and then you can start adding songs immediately.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
   "Repetoire made me the musician I am today!"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
 

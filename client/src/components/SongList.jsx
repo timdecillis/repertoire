@@ -28,7 +28,11 @@ const SongList = ({
         <div className="your-song">Songbook</div>
         <span
           onClick={() => setDashOpen(true)}
-          style={{ textDecoration: "underline", cursor: "pointer", fontSize: '1.5em' }}
+          style={{
+            textDecoration: "underline",
+            cursor: "pointer",
+            fontSize: "1.5em",
+          }}
         >
           +Add Song
         </span>

@@ -7,7 +7,6 @@ const SignIn = ({
   setSignInOpen,
   signInOpen,
   setAuthUser,
-  getSongs,
   authUser,
   setCreateOpen
 }) => {
@@ -19,7 +18,7 @@ const SignIn = ({
     if (authUser !== null) {
       setSignInOpen(false);
       setSignedIn(true);
-      getSongs();
+      getSongs(authUser);
     }
   }, [authUser]);
 

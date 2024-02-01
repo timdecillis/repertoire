@@ -64,10 +64,13 @@ const App = () => {
         data: { email: authUser, song: song, artist: artist },
       })
       .then(() => {
-        getSongs(authUser);
-      })
-      .then((songs) => setSongs(songs));
+        getSongs(authUser).then((songs) => {
+          setSongs(songs);
+        });
+      });
   };
+
+
 
   const handleCompleted = (authUser, song, artist) => {
     return axios

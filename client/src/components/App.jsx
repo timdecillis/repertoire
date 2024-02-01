@@ -22,6 +22,7 @@ const App = () => {
   const [authUser, setAuthUser] = useState(null);
   const [dashOpen, setDashOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -31,6 +32,13 @@ const App = () => {
   };
 
   const handleSearch = (band, instrument, difficulty) => {
+    if (!band) {
+      setErrorOpen(true);
+      return setTimeout(() => {
+        setErrorOpen(false);
+      }, 1500);
+    }
+
     setLoading(true);
     return axios
       .post("/findBand", {
@@ -115,6 +123,7 @@ const App = () => {
       )}
       {dashOpen ? (
         <Dashboard
+          errorOpen={errorOpen}
           handleSearch={handleSearch}
           choices={choices}
           songs={songs}

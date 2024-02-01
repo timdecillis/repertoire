@@ -17,10 +17,11 @@ const Dashboard = ({
   signedIn,
   authUser,
   setDashOpen,
+  errorOpen
 }) => {
   const [instrument, setInstrument] = useState("");
   const [difficulty, setDifficulty] = useState("");
-  const [currentBand, setCurrentBand] = useState('');
+  const [currentBand, setCurrentBand] = useState("");
 
   if (!signedIn) {
     return null;
@@ -34,7 +35,7 @@ const Dashboard = ({
           onSubmit={(e) => {
             e.preventDefault();
             handleSearch(currentBand, instrument, difficulty);
-            setCurrentBand('');
+            setCurrentBand("");
           }}
         >
           <div className="instrument">
@@ -137,6 +138,8 @@ const Dashboard = ({
 
         {loading ? (
           <div>Please wait a moment...</div>
+        ) : errorOpen ? (
+          <div>Please enter a band or artist</div>
         ) : (
           <Choices
             choices={choices}

@@ -11,10 +11,10 @@ const Dashboard = ({
   handleSearch,
   choices,
   songs,
-  setSongs,
+  // setSongs,
   band,
   setBand,
-  addSong,
+  // addSong,
   signedIn,
   authUser,
   setDashOpen,
@@ -142,7 +142,7 @@ const Dashboard = ({
         ) : (
           <Choices
             choices={choices}
-            addSong={addSong}
+            // addSong={addSong}
             band={band}
             authUser={authUser}
             setDashOpen={setDashOpen}

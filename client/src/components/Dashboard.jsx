@@ -11,7 +11,7 @@ const Dashboard = ({
   handleSearch,
   choices,
   songs,
-  // setSongs,
+  setSongs,
   band,
   setBand,
   // addSong,
@@ -143,6 +143,7 @@ const Dashboard = ({
           <Choices
             choices={choices}
             // addSong={addSong}
+            setSongs={setSongs}
             band={band}
             authUser={authUser}
             setDashOpen={setDashOpen}

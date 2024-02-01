@@ -126,7 +126,7 @@ const App = () => {
           handleSearch={handleSearch}
           choices={choices}
           songs={songs}
-          // setSongs={setSongs}
+          setSongs={setSongs}
           band={band}
           setBand={setBand}
           // addSong={addSong}

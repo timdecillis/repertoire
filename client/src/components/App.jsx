@@ -121,6 +121,7 @@ const App = () => {
           setSignedIn={setSignedIn}
           email={email}
           // getSongs={getSongs}
+          setSongs={setSongs}
           setAuthUser={setAuthUser}
           authUser={authUser}
           signInOpen={signInOpen}

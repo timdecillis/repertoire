@@ -8,7 +8,8 @@ const SignIn = ({
   signInOpen,
   setAuthUser,
   authUser,
-  setCreateOpen
+  setCreateOpen,
+  setSongs
 }) => {
 
   const [email, setEmail] = useState('');
@@ -18,7 +19,8 @@ const SignIn = ({
     if (authUser !== null) {
       setSignInOpen(false);
       setSignedIn(true);
-      getSongs(authUser);
+      songs = getSongs(authUser);
+      setSongs(songs);
     }
   }, [authUser]);
 

@@ -30,14 +30,6 @@ const App = () => {
     setChoices([]);
   };
 
-  // const getSongs = () => {
-  //   return axios
-  //     .get("/getSongs", { params: { email: authUser } })
-  //     .then(({ data }) => {
-  //       setSongs(data);
-  //     });
-  // };
-
   const handleSearch = (band, instrument, difficulty) => {
     setLoading(true);
     return axios
@@ -120,7 +112,6 @@ const App = () => {
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
-          // getSongs={getSongs}
           setSongs={setSongs}
           setAuthUser={setAuthUser}
           authUser={authUser}

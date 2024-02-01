@@ -15,6 +15,7 @@ const LandingPage = ({
   setCreateOpen,
   signInOpen,
   setAuthUser,
+  setSongs
 }) => {
   return (
     <div className="landing">
@@ -30,6 +31,7 @@ const LandingPage = ({
         <SignIn
           authUser={authUser}
           // getSongs={getSongs}
+          setSongs={setSongs}
           setAuthUser={setAuthUser}
           setSignedIn={setSignedIn}
           signInOpen={signInOpen}

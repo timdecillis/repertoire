@@ -19,7 +19,8 @@ const SignIn = ({
     if (authUser !== null) {
       setSignInOpen(false);
       setSignedIn(true);
-      songs = getSongs(authUser);
+      let songs = getSongs(authUser);
+      console.log('songs:', songs);
       setSongs(songs);
     }
   }, [authUser]);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { addSong } from "../lib.js";
+import { addSong, getSongs } from "../lib.js";
 
 const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
   return (

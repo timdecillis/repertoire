@@ -7,7 +7,7 @@ import SignIn from "./SignIn.jsx";
 import CreateUser from "./CreateUser.jsx";
 import HomeButtons from "./HomeButtons.jsx";
 import LandingPage from "./LandingPage.jsx";
-import { getSongs } from '../lib.js';
+import { getSongs } from "../lib.js";
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -69,8 +69,6 @@ const App = () => {
         });
       });
   };
-
-
 
   const handleCompleted = (authUser, song, artist) => {
     return axios

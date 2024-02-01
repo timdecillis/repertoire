@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import {deleteSong} from '../lib.js';
 import RemoveButton from "./RemoveButton.jsx";
 import Completed from "./Completed.jsx";
 import Draft from "./Draft.jsx";
@@ -8,7 +10,6 @@ const Notes = ({
   song,
   handleCompleted,
   authUser,
-  deleteSong,
   handleNotes,
 }) => {
   const [draft, setDraft] = useState("");
@@ -23,6 +24,7 @@ const Notes = ({
   };
 
   const handDeleted = () => {
+
     deleteSong(authUser, song.name, song.artist);
     setDraft(false);
   };

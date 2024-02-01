@@ -138,7 +138,6 @@ const App = () => {
             signedIn={signedIn}
             handleNotes={handleNotes}
             handleCompleted={handleCompleted}
-            deleteSong={deleteSong}
             band={band}
             songs={songs}
             setSongs={setSongs}

@@ -9,7 +9,7 @@ const SongCard = ({
   handleCompleted,
   handleNotes,
   authUser,
-  deleteSong,
+  setSongs,
   setDashOpen,
 }) => {
   const [notes, setNotes] = useState("");
@@ -24,7 +24,7 @@ const SongCard = ({
         </div>
       ) : (
         <Notes
-          deleteSong={deleteSong}
+          setSongs={setSongs}
           authUser={authUser}
           handleNotes={handleNotes}
           setDraftOpen={setDraftOpen}

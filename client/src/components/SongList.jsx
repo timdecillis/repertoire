@@ -10,7 +10,6 @@ const SongList = ({
   songs,
   setSongs,
   band,
-  deleteSong,
   handleCompleted,
   handleNotes,
   signedIn,
@@ -42,7 +41,7 @@ const SongList = ({
         <div>
           {songs.map((song, i) => (
             <SongCard
-              deleteSong={deleteSong}
+              setSongs={setSongs}
               authUser={authUser}
               handleNotes={handleNotes}
               key={i}

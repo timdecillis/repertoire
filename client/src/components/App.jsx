@@ -49,14 +49,6 @@ const App = () => {
       });
   };
 
-  const addSong = (authUser, song, band) => {
-    return axios
-      .post("/addSong", { email: authUser, song: song, artist: band })
-      .then(() => {
-        getSongs(authUser).then((songs) => setSongs(songs));
-      });
-  };
-
   const deleteSong = (authUser, song, artist) => {
     return axios
       .delete("/deleteSong", {

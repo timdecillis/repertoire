@@ -7,6 +7,7 @@ import SignIn from "./SignIn.jsx";
 import CreateUser from "./CreateUser.jsx";
 import HomeButtons from "./HomeButtons.jsx";
 import LandingPage from "./LandingPage.jsx";
+import { getSongs } from '../lib.js';
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -29,13 +30,13 @@ const App = () => {
     setChoices([]);
   };
 
-  const getSongs = () => {
-    return axios
-      .get("/getSongs", { params: { email: authUser } })
-      .then(({ data }) => {
-        setSongs(data);
-      });
-  };
+  // const getSongs = () => {
+  //   return axios
+  //     .get("/getSongs", { params: { email: authUser } })
+  //     .then(({ data }) => {
+  //       setSongs(data);
+  //     });
+  // };
 
   const handleSearch = (band, instrument, difficulty) => {
     setLoading(true);

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const Choices = ({ choices, addSong, authUser, band, setDashOpen }) => {
+import { addSong } from '../lib.js';
+
+const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
   return (
     <div className="choices">
       {choices.length > 0 && (

@@ -95,9 +95,6 @@ const App = () => {
     setSongs([]);
   };
 
-
-  //
-
   return (
     <div className="container">
       <div className="banner">

@@ -53,9 +53,8 @@ const App = () => {
     return axios
       .post("/addSong", { email: authUser, song: song, artist: band })
       .then(() => {
-        getSongs(authUser);
-      })
-      .then((songs) => setSongs(songs));
+        getSongs(authUser).then((songs) => setSongs(songs));
+      });
   };
 
   const deleteSong = (authUser, song, artist) => {
@@ -74,9 +73,8 @@ const App = () => {
     return axios
       .put("/updateSong", { email: authUser, song: song, artist: artist })
       .then(() => {
-        getSongs(authUser);
-      })
-      .then((songs) => setSongs(songs));
+        getSongs(authUser).then((songs) => setSongs(songs));
+      });
   };
   const handleNotes = (authUser, song, artist, notes) => {
     return axios
@@ -87,9 +85,8 @@ const App = () => {
         notes: notes,
       })
       .then(() => {
-        getSongs(authUser);
-      })
-      .then((songs) => setSongs(songs));
+        getSongs(authUser).then((songs) => setSongs(songs));
+      });
   };
 
   const handleSignOut = () => {

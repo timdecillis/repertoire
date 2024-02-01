@@ -129,7 +129,6 @@ const App = () => {
           setSongs={setSongs}
           band={band}
           setBand={setBand}
-          // addSong={addSong}
           signedIn={signedIn}
           authUser={authUser}
           setDashOpen={setDashOpen}

@@ -14,7 +14,6 @@ const Dashboard = ({
   setSongs,
   band,
   setBand,
-  // addSong,
   signedIn,
   authUser,
   setDashOpen,
@@ -115,7 +114,6 @@ const Dashboard = ({
               className="search-input"
               placeholder="Enter an artist or band"
               onChange={(e) => setCurrentBand(e.target.value)}
-              // value={band}
               onClick={(e) => (e.target.placeholder = "")}
             ></input>
             <input
@@ -142,7 +140,6 @@ const Dashboard = ({
         ) : (
           <Choices
             choices={choices}
-            // addSong={addSong}
             setSongs={setSongs}
             band={band}
             authUser={authUser}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { addSong } from '../lib.js';
+import { addSong } from "../lib.js";
 
 const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
   return (
@@ -11,8 +11,10 @@ const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
             <div
               className="choice"
               onClick={() => {
-                addSong(authUser, choice, band);
-                setDashOpen(false);
+                addSong(authUser, choice, band).then(() => {
+                  setDashOpen(false);
+                  getSongs(authUser).then((songs) => setSongs(songs));
+                });
               }}
               key={i}
             >

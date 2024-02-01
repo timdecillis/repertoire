@@ -6,7 +6,7 @@ import CreateUser from "./CreateUser.jsx";
 
 const LandingPage = ({
   setSignedIn,
-  getSongs,
+  // getSongs,
   authUser,
   createOpen,
   oneOpen,

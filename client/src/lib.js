@@ -15,7 +15,7 @@ module.exports = {
       artist: band,
     });
   },
-  searchSongs: () => {
+  searchSongs: (band, instrument, difficulty) => {
     return axios
       .post("/findBand", {
         band: band,

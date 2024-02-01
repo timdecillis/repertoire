@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { deleteSong } from "../lib.js";
+import { deleteSong, getSongs } from "../lib.js";
 import RemoveButton from "./RemoveButton.jsx";
 import Completed from "./Completed.jsx";
 import Draft from "./Draft.jsx";
@@ -11,6 +11,7 @@ const Notes = ({
   handleCompleted,
   authUser,
   handleNotes,
+  setSongs,
 }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
@@ -25,9 +26,9 @@ const Notes = ({
 
   const handDeleted = () => {
     deleteSong(authUser, song.name, song.artist).then(() => {
+      setDraft(false);
       getSongs(authUser).then((songs) => {
         setSongs(songs);
-        setDraft(false);
       });
     });
   };

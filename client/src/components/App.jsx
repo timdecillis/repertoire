@@ -7,7 +7,7 @@ import SignIn from "./SignIn.jsx";
 import CreateUser from "./CreateUser.jsx";
 import HomeButtons from "./HomeButtons.jsx";
 import LandingPage from "./LandingPage.jsx";
-import { getSongs } from "../lib.js";
+import { getSongs, searchSongs } from "../lib.js";
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -40,7 +40,7 @@ const App = () => {
     }
 
     setLoading(true);
-    searchSongs(band, instrument, difficulty).then(({ data }) => {
+    searchSongs(band, instrument, difficulty).then((data) => {
       if (data.songs[0] === "song 1") {
         setLoading(false);
         setChoices(["Your search did not match any results :("]);

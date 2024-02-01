@@ -42,6 +42,7 @@ const App = () => {
     setLoading(true);
     searchSongs(band, instrument, difficulty).then(({ data }) => {
       if (data.songs[0] === "song 1") {
+        setLoading(false);
         setChoices(["Your search did not match any results :("]);
       } else {
         setChoices(data.songs);

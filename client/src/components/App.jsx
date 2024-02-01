@@ -40,21 +40,15 @@ const App = () => {
     }
 
     setLoading(true);
-    return axios
-      .post("/findBand", {
-        band: band,
-        instrument: instrument,
-        difficulty: difficulty,
-      })
-      .then(({ data }) => {
-        if (data.songs[0] === "song 1") {
-          setChoices(["Your search did not match any results :("]);
-        } else {
-          setChoices(data.songs);
-          setBand(data.artist);
-          setLoading(false);
-        }
-      });
+    searchSongs(band, instrument, difficulty).then(({ data }) => {
+      if (data.songs[0] === "song 1") {
+        setChoices(["Your search did not match any results :("]);
+      } else {
+        setChoices(data.songs);
+        setBand(data.artist);
+        setLoading(false);
+      }
+    });
   };
 
   const deleteSong = (authUser, song, artist) => {

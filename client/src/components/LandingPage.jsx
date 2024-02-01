@@ -6,7 +6,6 @@ import CreateUser from "./CreateUser.jsx";
 
 const LandingPage = ({
   setSignedIn,
-  // getSongs,
   authUser,
   createOpen,
   oneOpen,
@@ -30,7 +29,6 @@ const LandingPage = ({
       ) : (
         <SignIn
           authUser={authUser}
-          // getSongs={getSongs}
           setSongs={setSongs}
           setAuthUser={setAuthUser}
           setSignedIn={setSignedIn}

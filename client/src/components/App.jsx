@@ -61,7 +61,7 @@ const App = () => {
     return axios
       .post("/addSong", { email: authUser, song: song, artist: band })
       .then(() => {
-        getSongs();
+        getSongs(authUser);
       });
   };
 
@@ -71,7 +71,7 @@ const App = () => {
         data: { email: authUser, song: song, artist: artist },
       })
       .then(() => {
-        getSongs();
+        getSongs(authUser);
       });
   };
 
@@ -79,7 +79,7 @@ const App = () => {
     return axios
       .put("/updateSong", { email: authUser, song: song, artist: artist })
       .then(() => {
-        getSongs();
+        getSongs(authUser);
       });
   };
   const handleNotes = (authUser, song, artist, notes) => {
@@ -91,7 +91,7 @@ const App = () => {
         notes: notes,
       })
       .then(() => {
-        getSongs();
+        getSongs(authUser);
       });
   };
 
@@ -116,7 +116,7 @@ const App = () => {
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
-          getSongs={getSongs}
+          // getSongs={getSongs}
           setAuthUser={setAuthUser}
           authUser={authUser}
           signInOpen={signInOpen}

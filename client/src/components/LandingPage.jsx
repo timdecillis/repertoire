@@ -29,7 +29,7 @@ const LandingPage = ({
       ) : (
         <SignIn
           authUser={authUser}
-          getSongs={getSongs}
+          // getSongs={getSongs}
           setAuthUser={setAuthUser}
           setSignedIn={setSignedIn}
           signInOpen={signInOpen}

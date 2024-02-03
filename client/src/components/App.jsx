@@ -114,7 +114,6 @@ const App = () => {
           <SongList
             authUser={authUser}
             signedIn={signedIn}
-            handleCompleted={handleCompleted}
             band={band}
             songs={songs}
             setSongs={setSongs}

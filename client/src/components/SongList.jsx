@@ -10,8 +10,6 @@ const SongList = ({
   songs,
   setSongs,
   band,
-  handleCompleted,
-  handleNotes,
   signedIn,
   authUser,
   dashOpen,
@@ -43,10 +41,8 @@ const SongList = ({
             <SongCard
               setSongs={setSongs}
               authUser={authUser}
-              handleNotes={handleNotes}
               key={i}
               song={song}
-              handleCompleted={handleCompleted}
               setDashOpen={setDashOpen}
             />
           ))}

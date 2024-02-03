@@ -52,16 +52,6 @@ const App = () => {
     });
   };
 
-  const handleCompleted = (authUser, song, artist) => {
-    return axios
-      .put("/updateSong", { email: authUser, song: song, artist: artist })
-      .then(() => {
-        getSongs(authUser).then((songs) => setSongs(songs));
-      });
-  };
-
-
-
   const handleSignOut = () => {
     setSignedIn(false);
     setAuthUser(null);

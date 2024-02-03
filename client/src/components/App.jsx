@@ -52,18 +52,6 @@ const App = () => {
     });
   };
 
-  const deleteSong = (authUser, song, artist) => {
-    return axios
-      .delete("/deleteSong", {
-        data: { email: authUser, song: song, artist: artist },
-      })
-      .then(() => {
-        getSongs(authUser).then((songs) => {
-          setSongs(songs);
-        });
-      });
-  };
-
   const handleCompleted = (authUser, song, artist) => {
     return axios
       .put("/updateSong", { email: authUser, song: song, artist: artist })

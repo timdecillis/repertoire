@@ -7,7 +7,7 @@ import SignIn from "./SignIn.jsx";
 import CreateUser from "./CreateUser.jsx";
 import HomeButtons from "./HomeButtons.jsx";
 import LandingPage from "./LandingPage.jsx";
-import { getSongs, searchSongs } from "../lib.js";
+import { searchSongs } from "../lib.js";
 
 const App = () => {
   const [songs, setSongs] = useState([]);

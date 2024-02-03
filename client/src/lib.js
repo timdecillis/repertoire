@@ -40,9 +40,6 @@ module.exports = {
   },
   completeSong: (authUser, song, artist) => {
     return axios
-      .put("/updateSong", { email: authUser, song: song, artist: artist })
-      .then(() => {
-        getSongs(authUser).then((songs) => setSongs(songs));
-      });
+      .put("/updateSong", { email: authUser, song: song, artist: artist });
   }
 };

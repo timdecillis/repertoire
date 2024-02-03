@@ -17,7 +17,7 @@ const Dashboard = ({
   signedIn,
   authUser,
   setDashOpen,
-  errorOpen
+  errorOpen,
 }) => {
   const [instrument, setInstrument] = useState("");
   const [difficulty, setDifficulty] = useState("");

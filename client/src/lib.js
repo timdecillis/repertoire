@@ -29,4 +29,13 @@ module.exports = {
       data: { email: authUser, song: song, artist: artist },
     });
   },
+  handleNotes: (authUser, song, artist, notes) => {
+    return axios
+      .put("/updateNotes", {
+        email: authUser,
+        song: song,
+        artist: artist,
+        notes: notes,
+      });
+  }
 };

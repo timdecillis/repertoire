@@ -45,7 +45,7 @@ module.exports = {
   updateSong: (email, song, artist) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = {
-      $set: { "songs.$.completed": { $not: "$songs.$.completed" } },
+      $set: { "songs.$.completed": { $ne: ["$songs.$.completed", true] } },
     };
     return User.findOneAndUpdate(query, update, { new: true });
   },

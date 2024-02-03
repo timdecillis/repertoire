@@ -6,8 +6,6 @@ import RemoveButton from "./RemoveButton.jsx";
 
 const SongCard = ({
   song,
-  handleCompleted,
-  handleNotes,
   authUser,
   setSongs,
   setDashOpen,
@@ -26,11 +24,9 @@ const SongCard = ({
         <Notes
           setSongs={setSongs}
           authUser={authUser}
-          handleNotes={handleNotes}
           setDraftOpen={setDraftOpen}
           song={song}
           draftOpen={draftOpen}
-          handleCompleted={handleCompleted}
         />
       )}
     </div>

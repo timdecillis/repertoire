@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 
-import { deleteSong, getSongs } from "../lib.js";
+import { deleteSong, getSongs, completeSong } from "../lib.js";
 import RemoveButton from "./RemoveButton.jsx";
 import Completed from "./Completed.jsx";
 import Draft from "./Draft.jsx";
 
-const Notes = ({
-  setDraftOpen,
-  song,
-  handleCompleted,
-  authUser,
-  handleNotes,
-  setSongs,
-}) => {
+const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handCompleted = () => {
-    handleCompleted(authUser, song.name, song.artist);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1500);
+  const handleCompleted = () => {
+    completeSong(authUser, song.name, song.artist).then(() => {
+      getSongs(authUser).then((songs) => {
+        setSongs(songs);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1500);
+      });
+    });
   };
 
   const handDeleted = () => {
@@ -44,7 +41,7 @@ const Notes = ({
 
       <div className="notes-buttons">
         <div style={{ display: "flex" }}>
-          <button onClick={handCompleted} className="note-button">
+          <button onClick={handleCompleted} className="note-button">
             {!song.completed ? "Mark Completed" : "Mark Uncompleted"}
           </button>
           {success && (

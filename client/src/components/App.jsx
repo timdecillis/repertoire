@@ -59,18 +59,8 @@ const App = () => {
         getSongs(authUser).then((songs) => setSongs(songs));
       });
   };
-  const handleNotes = (authUser, song, artist, notes) => {
-    return axios
-      .put("/updateNotes", {
-        email: authUser,
-        song: song,
-        artist: artist,
-        notes: notes,
-      })
-      .then(() => {
-        getSongs(authUser).then((songs) => setSongs(songs));
-      });
-  };
+
+
 
   const handleSignOut = () => {
     setSignedIn(false);
@@ -124,7 +114,6 @@ const App = () => {
           <SongList
             authUser={authUser}
             signedIn={signedIn}
-            handleNotes={handleNotes}
             handleCompleted={handleCompleted}
             band={band}
             songs={songs}

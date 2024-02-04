@@ -106,8 +106,8 @@ module.exports = {
   },
   updateSong: (req, res) => {
     updateSong(req.body.email, req.body.song, req.body.artist)
-      .then(() => {
-        res.status(202).send();
+      .then((songs) => {
+        res.status(202).send(songs);
       })
       .catch((err) => {
         console.log("Error updating song:", err);

@@ -2,7 +2,14 @@ import React, { useState } from "react";
 
 import { addSong } from "../lib.js";
 
-const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
+const Choices = ({
+  choices,
+  setChoices,
+  setSongs,
+  authUser,
+  band,
+  setDashOpen,
+}) => {
   return (
     <div className="choices">
       {choices.length > 0 && (
@@ -14,6 +21,7 @@ const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
                 addSong(authUser, choice, band).then(({ data }) => {
                   setDashOpen(false);
                   setSongs(data);
+                  setChoices([]);
                 });
               }}
               key={i}

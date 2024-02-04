@@ -35,7 +35,7 @@ module.exports = {
     return User.findOne({ email: email })
       .exec()
       .then((foundUser) => {
-        console.log('user songs:', foundUser.songs);
+        console.log("user songs:", foundUser.songs);
         return foundUser;
       });
   },
@@ -50,22 +50,28 @@ module.exports = {
     });
   },
 
-  updateSong: (email, song, artist) => {
-    return User.findOne({ email: email }).then((foundUser) => {
-      foundUser.songs = foundUser.songs.map((s) => {
-        if (s.name === song && s.artist === artist) {
-          console.log('updating');
-          s.completed = !s.completed;
-        } else {
-          console.log("skipping other song");
-        }
-        return s;
-      });
-      return foundUser.save().then((updatedUser) => {
-        return updatedUser.songs;
-      });
-    });
+  updateSong: async (email, song, artist) => {
+    try {
+      const updatedUser = await User.findOneAndUpdate(
+        { email: email, "songs.name": song, "songs.artist": artist },
+        { $set: { "songs.$.completed": { $ne: "$songs.$.completed" } } },
+        { new: true }
+      );
+
+      if (!updatedUser) {
+        console.log("User not found");
+        return null;
+      }
+
+      console.log('Updated songs:', updatedUser.songs);
+
+      return updatedUser.songs;
+    } catch (error) {
+      console.error("Error updating song:", error);
+      throw error;
+    }
   },
+
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };

@@ -13,7 +13,7 @@ const User = mongoose.model("User", repertoireSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return new User({ email: email, password: password }).save();
+    return new User({ email: email, password: password }).save().then((data) => console.log('data:', data));
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
@@ -33,6 +33,7 @@ module.exports = {
     return User.findOne({ email: email })
       .exec()
       .then((foundUser) => {
+        console.log('found user:', foundUser)
         return foundUser;
       });
   },

@@ -88,8 +88,8 @@ module.exports = {
   },
   addSong: (req, res) => {
     saveSong(req.body)
-      .then(() => {
-        res.status(201).send();
+      .then((songs) => {
+        res.status(201).send(songs);
       })
       .catch((err) => {
         console.log("Error adding song:", err);

@@ -24,7 +24,9 @@ module.exports = {
         completed: false,
         notes: "",
       });
-      return foundUser.save();
+      return foundUser.save().then((updatedUser) => {
+        return updatedUser.songs;
+      });
     });
   },
   getSongs: (email) => {

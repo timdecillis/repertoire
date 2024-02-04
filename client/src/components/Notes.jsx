@@ -21,7 +21,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   const handDeleted = () => {
     deleteSong(authUser, song.name, song.artist).then(({ data }) => {
-      setDraft(false);
+      setDraftOpen(false);
       setSongs(data);
     });
   };

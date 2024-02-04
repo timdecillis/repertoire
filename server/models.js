@@ -53,10 +53,8 @@ module.exports = {
   updateSong: (email, song, artist) => {
     return User.findOne({ email: email }).then((foundUser) => {
       foundUser.songs = foundUser.songs.map((s) => {
-        if (!s) {
-          return s;
-        }
         if (s.name === song && s.artist === artist) {
+          console.log('updating');
           s.completed = !s.completed;
         } else {
           console.log("skipping other song");

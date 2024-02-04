@@ -38,11 +38,12 @@ module.exports = {
       notes: notes,
     });
   },
-  completeSong: (authUser, song, artist) => {
+  completeSong: (authUser, song, artist, completed) => {
     return axios.put("/updateSong", {
       email: authUser,
-      song: song,
-      artist: artist,
+      song,
+      artist,
+      completed
     });
   },
 };

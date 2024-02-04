@@ -55,34 +55,21 @@ module.exports = {
     });
   },
 
-  updateSong: async (email, song, artist) => {
+  updateSong: async (email, song, artist, completed) => {
+    const value = completed;
+    console.log("value:", value);
     try {
-      const user = await User.findOne({ email: email });
-
-      if (!user) {
-        console.log("User not found");
-        return null;
-      }
-
-      const updatedSongs = user.songs.map((s) => {
-        if (s.name === song && s.artist === artist) {
-          s.completed = !s.completed;
-        }
-        return s;
-      });
-
-      user.songs = updatedSongs;
-      const updatedUser = await user.save();
-
-      console.log("Updated songs:", updatedUser.songs);
+      const updatedUser = await User.findOneAndUpdate(
+        { email: email, "songs.name": song, "songs.artist": artist },
+        { $set: { "songs.$.completed": !completed } },
+        { new: true }
+      );
 
       return updatedUser.songs;
     } catch (error) {
-      console.error("Error updating song:", error);
       throw error;
     }
   },
-
 
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };

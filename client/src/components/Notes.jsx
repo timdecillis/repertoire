@@ -9,7 +9,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [success, setSuccess] = useState(false);
 
   const handleCompleted = () => {
-    completeSong(authUser, song.name, song.artist).then(({ data }) => {
+    completeSong(authUser, song.name, song.artist, song.completed).then(({ data }) => {
       console.log('songs:', data);
       setSongs(data);
       setSuccess(true);

@@ -105,7 +105,7 @@ module.exports = {
       });
   },
   updateSong: (req, res) => {
-    updateSong(req.body.email, req.body.song, req.body.artist)
+    updateSong(req.body.email, req.body.song, req.body.artist, req.body.completed)
       .then((songs) => {
         res.status(202).send(songs);
       })

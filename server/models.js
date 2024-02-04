@@ -51,7 +51,9 @@ module.exports = {
     const update = {
       $set: { "songs.$.completed": { $ne: ["$songs.$.completed", true] } },
     };
-    return User.findOneAndUpdate(query, update, { new: true });
+    return User.findOneAndUpdate(query, update, { new: true }).then(
+      (foundUser) => foundUser.songs
+    );
   },
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };

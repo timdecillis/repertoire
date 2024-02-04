@@ -43,21 +43,11 @@ const Dashboard = ({
 
           <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
 
-          <div className="search">
-            <input
-              className="search-input"
-              placeholder="Enter an artist or band"
-              onChange={(e) => setCurrentBand(e.target.value)}
-              onClick={(e) => (e.target.placeholder = "")}
-            ></input>
-            <input
-              value={currentBand}
-              disabled={loading}
-              className="find-button"
-              type="submit"
-              value="Search"
-            />
-          </div>
+          <Search
+            loading={loading}
+            currentBand={currentBand}
+            setCurrentBand={setCurrentBand}
+          />
         </form>
         <button className="back-button" onClick={() => setDashOpen(false)}>
           Back
@@ -67,7 +57,7 @@ const Dashboard = ({
 
 
 
-      <Search band={band} setBand={setBand} instrument={instrument} difficulty={difficulty} handleSearch={handleSearch} /> */}
+      */}
 
         {loading ? (
           <div>Please wait a moment...</div>

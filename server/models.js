@@ -41,7 +41,9 @@ module.exports = {
       foundUser.songs = foundUser.songs.filter(
         (s) => !(s.name === song && s.artist === artist)
       );
-      return foundUser.save();
+      return foundUser.save().then((updatedUser) => {
+        return updatedUser.songs;
+      });
     });
   },
   updateSong: (email, song, artist) => {

@@ -10,19 +10,17 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [success, setSuccess] = useState(false);
 
   const handleCompleted = () => {
-    completeSong(authUser, song.name, song.artist).then(() => {
-      getSongs(authUser).then((songs) => {
-        setSongs(songs);
-        setSuccess(true);
-        setTimeout(() => {
-          setSuccess(false);
-        }, 1500);
-      });
+    completeSong(authUser, song.name, song.artist).then(({ data }) => {
+      setSongs(data);
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 1500);
     });
   };
 
   const handDeleted = () => {
-    deleteSong(authUser, song.name, song.artist).then(({data}) => {
+    deleteSong(authUser, song.name, song.artist).then(({ data }) => {
       setDraft(false);
       setSongs(data);
     });

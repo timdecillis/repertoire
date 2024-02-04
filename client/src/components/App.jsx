@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Dashboard from "./Dashboard.jsx";
 import SongList from "./SongList.jsx";
-const axios = require("axios");
 
 import SignIn from "./SignIn.jsx";
 import CreateUser from "./CreateUser.jsx";

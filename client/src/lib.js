@@ -28,7 +28,8 @@ module.exports = {
   deleteSong: (authUser, song, artist) => {
     return axios.delete("/deleteSong", {
       data: { email: authUser, song: song, artist: artist },
-    });
+    })
+    .then((data) => console.log(data))
   },
   handleNotes: (authUser, song, artist, notes) => {
     return axios.put("/updateNotes", {

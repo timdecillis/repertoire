@@ -97,8 +97,8 @@ module.exports = {
   },
   deleteSong: (req, res) => {
     deleteSong(req.body.email, req.body.song, req.body.artist)
-      .then(() => {
-        res.status(203).send();
+      .then((songs) => {
+        res.status(203).send(songs);
       })
       .catch((err) => {
         console.log("Error deleting song:", err);

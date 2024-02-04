@@ -7,6 +7,7 @@ import Choices from "./Choices.jsx";
 
 const Dashboard = ({
   loading,
+  setChoices,
   setLoading,
   handleSearch,
   choices,
@@ -142,6 +143,7 @@ const Dashboard = ({
           <div>Please enter a band or artist</div>
         ) : (
           <Choices
+            setChoices={setChoices}
             choices={choices}
             setSongs={setSongs}
             band={band}

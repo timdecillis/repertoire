@@ -9,6 +9,13 @@ const repertoireSchema = new mongoose.Schema({
   songs: [],
 });
 
+const songSchema = new mongoose.Schema({
+  name: String,
+  artist: String,
+  completed: { type: Boolean, default: false },
+  notes: String,
+});
+
 const User = mongoose.model("User", repertoireSchema);
 
 module.exports = {
@@ -50,28 +57,23 @@ module.exports = {
     });
   },
 
-  updateSong: async (email, song, artist) => {
-    try {
-      const updatedUser = await User.findOneAndUpdate(
-        { email: email, "songs.name": song, "songs.artist": artist },
-        { $set: { "songs.$.completed": { $ne: "$songs.$.completed" } } },
-        { new: true }
-      );
-
-      if (!updatedUser) {
-        console.log("User not found");
-        return null;
+  updateSong: (email, song, artist) => {
+    return User.findOne({ email: email }).then((foundUser) => {
+      console.log("found user:", foundUser);
+      for (i = 0; i < foundUser.songs.length; i++) {
+        let s = foundUser.songs[i];
+        if (s.name === song && s.artist === artist) {
+          s.completed = !s.completed;
+          break;
+        }
       }
-
-      console.log('Updated songs:', updatedUser.songs);
-
-      return updatedUser.songs;
-    } catch (error) {
-      console.error("Error updating song:", error);
-      throw error;
-    }
+      console.log("songs after forEach:", foundUser.songs);
+      return foundUser.save().then((updatedUser) => {
+        console.log("updated songs:", updatedUser.songs);
+        return updatedUser.songs;
+      });
+    });
   },
-
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };

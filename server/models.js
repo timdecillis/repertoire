@@ -18,6 +18,8 @@ const songSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", repertoireSchema);
 
+const Song = mongoose.model("Song", songSchema);
+
 module.exports = {
   createUser: (email, password) => {
     return new User({ email: email, password: password })
@@ -27,12 +29,8 @@ module.exports = {
   saveSong: (req) => {
     let { email, song, artist } = req;
     return User.findOne({ email: email }).then((foundUser) => {
-      foundUser.songs.push({
-        name: song,
-        artist: artist,
-        completed: false,
-        notes: "",
-      });
+      const newSong = new Song({ name: song, artist });
+      foundUser.songs.push(newSong);
       return foundUser.save().then((updatedUser) => {
         return updatedUser.songs;
       });
@@ -57,23 +55,35 @@ module.exports = {
     });
   },
 
-  updateSong: (email, song, artist) => {
-    return User.findOne({ email: email }).then((foundUser) => {
-      console.log("found user:", foundUser);
-      for (i = 0; i < foundUser.songs.length; i++) {
-        let s = foundUser.songs[i];
+  updateSong: async (email, song, artist) => {
+    try {
+      const user = await User.findOne({ email: email });
+
+      if (!user) {
+        console.log("User not found");
+        return null;
+      }
+
+      const updatedSongs = user.songs.map((s) => {
         if (s.name === song && s.artist === artist) {
           s.completed = !s.completed;
-          break;
         }
-      }
-      console.log("songs after forEach:", foundUser.songs);
-      return foundUser.save().then((updatedUser) => {
-        console.log("updated songs:", updatedUser.songs);
-        return updatedUser.songs;
+        return s;
       });
-    });
+
+      user.songs = updatedSongs;
+      const updatedUser = await user.save();
+
+      console.log("Updated songs:", updatedUser.songs);
+
+      return updatedUser.songs;
+    } catch (error) {
+      console.error("Error updating song:", error);
+      throw error;
+    }
   },
+
+
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };

@@ -89,6 +89,7 @@ const App = () => {
           errorOpen={errorOpen}
           handleSearch={handleSearch}
           choices={choices}
+          setChoices={setChoices}
           songs={songs}
           setSongs={setSongs}
           band={band}

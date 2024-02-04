@@ -13,7 +13,9 @@ const User = mongoose.model("User", repertoireSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return new User({ email: email, password: password }).save().then((data) => console.log('data:', data));
+    return new User({ email: email, password: password })
+      .save()
+      .then((data) => console.log("data:", data));
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
@@ -33,6 +35,7 @@ module.exports = {
     return User.findOne({ email: email })
       .exec()
       .then((foundUser) => {
+        console.log('user songs:', foundUser.songs);
         return foundUser;
       });
   },
@@ -46,14 +49,24 @@ module.exports = {
       });
     });
   },
+
   updateSong: (email, song, artist) => {
-    const query = { email: email, "songs.name": song, "songs.artist": artist };
-    const update = {
-      $set: { "songs.$.completed": { $ne: ["$songs.$.completed", true] } },
-    };
-    return User.findOneAndUpdate(query, update, { new: true }).then(
-      (foundUser) => foundUser.songs
-    );
+    return User.findOne({ email: email }).then((foundUser) => {
+      foundUser.songs = foundUser.songs.map((s) => {
+        if (!s) {
+          return s;
+        }
+        if (s.name === song && s.artist === artist) {
+          s.completed = !s.completed;
+        } else {
+          console.log("skipping other song");
+        }
+        return s;
+      });
+      return foundUser.save().then((updatedUser) => {
+        return updatedUser.songs;
+      });
+    });
   },
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };

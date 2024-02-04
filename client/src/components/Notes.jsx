@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import { deleteSong, completeSong } from "../lib.js";
-import RemoveButton from "./RemoveButton.jsx";
 import Completed from "./Completed.jsx";
 import Draft from "./Draft.jsx";
 

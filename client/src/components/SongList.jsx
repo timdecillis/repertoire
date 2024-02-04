@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Draft from "./Draft.jsx";
 import Notes from "./Notes.jsx";
 import Completed from "./Completed.jsx";
-import RemoveButton from "./RemoveButton.jsx";
 import SongCard from "./SongCard.jsx";
 
 const SongList = ({

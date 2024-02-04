@@ -13,7 +13,7 @@ const User = mongoose.model("User", repertoireSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return new User({ email: email, password: password }).save();
+    return new User({ email: email, password: password, songs: [] }).save();
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
@@ -47,13 +47,18 @@ module.exports = {
     });
   },
   updateSong: (email, song, artist) => {
-    const query = { email: email, "songs.name": song, "songs.artist": artist };
-    const update = {
-      $set: { "songs.$.completed": { $ne: ["$songs.$.completed", true] } },
-    };
-    return User.findOneAndUpdate(query, update, { new: true }).then(
-      (foundUser) => foundUser.songs
-    );
+    return User.findOne({ email: email }).then((foundUser) => {
+      foundUser.songs = foundUser.songs.map((s) => {
+        if (s.name === song && s.artist === artist) {
+          s.completed = !s.completed;
+        }
+        return s;
+      });
+      return foundUser.save().then((updatedUser) => {
+        console.log('updated songs:', updatedUser.songs)
+        return updatedUser.songs;
+      });
+    });
   },
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };

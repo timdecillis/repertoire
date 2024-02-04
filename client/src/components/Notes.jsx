@@ -10,6 +10,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist).then(({ data }) => {
+      console.log('songs:', data);
       setSongs(data);
       setSuccess(true);
       setTimeout(() => {

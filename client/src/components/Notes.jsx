@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { deleteSong, getSongs, completeSong } from "../lib.js";
+import { deleteSong, completeSong } from "../lib.js";
 import RemoveButton from "./RemoveButton.jsx";
 import Completed from "./Completed.jsx";
 import Draft from "./Draft.jsx";
@@ -22,11 +22,9 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   };
 
   const handDeleted = () => {
-    deleteSong(authUser, song.name, song.artist).then(() => {
+    deleteSong(authUser, song.name, song.artist).then(({ data }) => {
       setDraft(false);
-      getSongs(authUser).then((songs) => {
-        setSongs(songs);
-      });
+      setSongs(data);
     });
   };
 

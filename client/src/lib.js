@@ -9,11 +9,12 @@ module.exports = {
       });
   },
   addSong: (authUser, song, band) => {
-    return axios.post("/addSong", {
-      email: authUser,
-      song: song,
-      artist: band,
-    });
+    return axios
+      .post("/addSong", {
+        email: authUser,
+        song: song,
+        artist: band,
+      });
   },
   searchSongs: (band, instrument, difficulty) => {
     return axios
@@ -30,16 +31,18 @@ module.exports = {
     });
   },
   handleNotes: (authUser, song, artist, notes) => {
-    return axios
-      .put("/updateNotes", {
-        email: authUser,
-        song: song,
-        artist: artist,
-        notes: notes,
-      });
+    return axios.put("/updateNotes", {
+      email: authUser,
+      song: song,
+      artist: artist,
+      notes: notes,
+    });
   },
   completeSong: (authUser, song, artist) => {
-    return axios
-      .put("/updateSong", { email: authUser, song: song, artist: artist });
-  }
+    return axios.put("/updateSong", {
+      email: authUser,
+      song: song,
+      artist: artist,
+    });
+  },
 };

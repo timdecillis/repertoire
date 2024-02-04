@@ -11,9 +11,9 @@ const Choices = ({ choices, setSongs, authUser, band, setDashOpen }) => {
             <div
               className="choice"
               onClick={() => {
-                addSong(authUser, choice, band).then(() => {
+                addSong(authUser, choice, band).then(({ data }) => {
                   setDashOpen(false);
-                  getSongs(authUser).then((songs) => setSongs(songs));
+                  setSongs(data);
                 });
               }}
               key={i}

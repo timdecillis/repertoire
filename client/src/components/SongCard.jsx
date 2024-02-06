@@ -30,5 +30,4 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
     </div>
   );
 };
-//
 export default SongCard;

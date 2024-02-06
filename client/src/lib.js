@@ -9,12 +9,11 @@ module.exports = {
       });
   },
   addSong: (authUser, song, band) => {
-    return axios
-      .post("/addSong", {
-        email: authUser,
-        song: song,
-        artist: band,
-      });
+    return axios.post("/addSong", {
+      email: authUser,
+      song: song,
+      artist: band,
+    });
   },
   searchSongs: (band, instrument, difficulty) => {
     return axios
@@ -43,7 +42,7 @@ module.exports = {
       email: authUser,
       song,
       artist,
-      completed
+      completed,
     });
   },
 };

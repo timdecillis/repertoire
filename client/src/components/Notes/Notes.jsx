@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { deleteSong, completeSong } from "../lib.js";
-import Completed from "./Completed.jsx";
-import Draft from "./Draft.jsx";
+import { deleteSong, completeSong } from "../../lib.js";
+import Completed from "../Completed/Completed.jsx";
+import Draft from "../Draft/Draft.jsx";
 
 const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");

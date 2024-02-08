@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Notes from "./Notes.jsx";
-import Completed from "./Completed.jsx";
+import Notes from "../Notes/Notes.jsx";
+import Completed from "../Completed/Completed.jsx";
 
 const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
   const [notes, setNotes] = useState("");

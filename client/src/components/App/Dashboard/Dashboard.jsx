@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import Instrument from "./Instrument.jsx";
-import Difficulty from "./Difficulty.jsx";
-import Search from "./Search.jsx";
-import Choices from "./Choices.jsx";
+import Instrument from "../Instrument/Instrument.jsx";
+import Difficulty from "../Difficulty/Difficulty.jsx";
+import Search from "../Search/Search.jsx";
+import Choices from "../Choices/Choices.jsx";
 
 const Dashboard = ({
   loading,

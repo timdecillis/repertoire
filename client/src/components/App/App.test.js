@@ -1,13 +1,24 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { useState } from "react";
+import { render } from "@testing-library/react";
 
-import App from './App.jsx';
-import LandingPage from '../LandingPage/LandingPage.jsx';
+import App from "./App.jsx";
+import LandingPage from "../LandingPage/LandingPage.jsx";
 
-describe('App Component', () => {
-  it('includes the container, banner, and header', () => {
-    const signedIn = true;
-    render(<App />);
-    expect(document.getElementsByClassName('container', 'banner', 'header')).toBeTruthy();
+describe("App Component", () => {
+  it("includes the container, banner, and header", () => {
+    const Wrapper = () => {
+      const [signedIn, setSignedIn] = useState(false);
+      return <App />;
+    };
+    render(<Wrapper />);
+    expect(
+      document.getElementsByClassName(
+        "container",
+        "banner",
+        "header",
+        "landing",
+        "foobar"
+      )
+    ).toBeTruthy();
   });
 });

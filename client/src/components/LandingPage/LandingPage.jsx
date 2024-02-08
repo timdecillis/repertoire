@@ -1,8 +1,8 @@
 import React from "react";
 
-import HomeButtons from "./HomeButtons.jsx";
-import SignIn from "./SignIn.jsx";
-import CreateUser from "./CreateUser.jsx";
+import HomeButtons from "../HomeButtons/HomeButtons.jsx";
+import SignIn from "../SignIn/SignIn.jsx";
+import CreateUser from "../CreateUser/CreateUser.jsx";
 
 const LandingPage = ({
   setSignedIn,

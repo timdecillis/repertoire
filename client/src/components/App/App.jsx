@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Dashboard from "./Dashboard.jsx";
-import SongList from "./SongList.jsx";
-
-import SignIn from "./SignIn.jsx";
-import CreateUser from "./CreateUser.jsx";
-import HomeButtons from "./HomeButtons.jsx";
-import LandingPage from "./LandingPage.jsx";
-import { searchSongs } from "../lib.js";
+import Dashboard from "../Dashboard/Dashboard.jsx";
+import SongList from "../SongList/SongList.jsx";
+import SignIn from "../SignIn/SignIn.jsx";
+import CreateUser from "../CreateUser/CreateUser.jsx";
+import HomeButtons from "../HomeButtons/HomeButtons.jsx";
+import LandingPage from "../LandingPage/LandingPage.jsx";
+import { searchSongs } from "../../lib.js";
 
 const App = () => {
   const [songs, setSongs] = useState([]);

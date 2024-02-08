@@ -9,5 +9,6 @@ describe('App Component', () => {
   });
   it('renders the header', () => {
     render(<App />);
+    expect(window.getElementByClassName('header')).toBe(true);
   });
 });

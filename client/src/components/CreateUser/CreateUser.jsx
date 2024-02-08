@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const axios = require("axios");
 
-import Button from "./Button.jsx";
+import Button from "../Button/Button.jsx";
 
 const CreateUser = ({
   setAuthUser,

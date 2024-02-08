@@ -7,4 +7,7 @@ describe('App Component', () => {
   it('renders without errors', () => {
     render(<App />);
   });
+  it('renders the header', () => {
+    render(<App />);
+  });
 });

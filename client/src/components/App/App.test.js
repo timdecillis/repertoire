@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import App from './App.js';
+import App from './App.jsx';
 
 describe('App Component', () => {
   it('renders without errors', () => {

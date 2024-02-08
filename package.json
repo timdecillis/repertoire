@@ -7,7 +7,8 @@
     "server-dev": "npx nodemon --inspect --watch server server/index.js",
     "build": "npx webpack",
     "client-dev": "npx webpack --watch",
-    "start": "concurrently \"npx webpack --watch\" \"npx nodemon --inspect --watch server server/index.js\""
+    "start": "concurrently \"npx webpack --watch\" \"npx nodemon --inspect --watch server server/index.js\"",
+    "test": "jest --env=jsdom"
   },
   "keywords": [],
   "author": "Tim DeCillis",
@@ -31,6 +32,7 @@
     "express": "^4.18.2",
     "firebase": "^10.7.2",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "mongoose": "^6.1.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",

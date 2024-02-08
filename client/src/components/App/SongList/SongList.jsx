@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import Draft from "./Draft.jsx";
-import Notes from "./Notes.jsx";
-import Completed from "./Completed.jsx";
-import SongCard from "./SongCard.jsx";
+import Draft from "../Draft/Draft.jsx";
+import Notes from "../Notes/Notes.jsx";
+import Completed from "../Completed/Completed.jsx";
+import SongCard from "../SongCard/SongCard.jsx";
 
 const SongList = ({
   songs,

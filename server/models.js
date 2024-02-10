@@ -23,8 +23,7 @@ const Song = mongoose.model("Song", songSchema);
 module.exports = {
   createUser: (email, password) => {
     return new User({ email: email, password: password })
-      .save()
-      .then((data) => console.log("data:", data));
+      .save();
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
@@ -57,7 +56,6 @@ module.exports = {
 
   updateSong: async (email, song, artist, completed) => {
     const value = completed;
-    console.log("value:", value);
     try {
       const updatedUser = await User.findOneAndUpdate(
         { email: email, "songs.name": song, "songs.artist": artist },

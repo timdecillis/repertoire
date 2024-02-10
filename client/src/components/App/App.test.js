@@ -11,14 +11,6 @@ describe("App Component", () => {
       return <App />;
     };
     render(<Wrapper />);
-    expect(
-      document.querySelector(
-        ".container",
-        ".banner",
-        ".header",
-        ".landing",
-        ".foobar"
-      )
-    ).toBeTruthy();
+    expect(document.querySelector(".foobar")).toBeTruthy();
   });
 });

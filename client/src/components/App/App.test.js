@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, queryByText } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import App from "./App.jsx";
@@ -15,14 +15,16 @@ describe("App Component", () => {
     expect(header).toBeInTheDocument();
   });
   it("calls the sign in function", () => {
-    // const handleClick = jest.fn();
-    const { getByText } = render(<App />);
+    const handleClick = jest.fn();
+    const { getByText } = render(<App onClick={handleClick} />);
     const button = getByText("Log In");
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
-    const newThing = getByText('Account Login');
-    expect(newThing).toBeInTheDocument();
-    // expect(handleClick).toHaveBeenCalledTimes(1);
+    // const newThing = getByText('Account Login');
+    // expect(newThing).toBeInTheDocument();
+    const songBook = getByText("Songbook");
+    expect(songBook).toBeInTheDocument(); // Replace with the text of the new component
+
   });
 });

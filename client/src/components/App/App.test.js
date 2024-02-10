@@ -6,11 +6,9 @@ import LandingPage from "../LandingPage/LandingPage.jsx";
 
 describe("App Component", () => {
   it("includes the container, banner, and header", () => {
-    const Wrapper = () => {
-      const [signedIn, setSignedIn] = useState(false);
-      return <App />;
-    };
-    render(<Wrapper />);
-    expect(document.querySelector(".foobar")).toBeTruthy();
+    render(<App />);
+    expect(document.querySelector(".container")).toBeTruthy();
+    expect(document.querySelector(".banner")).toBeTruthy();
+    expect(document.querySelector(".header")).toBeTruthy();
   });
 });

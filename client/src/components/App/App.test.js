@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { render } from "@testing-library/react";
+import '@testing-library/jest-dom';
 
 import App from "./App.jsx";
 import LandingPage from "../LandingPage/LandingPage.jsx";

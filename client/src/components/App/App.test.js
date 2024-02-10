@@ -12,12 +12,12 @@ describe("App Component", () => {
     };
     render(<Wrapper />);
     expect(
-      document.getElementsByClassName(
-        "container",
-        "banner",
-        "header",
-        "landing",
-        "foobar"
+      document.querySelector(
+        ".container",
+        ".banner",
+        ".header",
+        ".landing",
+        ".foobar"
       )
     ).toBeTruthy();
   });

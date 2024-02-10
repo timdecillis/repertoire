@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import App from "./App.jsx";
@@ -15,12 +15,14 @@ describe("App Component", () => {
     expect(header).toBeInTheDocument();
   });
   it("calls the sign in function", () => {
-    const handleClick = jest.fn();
+    // const handleClick = jest.fn();
     const { getByText } = render(<App />);
     const button = getByText("Log In");
     expect(button).toBeInTheDocument();
 
-    // fireEvent.click(button);
+    fireEvent.click(button);
+    const newThing = getByText('Account Login');
+    expect(newThing).toBeInTheDocument();
     // expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });

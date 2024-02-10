@@ -39,7 +39,6 @@ module.exports = {
     return User.findOne({ email: email })
       .exec()
       .then((foundUser) => {
-        console.log("user songs:", foundUser.songs);
         return foundUser;
       });
   },

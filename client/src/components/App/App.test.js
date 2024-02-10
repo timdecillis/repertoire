@@ -15,14 +15,13 @@ describe("App Component", () => {
     expect(header).toBeInTheDocument();
   });
   it("logs in successfully", () => {
-    const handleClick = jest.fn();
-    const { getByText } = render(<App onClick={handleClick} />);
+    const { getByText } = render(<App />);
     const button = getByText("Log In");
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
     const songBook = getByText("Songbook");
     expect(songBook).toBeInTheDocument();
-
   });
+  it("opens the create account page", () => {});
 });

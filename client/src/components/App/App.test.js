@@ -21,10 +21,8 @@ describe("App Component", () => {
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
-    // const newThing = getByText('Account Login');
-    // expect(newThing).toBeInTheDocument();
     const songBook = getByText("Songbook");
-    expect(songBook).toBeInTheDocument(); // Replace with the text of the new component
+    expect(songBook).toBeInTheDocument();
 
   });
 });

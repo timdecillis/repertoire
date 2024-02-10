@@ -8,13 +8,13 @@ import LandingPage from "../LandingPage/LandingPage.jsx";
 describe("App Component", () => {
   it("includes the container, banner, and header", () => {
     const { getByText } = render(<App />);
-    // expect(document.querySelector(".container")).toBeTruthy();
-    // expect(document.querySelector(".banner")).toBeTruthy();
-    // expect(document.querySelector(".header")).toBeTruthy();
+    expect(document.querySelector(".container")).toBeTruthy();
+    expect(document.querySelector(".banner")).toBeTruthy();
+    expect(document.querySelector(".header")).toBeTruthy();
     const header = getByText("Repertoire");
     expect(header).toBeInTheDocument();
   });
-  it("calls the sign in function", () => {
+  it("logs in successfully", () => {
     const handleClick = jest.fn();
     const { getByText } = render(<App onClick={handleClick} />);
     const button = getByText("Log In");

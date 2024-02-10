@@ -23,5 +23,13 @@ describe("App Component", () => {
     const songBook = getByText("Songbook");
     expect(songBook).toBeInTheDocument();
   });
-  it("opens the create account page", () => {});
+  it("opens the create account page", () => {
+    const { getByText } = render(<App />);
+    const button = getByText("Create account");
+    expect(button).toBeInTheDocument();
+
+    fireEvent.click(button);
+    const songBook = getByText("Submit");
+    expect(songBook).toBeInTheDocument();
+  });
 });

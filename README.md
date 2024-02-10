@@ -13,7 +13,9 @@ This fullstack web application was part of a 2-day sprint to create a minimum vi
 
 ## Demo
 
-![Untitled design](https://github.com/timdecillis/repertoire/assets/120437574/3ab0c5e8-56e7-4e48-8425-137560292656)
+![repertoire](https://github.com/timdecillis/repertoire/assets/120437574/e29325ef-a1fb-440d-aa56-c4113a86aa03)
+
+![jamuary](https://github.com/timdecillis/repertoire/assets/120437574/84a6ae0d-8b5f-4ce6-ad76-d85766bf0c90)
 
 
 

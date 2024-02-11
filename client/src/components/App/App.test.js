@@ -42,5 +42,8 @@ describe("App Component", () => {
     const button = getByText("Log In");
     fireEvent.click(button);
     const addButton = getByText("+Add Song");
+    fireEvent.click(addButton);
+    const header = getByText("Find a song");
+    expect(header).toBeInTheDocument();
   });
 });

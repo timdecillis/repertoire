@@ -37,4 +37,10 @@ describe("App Component", () => {
     expect(submitButton).toBeInTheDocument();
 
   });
+  it("opens the add song dashboard", () => {
+    const { getByText } = render(<App />);
+    const button = getByText("Log In");
+    fireEvent.click(button);
+    const addButton = getByText("+Add Song");
+  });
 });

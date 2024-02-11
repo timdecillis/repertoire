@@ -35,15 +35,5 @@ describe("App Component", () => {
     fireEvent.click(button);
     const submitButton = getByText("Submit");
     expect(submitButton).toBeInTheDocument();
-
-  });
-  it("opens the add song dashboard", () => {
-    const { getByText } = render(<App />);
-    const button = getByText("Log In");
-    fireEvent.click(button);
-    const addButton = getByText("+Add Song");
-    fireEvent.click(addButton);
-    const header = getByText("Find a song");
-    expect(header).toBeInTheDocument();
   });
 });

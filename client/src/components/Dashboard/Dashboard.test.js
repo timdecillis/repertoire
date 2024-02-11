@@ -3,7 +3,7 @@ import { render, fireEvent, queryByText } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import App from "./App.jsx";
-import LandingPage from "../LandingPage/LandingPage.jsx";
+import Dashboard from "../Dashboard/Dashboard.jsx";
 
 describe("App Component", () => {
   it("includes the container, banner, and header", () => {

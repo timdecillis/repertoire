@@ -6,7 +6,8 @@ import Dashboard from "../Dashboard/Dashboard.jsx";
 
 describe("Dashboard Component", () => {
   it("opens the add song dashboard", () => {
-    const { getByText } = render(<Dashboard />);
+    const { debug } = render(<Dashboard signedIn={true} />);
+    debug();
     // const header = getByText("Find a song");
     // expect(header).toBeInTheDocument();
   });

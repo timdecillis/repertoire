@@ -22,8 +22,10 @@ describe("App Component", () => {
     fireEvent.click(button);
     const songBook = getByText("Songbook");
     const addSongButton = getByText("+Add Song");
-    // const signOutButton = getByText("Sign Out");
+    const signOutButton = getByText("Sign Out");
     expect(songBook).toBeInTheDocument();
+    expect(addSongButton).toBeInTheDocument();
+    expect(signOutButton).toBeInTheDocument();
   });
   it("opens the create account page", () => {
     const { getByText } = render(<App />);

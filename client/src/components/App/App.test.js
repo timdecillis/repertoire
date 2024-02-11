@@ -30,6 +30,8 @@ describe("App Component", () => {
 
     fireEvent.click(button);
     const songBook = getByText("Submit");
-    expect(songBook).toBeInTheDocument();
+    const signOutButton = getByText("Sign Out");
+    expect(songBook, signOutButton).toBeInTheDocument();
+
   });
 });

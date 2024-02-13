@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import MyComponent from './MyComponent';
+import Difficulty from './Difficulty';
 
-describe('MyComponent', () => {
+describe('Difficulty', () => {
   it('renders with the correct name', () => {
-    const wrapper = mount(<MyComponent name="John" />);
+    const wrapper = mount(<Difficulty name="John" />);
 
     // Using Chai to make assertions on the rendered component
     expect(wrapper.text()).to.equal('Hello, John!');

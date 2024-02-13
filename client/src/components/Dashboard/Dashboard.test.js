@@ -8,9 +8,9 @@ describe("Dashboard Component", () => {
   it("renders without throwing an error", () => {
     const props = {
       signedIn: true,
-      choices: []
+      choices: [],
     };
-    render(<Dashboard {...props} />);
+    const { getByText } = render(<Dashboard {...props} />);
     const header = getByText("Find a song");
     expect(header).toBeInTheDocument();
   });

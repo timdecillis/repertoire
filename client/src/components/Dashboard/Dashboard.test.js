@@ -11,7 +11,7 @@ describe("Dashboard Component", () => {
       choices: []
     };
     render(<Dashboard {...props} />);
-    // const header = getByText("Find a song");
-    // expect(header).toBeInTheDocument();
+    const header = getByText("Find a song");
+    expect(header).toBeInTheDocument();
   });
 });

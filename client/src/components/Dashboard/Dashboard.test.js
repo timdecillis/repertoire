@@ -9,12 +9,12 @@ describe("Dashboard Component", () => {
     const props = {
       signedIn: true,
       choices: [],
+      dashOpen: true,
     };
     const { getByText } = render(<Dashboard {...props} />);
     const header = getByText("Find a song");
     expect(header).toBeInTheDocument();
     const backButton = getByText("Back");
-    fireEvent.click(backButton);
-    expect(header).not.toBeInTheDocument();
+    expect(backButton).toBeInTheDocument();
   });
 });

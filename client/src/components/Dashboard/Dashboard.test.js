@@ -13,5 +13,8 @@ describe("Dashboard Component", () => {
     const { getByText } = render(<Dashboard {...props} />);
     const header = getByText("Find a song");
     expect(header).toBeInTheDocument();
+    const backButton = getByText("Back");
+    fireEvent.click(backButton);
+    expect(header).not.toBeInTheDocument();
   });
 });

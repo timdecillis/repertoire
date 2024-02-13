@@ -1,0 +1,7 @@
+--require @babel/register
+--recursive
+--watch
+--ui bdd
+--reporter spec
+--timeout 5000
+--extension js,jsx

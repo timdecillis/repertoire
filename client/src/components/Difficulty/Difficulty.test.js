@@ -1,5 +1,6 @@
 import { expect } from "chai";
 
+const add = (x, y) => x + y;
 const var1 = 5;
 const var2 = 4;
 const var3 = -30;

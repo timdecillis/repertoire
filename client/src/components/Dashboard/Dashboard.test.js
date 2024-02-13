@@ -6,8 +6,10 @@ import Dashboard from "../Dashboard/Dashboard.jsx";
 
 describe("Dashboard Component", () => {
   it("renders without throwing an error", () => {
-    render(<Dashboard />);
-    // debug();
+    const props = {
+      signedIn: true,
+    };
+    render(<Dashboard {...props} />);
     // const header = getByText("Find a song");
     // expect(header).toBeInTheDocument();
   });

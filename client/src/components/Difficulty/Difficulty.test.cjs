@@ -1,12 +1,18 @@
-const assert = require('assert');
+import React from 'react';
+import { mount } from 'enzyme';
+import { expect } from 'chai';
+import MyComponent from './MyComponent';
 
-// import Difficulty from './Difficulty.jsx';
+describe('MyComponent', () => {
+  it('renders with the correct name', () => {
+    const wrapper = mount(<MyComponent name="John" />);
 
-const add = (x, y) => x + y;
+    // Using Chai to make assertions on the rendered component
+    expect(wrapper.text()).to.equal('Hello, John!');
 
-describe("Difficulty component", () => {
-  it("renders successfully", () => {
-    const result = add(1, 2);
-    assert.strictEqual(result, 3);
+    // Optional: Clean up after the test to avoid memory leaks
+    wrapper.unmount();
   });
+
+  // Add more tests for different scenarios or behaviors of MyComponent
 });

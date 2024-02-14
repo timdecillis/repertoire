@@ -9,7 +9,8 @@
     "build": "npx webpack",
     "client-dev": "npx webpack --watch",
     "start": "concurrently \"npx webpack --watch\" \"npx nodemon --inspect --watch server server/index.js\"",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "full test": "jest --env=jsdom --coverage"
   },
   "keywords": [],
   "author": "Tim DeCillis",

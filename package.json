@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": false,
-  "type": "module",
   "scripts": {
     "server-dev": "npx nodemon --inspect --watch server server/index.js",
     "build": "npx webpack",

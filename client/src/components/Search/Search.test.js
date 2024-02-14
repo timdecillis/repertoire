@@ -1,17 +1,17 @@
-import { expect } from "chai";
 
-const add = (x, y) => x + y;
-const var1 = 5;
-const var2 = 4;
-const var3 = -30;
+import React, { useState } from "react";
+import { render, fireEvent, queryByText } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-describe("Add", () => {
-  it("adds positive numbers", () => {
-    const result = add(var1, var2);
-    expect(result).to.equal(var1 + var2);
-  });
-  it("adds negative numbers", () => {
-    const result = add(var1, var3);
-    expect(result).to.equal(var1 + var3);
+import Search from './Search.jsx'
+
+describe("Instrument Component", () => {
+  it("renders without throwing an error", () => {
+    const props = {
+      signedIn: true,
+      choices: [],
+      dashOpen: true,
+    };
+    render(<Instrument {...props} />);
   });
 });

@@ -1,17 +1,16 @@
-import { expect } from "chai";
+import React, { useState } from "react";
+import { render, fireEvent, queryByText } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-const add = (x, y) => x + y;
-const var1 = 5;
-const var2 = 4;
-const var3 = -30;
+import Difficulty from './Difficulty.jsx';
 
-describe("Add", () => {
-  it("adds positive numbers", () => {
-    const result = add(var1, var2);
-    expect(result).to.equal(var1 + var2);
-  });
-  it("adds negative numbers", () => {
-    const result = add(var1, var3);
-    expect(result).to.equal(var1 + var3);
+describe("Difficulty Component", () => {
+  it("renders without throwing an error", () => {
+    const props = {
+      signedIn: true,
+      choices: [],
+      dashOpen: true,
+    };
+    render(<Difficulty {...props} />);
   });
 });

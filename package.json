@@ -10,7 +10,9 @@
     "client-dev": "npx webpack --watch",
     "start": "concurrently \"npx webpack --watch\" \"npx nodemon --inspect --watch server server/index.js\"",
     "test": "jest --env=jsdom",
-    "full-test": "jest --env=jsdom --coverage"
+    "full-test": "jest --env=jsdom --coverage",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run"
   },
   "keywords": [],
   "author": "Tim DeCillis",

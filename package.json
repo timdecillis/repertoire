@@ -16,6 +16,7 @@
   "author": "Tim DeCillis",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^13.6.4",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",

@@ -1,7 +1,7 @@
 import App from '../../client/src/components/App/App.jsx';
 
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io');
+describe('App spec', () => {
+  it('loads the home page', () => {
+    cy.visit('https://localhost:3000');
   });
 });

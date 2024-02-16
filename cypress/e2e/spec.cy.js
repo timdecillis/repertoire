@@ -4,7 +4,6 @@ describe("App spec", () => {
     cy.get(".container").should("be.visible");
     cy.get(".header").should("be.visible");
     cy.get(".banner").should("be.visible");
-    cy.title().should('eq', 'Repertoire');
-
+    cy.title().should("eq", "Repertoire");
   });
 });

@@ -15,7 +15,7 @@ const SignIn = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
-  const [error, setError] = (null);
+  const [error, setError] = null;
 
   useEffect(() => {
     if (authUser !== null) {
@@ -31,12 +31,12 @@ const SignIn = ({
     e.preventDefault();
     if (!email) {
       setErrorOpen(true);
-      setError('email');
+      setError("email");
       return;
     }
-    if(!password) {
+    if (!password) {
       setErrorOpen(true);
-      setError('password');
+      setError("password");
     }
 
     setAuthUser(email);
@@ -80,7 +80,7 @@ const SignIn = ({
           type="submit"
           value="Log In"
         />
-        {errorOpen && <Error />}
+        {errorOpen && <Error error={error} />}
 
         <div
           style={{

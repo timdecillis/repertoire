@@ -11,12 +11,17 @@ describe("App spec", () => {
     get(".error");
     contains("div", "Please enter your email");
 
+    get("#email").type("user@email.com");
+    contains("input", "Log In").click();
+    contains("div", "Please enter your password");
     get('#email').clear();
+
     get("#password").type("asdfasdfasdf{enter}");
     contains("div", "Please enter your email");
+    get('#password').clear();
 
-    // get("#email").type("user@email.com");
-    // contains("input", "Log In").click();
+
+
 
     // get("#password").type("asdfasdfasdf{enter}");
     // contains("div", "Songbook");

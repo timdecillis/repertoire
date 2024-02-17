@@ -14,18 +14,14 @@ describe("App spec", () => {
     get("#email").type("user@email.com");
     contains("input", "Log In").click();
     contains("div", "Please enter your password");
-    get('#email').clear();
+    get("#email").clear();
 
     get("#password").type("asdfasdfasdf{enter}");
     contains("div", "Please enter your email");
-    get('#password').clear();
+    get("#password").clear();
 
-
-
-
-    // get("#password").type("asdfasdfasdf{enter}");
-    // contains("div", "Songbook");
-
-
+    get("#email").type("user@email.com");
+    get("#password").type("asdfasdfasdf{enter}");
+    contains("div", "Songbook");
   });
 });

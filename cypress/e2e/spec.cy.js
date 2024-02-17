@@ -1,11 +1,11 @@
 describe("App spec", () => {
   it("loads the home page", () => {
-    const { get, contains } = cy;
-    cy.visit("localhost:3000");
+    const { get, contains, visit, title } = cy;
+    visit("localhost:3000");
     get(".container").should("be.visible");
     get(".header").should("be.visible");
     get(".banner").should("be.visible");
-    cy.title().should("eq", "Repertoire");
+    title().should("eq", "Repertoire");
 
     contains("input", "Log In").click();
     get(".error");

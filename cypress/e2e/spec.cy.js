@@ -27,6 +27,9 @@ describe("App spec", () => {
     contains("span", '+Add Song').click();
     get('.dashboard');
 
-    get('input[value="guitar"]').click();
+    get('input[value="drums"]').click();
+    get('input[value="advanced"]').click();
+    get(".search-input").type("Van Halen{enter}");
+
   });
 });

@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 const Error = () => {
   return (
-    <div className="error">
+    <div
+      style={{
+        textAlign: "center",
+        color: "red",
+        cursor: "pointer",
+      }}
+    >
       Error
     </div>
   );

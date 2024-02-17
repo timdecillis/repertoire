@@ -8,5 +8,6 @@ describe("App spec", () => {
     cy.title().should("eq", "Repertoire");
 
     cy.contains("input", "Log In").click();
+    get(".error");
   });
 });

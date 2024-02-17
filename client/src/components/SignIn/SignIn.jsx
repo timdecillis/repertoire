@@ -14,7 +14,7 @@ const SignIn = ({
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorOpen, setErrorOpen] = useState(true);
+  const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = (null);
 
   useEffect(() => {
@@ -32,7 +32,13 @@ const SignIn = ({
     if (!email) {
       setErrorOpen(true);
       setError('email');
+      return;
     }
+    if(!password) {
+      setErrorOpen(true);
+      setError('password');
+    }
+
     setAuthUser(email);
   };
 

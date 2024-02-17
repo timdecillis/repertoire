@@ -25,5 +25,6 @@ describe("App spec", () => {
     contains("div", "Songbook");
 
     contains("span", '+Add Song').click();
+    get('.dashboard');
   });
 });

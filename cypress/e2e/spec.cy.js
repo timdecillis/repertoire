@@ -26,5 +26,7 @@ describe("App spec", () => {
 
     contains("span", '+Add Song').click();
     get('.dashboard');
+
+    get('input[value="guitar"]').click();
   });
 });

@@ -23,5 +23,7 @@ describe("App spec", () => {
     get("#email").type("user@email.com");
     get("#password").type("asdfasdfasdf{enter}");
     contains("div", "Songbook");
+
+    contains("span", '+Add Song').click();
   });
 });

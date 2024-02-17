@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Error = () => {
+const Error = ({ error }) => {
   return (
     <div
       style={{
@@ -9,7 +9,7 @@ const Error = () => {
         cursor: "pointer",
       }}
     >
-      Error
+      Please enter your {error}
     </div>
   );
 };

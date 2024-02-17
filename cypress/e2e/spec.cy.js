@@ -9,5 +9,7 @@ describe("App spec", () => {
 
     cy.contains("input", "Log In").click();
     get(".error");
+    cy.contains("div", "Please enter your email");
+    cy.get("#email").type("user@email.com");
   });
 });

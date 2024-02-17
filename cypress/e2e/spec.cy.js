@@ -24,16 +24,13 @@ describe("App spec", () => {
     get("#password").type("asdfasdfasdf{enter}");
     contains("div", "Songbook");
 
-    contains("span", '+Add Song').click();
-    get('.dashboard');
+    contains("span", "+Add Song").click();
+    get(".dashboard");
 
     get('input[value="drums"]').click();
     get('input[value="advanced"]').click();
     get(".search-input").type("Van Halen{enter}");
-    intercept('POST', '/addSong').as('addSong');
-    cy.wait('@getData');
-    get('.choice[key="1"]').should('be.visible').click();
-
-
+    get('.choices').should("be.visible");
+    get('.choice').first().click();
   });
 });

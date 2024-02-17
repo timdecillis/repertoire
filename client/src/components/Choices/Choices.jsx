@@ -17,6 +17,7 @@ const Choices = ({
           {choices.map((choice, i) => (
             <div
               className="choice"
+
               onClick={() => {
                 addSong(authUser, choice, band).then(({ data }) => {
                   setDashOpen(false);

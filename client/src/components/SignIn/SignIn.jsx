@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { getSongs } from "../../lib.js";
-import Error from '../Error/Error.jsx';
+import Error from "../Error/Error.jsx";
 
 const SignIn = ({
   setSignedIn,
@@ -14,7 +14,7 @@ const SignIn = ({
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorOpen, setErrorOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(true);
 
   useEffect(() => {
     if (authUser !== null) {
@@ -69,7 +69,8 @@ const SignIn = ({
           type="submit"
           value="Log In"
         />
-        <Error />
+        {errorOpen && <Error />}
+
         <div
           style={{
             textAlign: "center",

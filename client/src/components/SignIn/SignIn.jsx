@@ -15,6 +15,7 @@ const SignIn = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(true);
+  const [error, setError] = (null);
 
   useEffect(() => {
     if (authUser !== null) {
@@ -28,6 +29,10 @@ const SignIn = ({
 
   const handleSignIn = (e) => {
     e.preventDefault();
+    if (!email) {
+      setErrorOpen(true);
+      setError('email');
+    }
     setAuthUser(email);
   };
 

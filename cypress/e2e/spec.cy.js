@@ -1,6 +1,6 @@
 describe("App spec", () => {
   it("loads the home page", () => {
-    const { get, contains, visit, title, intercept } = cy;
+    const { get, contains, visit, title, intercept, wait } = cy;
     visit("localhost:3000");
     get(".container").should("be.visible");
     get(".header").should("be.visible");
@@ -30,7 +30,8 @@ describe("App spec", () => {
     get('input[value="drums"]').click();
     get('input[value="advanced"]').click();
     get(".search-input").type("Van Halen{enter}");
-    intercept('GET', '/api/data').as('getData');
+    intercept('POST', '/addSong').as('addSong');
+    cy.wait('@getData');
     get('.choice[key="1"]').should('be.visible').click();
 
 

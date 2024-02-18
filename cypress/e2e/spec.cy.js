@@ -36,8 +36,8 @@ describe("App spec", () => {
 
     // cy.visit("/your-page");
 
-    wait("@addSong").then((interception) => {
-      console.log('interception:', interception);
+    wait("@addSong", { timeout: 10000 }).then((interception) => {
+      console.log("interception:", interception);
       // Access the response data from the interception object
       // const responseData = interception.response.body;
 

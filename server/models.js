@@ -28,6 +28,9 @@ module.exports = {
   saveSong: (req) => {
     let { email, song, artist } = req;
     return User.findOne({ email: email }).then((foundUser) => {
+      if (foundUser.songs.findOne({name, artist})) {
+        return foundUser.songs;
+      }
       const newSong = new Song({ name: song, artist });
       foundUser.songs.push(newSong);
       return foundUser.save().then((updatedUser) => {

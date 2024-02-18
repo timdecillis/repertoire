@@ -30,7 +30,18 @@ describe("App spec", () => {
     get('input[value="drums"]').click();
     get('input[value="advanced"]').click();
     get(".search-input").type("Van Halen{enter}");
-    get('.choices').should("be.visible");
-    get('.choice').first().click();
+    get(".choices").should("be.visible");
+    get(".choice").first().click();
+    cy.intercept("GET", "/api/data").as("getData");
+
+    cy.visit("/your-page");
+
+    cy.wait("@getData").then((interception) => {
+      // Access the response data from the interception object
+      const responseData = interception.response.body;
+
+      // Use the response data for your assertions
+      expect(responseData).to.have.property("yourProperty", "expectedValue");
+    });
   });
 });

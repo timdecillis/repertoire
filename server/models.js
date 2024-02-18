@@ -22,13 +22,13 @@ const Song = mongoose.model("Song", songSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return new User({ email: email, password: password })
-      .save();
+    return new User({ email: email, password: password }).save();
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
     return User.findOne({ email: email }).then((foundUser) => {
-      if (foundUser.songs.findOne({name, artist})) {
+      if (foundUser.songs.some((s) => s.name === song && s.artist === artist)) {
+        // If a song with the same name and artist already exists, return foundUser.songs
         return foundUser.songs;
       }
       const newSong = new Song({ name: song, artist });

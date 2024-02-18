@@ -28,7 +28,6 @@ module.exports = {
     let { email, song, artist } = req;
     return User.findOne({ email: email }).then((foundUser) => {
       if (foundUser.songs.some((s) => s.name === song && s.artist === artist)) {
-        // If a song with the same name and artist already exists, return foundUser.songs
         return foundUser.songs;
       }
       const newSong = new Song({ name: song, artist });

@@ -32,11 +32,11 @@ describe("App spec", () => {
     get(".search-input").type("Van Halen{enter}");
     get(".choices").should("be.visible");
 
-    intercept('POST', '/addSong').as('addSong');
-    wait('@addSong').then((interception) => {
-      console.log(interception);
-    });
+    intercept("POST", "/addSong").as("addSong");
     get(".choice").first().click();
-
+    wait("@addSong").then((interception) => {
+      const song = interception.request.body.song;
+      contains("div", song);
+    });
   });
 });

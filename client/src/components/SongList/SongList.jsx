@@ -17,6 +17,7 @@ const SongList = ({
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
+  const [songDuplicate, setSongDuplicate] = useState(false);
 
   return (
     <div className="songlist">

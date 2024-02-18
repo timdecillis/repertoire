@@ -31,6 +31,12 @@ describe("App spec", () => {
     get('input[value="advanced"]').click();
     get(".search-input").type("Van Halen{enter}");
     get(".choices").should("be.visible");
+
+    intercept('POST', '/addSong').as('addSong');
+    wait('@addSong').then((interception) => {
+      console.log(interception);
+    });
     get(".choice").first().click();
+
   });
 });

@@ -22,6 +22,7 @@ const SongList = ({
     <div className="songlist">
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
+        {songDuplicate && <div>Song already exists on list, skipping...</div>}
         <span
           onClick={() => setDashOpen(true)}
           style={{

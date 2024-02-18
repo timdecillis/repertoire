@@ -17,12 +17,15 @@ const Choices = ({
           {choices.map((choice, i) => (
             <div
               className="choice"
-
               onClick={() => {
                 addSong(authUser, choice, band).then(({ data }) => {
                   setDashOpen(false);
-                  setSongs(data);
                   setChoices([]);
+                  if (data.length === songs.length) {
+
+                    return;
+                  }
+                  setSongs(data);
                 });
               }}
               key={i}

@@ -32,17 +32,5 @@ describe("App spec", () => {
     get(".search-input").type("Van Halen{enter}");
     get(".choices").should("be.visible");
     get(".choice").first().click();
-    intercept("POST", "/addSong").as("addSong");
-
-    // cy.visit("/your-page");
-
-    wait("@addSong", { timeout: 10000 }).then((interception) => {
-      console.log("interception:", interception);
-      // Access the response data from the interception object
-      // const responseData = interception.response.body;
-
-      // Use the response data for your assertions
-      // expect(responseData).to.have.property("yourProperty", "expectedValue");
-    });
   });
 });

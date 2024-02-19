@@ -63,6 +63,7 @@ const Dashboard = ({
           <div>Please enter a band or artist</div>
         ) : (
           <Choices
+            songs={songs}
             setSongDuplicate={setSongDuplicate}
             setChoices={setChoices}
             choices={choices}

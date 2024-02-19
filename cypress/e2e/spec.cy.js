@@ -38,6 +38,9 @@ describe("App spec", () => {
     wait("@addSong").then((interception) => {
       song = interception.request.body.song;
       contains("div", song).click();
+      contains("button", "Delete").click();
+      console.log('song:', song);
+      contains('div', song).should("not.exist");
     });
   });
 });

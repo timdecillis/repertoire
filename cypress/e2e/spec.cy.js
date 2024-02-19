@@ -34,9 +34,10 @@ describe("App spec", () => {
 
     intercept("POST", "/addSong").as("addSong");
     get(".choice").first().click();
+    let song;
     wait("@addSong").then((interception) => {
-      const song = interception.request.body.song;
-      contains("div", song);
+      song = interception.request.body.song;
+      contains("div", song).click();
     });
   });
 });

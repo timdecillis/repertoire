@@ -6,6 +6,7 @@ import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
 
 const SongList = ({
+  songDuplicate,
   songs,
   setSongs,
   band,
@@ -17,7 +18,6 @@ const SongList = ({
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
-  const [songDuplicate, setSongDuplicate] = useState(false);
 
   return (
     <div className="songlist">

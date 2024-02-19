@@ -21,6 +21,7 @@ const App = () => {
   const [dashOpen, setDashOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
+  const [songDuplicate, setSongDuplicate] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -84,6 +85,7 @@ const App = () => {
       )}
       {dashOpen ? (
         <Dashboard
+          setSongDuplicate={setSongDuplicate}
           errorOpen={errorOpen}
           handleSearch={handleSearch}
           choices={choices}
@@ -101,6 +103,7 @@ const App = () => {
       ) : (
         signedIn && (
           <SongList
+            songDuplicate={songDuplicate}
             authUser={authUser}
             signedIn={signedIn}
             band={band}

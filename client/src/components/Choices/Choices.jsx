@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { addSong } from "../../lib.js";
 
 const Choices = ({
+  setSongDuplicate,
   choices,
   setChoices,
   setSongs,
@@ -22,8 +23,10 @@ const Choices = ({
                   setDashOpen(false);
                   setChoices([]);
                   if (data.length === songs.length) {
-
-                    return;
+                    setSongDuplicate(true);
+                    return setTimeout(() => {
+                      setSongDuplicate(false);
+                    }, 2000);
                   }
                   setSongs(data);
                 });

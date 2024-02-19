@@ -6,6 +6,7 @@ import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 
 const Dashboard = ({
+  setSongDuplicate,
   loading,
   setChoices,
   setLoading,
@@ -54,10 +55,7 @@ const Dashboard = ({
         </button>
 
         {/*
-
-
-
-      */}
+         */}
 
         {loading ? (
           <div>Please wait a moment...</div>
@@ -65,6 +63,7 @@ const Dashboard = ({
           <div>Please enter a band or artist</div>
         ) : (
           <Choices
+            setSongDuplicate={setSongDuplicate}
             setChoices={setChoices}
             choices={choices}
             setSongs={setSongs}

@@ -42,10 +42,10 @@ describe("App spec", () => {
       contains("div", song).should("not.exist");
     });
     const firstSong = get(".song-name-content");
-    get(".song-name-check").should("exist");
-    get(".song-name-content").first().click();
-    get("button").contains("Mark Uncompleted").click();
-    contains("button", "Back").click();
-    get(".song-name-check").should("not.exist");
+    firstSong.get(".song-name-check").should("exist");
+    firstSong.get(".song-name-content").first().click();
+    firstSong.get("button").contains("Mark Uncompleted").click();
+    firstSong.get("button").contains("Back").click();
+    firstSong.get("div").contains(".song-name-check").should("not.exist");
   });
 });

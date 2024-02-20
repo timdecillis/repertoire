@@ -55,5 +55,3 @@ describe("App spec", () => {
     firstSong.get(".song-name-check").should("exist");
   });
 });
-
-//

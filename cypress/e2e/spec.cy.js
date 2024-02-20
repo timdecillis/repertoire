@@ -39,7 +39,8 @@ describe("App spec", () => {
       song = interception.request.body.song;
       contains("div", song).click();
       contains("button", "Delete").click();
-      contains('div', song).should("not.exist");
+      contains("div", song).should("not.exist");
     });
+    get(".song-name-content").first().click();
   });
 });

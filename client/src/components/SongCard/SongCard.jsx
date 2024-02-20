@@ -13,7 +13,7 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
         <div className="song">
           {!draftOpen ? (
             <div onClick={() => setDraftOpen(true)} className="song-name">
-              <div>{song.name}</div>
+              <div className="song-name-content" >{song.name}</div>
               {song.completed && <div>&#10003;</div>}
             </div>
           ) : (

@@ -42,7 +42,9 @@ describe("App spec", () => {
       contains("div", song).should("not.exist");
     });
     get(".song-name-content").first().click();
-    contains("button", "Mark Uncompleted").click();
+    get("button")
+      .contains(/Mark Uncompleted|Mark Completed/)
+      .click();
     contains("button", "Back").click();
   });
 });

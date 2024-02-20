@@ -41,11 +41,11 @@ describe("App spec", () => {
       contains("button", "Delete").click();
       contains("div", song).should("not.exist");
     });
+    const firstSong = get(".song-name-content");
     get(".song-name-check").should("exist");
     get(".song-name-content").first().click();
-    // get("button")
-    //   .contains(/Mark Uncompleted|Mark Completed/)
-    //   .click();
-    // contains("button", "Back").click();
+    get("button").contains("Mark Uncompleted").click();
+    contains("button", "Back").click();
+    get(".song-name-check").should("not.exist");
   });
 });

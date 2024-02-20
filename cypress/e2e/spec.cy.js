@@ -34,14 +34,14 @@ describe("App spec", () => {
 
     intercept("POST", "/addSong").as("addSong");
     get(".choice").first().click();
-    // wait("@addSong").then((interception) => {
-    //   let song = interception.request.body.song;
-    //   let newSong = get("div").contains(song);
-    //   newSong.get(".song-name-check").should("not.exist");
-    //   newSong.click();
-    //   contains("button", "Delete").click();
-    //   contains("div", song).should("not.exist");
-    // });
+    wait("@addSong").then((interception) => {
+      let song = interception.request.body.song;
+      let newSong = get("div").contains(song);
+      newSong.get(".song-name-check").should("not.exist");
+      newSong.click();
+      contains("button", "Delete").click();
+      contains("div", song).should("not.exist");
+    });
     const firstSong = get(".song").first();
     firstSong.get(".song-name-check").should("exist");
     firstSong.click();

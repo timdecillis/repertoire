@@ -43,5 +43,6 @@ describe("App spec", () => {
     });
     get(".song-name-content").first().click();
     contains("button", "Mark Uncompleted").click();
+    contains("button", "Back").click();
   });
 });

@@ -42,5 +42,6 @@ describe("App spec", () => {
       contains("div", song).should("not.exist");
     });
     get(".song-name-content").first().click();
+    contains("button", "Mark Uncompleted").click();
   });
 });

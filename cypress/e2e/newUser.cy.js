@@ -4,6 +4,7 @@ describe("App spec", () => {
     visit("localhost:3000");
     get("#email").type("newuser@email.com");
     contains("input", "Log In").click();
+    get("#password").type("asdfasdfasdf{enter}");
 
   });
 });

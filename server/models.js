@@ -27,6 +27,15 @@ module.exports = {
   saveSong: (req) => {
     let { email, song, artist } = req;
     return User.findOne({ email: email }).then((foundUser) => {
+      if (foundUser.songs.length === 0) {
+        console.log('FIRST SONG');
+        const newSong = new Song({ name: song, artist });
+        foundUser.songs.push(newSong);
+        return foundUser.save().then((updatedUser) => {
+          return updatedUser.songs;
+        });
+      }
+      console.log('found user SONGS:', foundUser.songs.length);
       if (foundUser.songs.some((s) => s.name === song && s.artist === artist)) {
         return foundUser.songs;
       }

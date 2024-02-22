@@ -5,6 +5,6 @@ describe("App spec", () => {
     get("#email").type("newuser@email.com");
     contains("input", "Log In").click();
     get("#password").type("asdfasdfasdf{enter}");
-
+    get(".song").should("not.exist");
   });
 });

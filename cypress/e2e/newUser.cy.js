@@ -14,7 +14,6 @@ describe("App spec", () => {
 
     get(".search-input").type("Aerosmith{enter}");
     get(".choices").should("be.visible");
-    // get(".choice").first().click();
 
     intercept("POST", "/addSong").as("addSong");
     get(".choice").first().click();

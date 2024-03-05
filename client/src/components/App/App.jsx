@@ -63,7 +63,7 @@ const App = () => {
         <div className="header">Repertoire</div>
         {signedIn && (
           <span onClick={handleSignOut} className="sign-out-button">
-            Sign Out
+            Quit
           </span>
         )}
       </div>

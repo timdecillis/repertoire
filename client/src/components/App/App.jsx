@@ -61,7 +61,6 @@ const App = () => {
     <div className="container">
       <div className="banner">
         <div className="header">Repertoire</div>
-        <h2>This is heading</h2>
         {signedIn && (
           <span onClick={handleSignOut} className="sign-out-button">
             Sign Out

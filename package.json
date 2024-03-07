@@ -7,7 +7,7 @@
     "server-dev": "npx nodemon --inspect --watch server server/index.js",
     "build": "npx webpack",
     "client-dev": "npx webpack --watch",
-    "start": "concurrently \"npx webpack --watch\" \"npx nodemon --inspect --watch server server/index.js\"",
+    "start": "concurrently \"npx webpack serve --open --hot\" \"npx nodemon --inspect --watch server server/index.js\"",
     "test": "jest --env=jsdom",
     "full-test": "jest --env=jsdom --coverage",
     "cypress-open": "cypress open",
@@ -22,6 +22,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",
     "webpack-cli": "^5.1.4"
+
   },
   "dependencies": {
     "@babel/core": "^7.14.6",

@@ -53,7 +53,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         <button className="note-button" onClick={() => setDraftOpen(false)}>
           Back
         </button>
-        <button className="note-button">Add Notes</button>
+        <button className="note-button"></button>
       </div>
     </div>
   );

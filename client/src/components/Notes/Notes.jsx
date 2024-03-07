@@ -29,14 +29,13 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   return (
     <div className="notes">
-      <div className="notes-heading">
-        <div>
-          <div className="song-title">{song.name}</div>
-          <div className="song-artist">by {song.artist}</div>
-        </div>
-      </div>
-
       <div className="notes-buttons">
+        <div className="notes-heading">
+          <div>
+            <div className="song-title">{song.name}</div>
+            <div className="song-artist">by {song.artist}</div>
+          </div>
+        </div>
         <div style={{ display: "flex" }}>
           <button onClick={handleCompleted} className="note-button">
             {!song.completed ? "Mark Completed" : "Mark Uncompleted"}
@@ -57,8 +56,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
           {song.notes ? "Edit Notes" : "Add Notes"}
         </button>
       </div>
-
-      <div>Notes:</div>
+      <div className="notes-notes">Notes:</div>
     </div>
   );
 };

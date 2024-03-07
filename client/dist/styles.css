@@ -201,8 +201,8 @@ body {
   border-top: solid;
   border-top-width: 0.01em;
   border-bottom-width: 0.01em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
   display: flex;
   flex-direction: column;
 }

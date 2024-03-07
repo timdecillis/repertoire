@@ -54,7 +54,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
           Back
         </button>
       </div>
-      <div>Song Notes:</div>
+      {song.notes ? <div>Song Notes:</div> : <button>Add Notes</button>}
     </div>
   );
 };

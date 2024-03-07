@@ -204,6 +204,7 @@ body {
   padding-top: .5em;
   padding-bottom: .5em;
   display: flex;
+  padding-left: 1.5%;
 }
 
 .notes-buttons {
@@ -242,9 +243,9 @@ body {
   min-height: 1.8em;
 }
 
-/* .notes-notes {
-  font-size: 1.2em;
-} */
+.notes-notes {
+  margin-left: 1em;
+}
 
 .radio-button {
   font-size: 0.9em;

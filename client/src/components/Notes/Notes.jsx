@@ -65,7 +65,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
       ) : notesInputOpen ? (
         <>
           <form>
-            <input type='text'></input>
+            <textarea></textarea>
             <input type='submit'></input>
           </form>
         </>

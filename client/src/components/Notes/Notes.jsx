@@ -8,6 +8,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
   const [notesInputOpen, setNotesInputOpen] = useState(false);
+  const [notes, setNotes] = useState('');
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
@@ -26,6 +27,12 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
       setDraftOpen(false);
       setSongs(data);
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("these are the notes:", e.target.value);
+    setNotesInputOpen(false);
   };
 
   return (
@@ -64,10 +71,35 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         </>
       ) : notesInputOpen ? (
         <>
-          <form className="notes-buttons notes-notes">
-            <textarea style={{ marginBottom: "0.7em" }}></textarea>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-              <button onClick={() => setNotesInputOpen(false)} className="note-button">Back</button>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit(e);
+            }}
+            className="notes-buttons notes-notes"
+          >
+            <textarea
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit(e);
+                }
+              }}
+              style={{ marginBottom: "0.7em" }}
+            ></textarea>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <button
+                onClick={() => setNotesInputOpen(false)}
+                className="note-button"
+              >
+                Back
+              </button>
               <input className="note-button" type="submit" value="Save"></input>
             </div>
           </form>

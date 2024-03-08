@@ -66,7 +66,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         <>
           <form>
             <textarea></textarea>
-            <input type='submit'></input>
+            <input className="note-button" type='submit'></input>
           </form>
         </>
       ) : null}

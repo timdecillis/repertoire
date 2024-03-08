@@ -7,6 +7,7 @@ import Draft from "../Draft/Draft.jsx";
 const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
+  const [notesInputOpen, setNotesInputOpen] = useState(false);
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(

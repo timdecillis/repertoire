@@ -7,7 +7,7 @@ import Draft from "../Draft/Draft.jsx";
 const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
-  const [notesInputOpen, setNotesInputOpen] = useState(false);
+  const [notesInputOpen, setNotesInputOpen] = useState(true);
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
@@ -57,12 +57,19 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
           {song.notes ? "Edit Notes" : "Add Notes"}
         </button>
       </div>
-      {song.notes && (
+      {song.notes && !notesInputOpen ? (
         <>
           <div className="notes-notes">Notes:</div>
           <div>{song.notes}</div>
         </>
-      )}
+      ) : notesInputOpen ? (
+        <>
+          <form>
+            <input type='text'></input>
+            <input type='submit'></input>
+          </form>
+        </>
+      ) : null}
     </div>
   );
 };

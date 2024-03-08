@@ -64,9 +64,12 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         </>
       ) : notesInputOpen ? (
         <>
-          <form className='notes-buttons notes-notes'>
-            <textarea style={{marginBottom: '0.7em'}}></textarea>
-            <input className="note-button" type='submit' value='Save'></input>
+          <form className="notes-buttons notes-notes">
+            <textarea style={{ marginBottom: "0.7em" }}></textarea>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <button className="note-button">Back</button>
+              <input className="note-button" type="submit" value="Save"></input>
+            </div>
           </form>
         </>
       ) : null}

@@ -8,7 +8,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
   const [notesInputOpen, setNotesInputOpen] = useState(false);
-  const [notes, setNotes] = useState('');
+  const [notes, setNotes] = useState("");
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
@@ -31,7 +31,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("these are the notes:", e.target.value);
+    console.log("these are the notes:", notes);
     setNotesInputOpen(false);
   };
 
@@ -72,10 +72,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
       ) : notesInputOpen ? (
         <>
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit(e);
-            }}
+            onSubmit={handleSubmit}
             className="notes-buttons notes-notes"
           >
             <textarea
@@ -85,6 +82,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
                   handleSubmit(e);
                 }
               }}
+              onChange={(e) => setNotes(e.target.value)}
               style={{ marginBottom: "0.7em" }}
             ></textarea>
             <div

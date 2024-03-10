@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { deleteSong, completeSong } from "../../lib.js";
+import { deleteSong, completeSong, handleNotes } from "../../lib.js";
 import Completed from "../Completed/Completed.jsx";
 import Draft from "../Draft/Draft.jsx";
 

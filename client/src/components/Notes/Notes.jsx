@@ -8,7 +8,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
   const [notesInputOpen, setNotesInputOpen] = useState(false);
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(song.notes || null);
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
@@ -32,7 +32,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNotes(authUser, song.name, song.artist, notes).then((data) => {
-      console.log("data returned:", data);
+      setNotes(data.data);
       setNotesInputOpen(false);
     });
   };
@@ -63,16 +63,16 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
           Back
         </button>
         <button onClick={() => setNotesInputOpen(true)} className="note-button">
-          {song.notes ? "Edit Notes" : "Add Notes"}
+          {notes ? "Edit Notes" : "Add Notes"}
         </button>
       </div>
-      {song.notes && !notesInputOpen ? (
+      {notes && !notesInputOpen ? (
         <div
           className="notes-notes"
           style={{ display: "flex", flexDirection: "column" }}
         >
           <div>Notes:</div>
-          <div>{song.notes}</div>
+          <div>{notes}</div>
         </div>
       ) : notesInputOpen ? (
         <>

@@ -120,8 +120,8 @@ module.exports = {
   },
   updateNotes: (req, res) => {
     updateNotes(req.body.email, req.body.song, req.body.artist, req.body.notes)
-      .then(() => {
-        res.status(202).send();
+      .then((notes) => {
+        res.status(202).send(notes);
       })
       .catch((err) => {
         console.log("Error updating notes:", err);

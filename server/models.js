@@ -73,6 +73,9 @@ module.exports = {
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };
-    return User.findOneAndUpdate(query, update, { new: true });
+    return User.findOneAndUpdate(query, update, { new: true }).then((updatedUser) => {
+      const updatedSong = updatedUser.songs.find(s => s.name === song && s.artist === artist);
+      return updatedSong.notes;
+    });
   },
 };

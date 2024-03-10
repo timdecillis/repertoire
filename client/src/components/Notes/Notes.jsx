@@ -67,10 +67,13 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         </button>
       </div>
       {song.notes && !notesInputOpen ? (
-        <>
-          <div className="notes-notes">Notes:</div>
+        <div
+          className="notes-notes"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <div>Notes:</div>
           <div>{song.notes}</div>
-        </>
+        </div>
       ) : notesInputOpen ? (
         <>
           <form onSubmit={handleSubmit} className="notes-buttons notes-notes">

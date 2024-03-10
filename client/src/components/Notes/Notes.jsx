@@ -31,7 +31,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("these are the notes:", notes);
+    handleNotes(authUser, song.name, song.artist, notes);
     setNotesInputOpen(false);
   };
 

@@ -31,8 +31,10 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleNotes(authUser, song.name, song.artist, notes);
-    setNotesInputOpen(false);
+    handleNotes(authUser, song.name, song.artist, notes).then((data) => {
+      console.log("data returned:", data);
+      setNotesInputOpen(false);
+    });
   };
 
   return (
@@ -71,10 +73,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
         </>
       ) : notesInputOpen ? (
         <>
-          <form
-            onSubmit={handleSubmit}
-            className="notes-buttons notes-notes"
-          >
+          <form onSubmit={handleSubmit} className="notes-buttons notes-notes">
             <textarea
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {

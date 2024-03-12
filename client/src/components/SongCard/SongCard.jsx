@@ -7,6 +7,14 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleNotes(authUser, song.name, song.artist, notes).then((data) => {
+      setNotes(data.data);
+      setNotesInputOpen(false);
+    });
+  };
+
   return (
     <div>
       {song && (

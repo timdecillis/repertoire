@@ -28,6 +28,7 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
             </div>
           ) : (
             <Notes
+              handleSubmit={handleSubmit}
               setSongs={setSongs}
               authUser={authUser}
               setDraftOpen={setDraftOpen}

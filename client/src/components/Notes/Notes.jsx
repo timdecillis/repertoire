@@ -10,6 +10,8 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
   const [notesInputOpen, setNotesInputOpen] = useState(false);
   const [notes, setNotes] = useState(song.notes || null);
 
+  console.log('the notes:', notes);
+
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
       ({ data }) => {
@@ -26,14 +28,6 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs }) => {
     deleteSong(authUser, song.name, song.artist).then(({ data }) => {
       setDraftOpen(false);
       setSongs(data);
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleNotes(authUser, song.name, song.artist, notes).then((data) => {
-      setNotes(data.data);
-      setNotesInputOpen(false);
     });
   };
 

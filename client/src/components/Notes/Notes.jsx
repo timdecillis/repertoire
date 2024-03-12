@@ -68,7 +68,7 @@ const Notes = ({
           className="notes-notes"
           style={{ display: "flex", flexDirection: "column" }}
         >
-          <div>Notes:</div>
+          <div style={{borderBottom: 'solid', borderBottomWidth: '.1em'}} >Notes</div>
           <div>{notes}</div>
         </div>
       ) : notesInputOpen ? (

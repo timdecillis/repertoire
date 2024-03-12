@@ -4,11 +4,21 @@ import { deleteSong, completeSong, handleNotes } from "../../lib.js";
 import Completed from "../Completed/Completed.jsx";
 import Draft from "../Draft/Draft.jsx";
 
-const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes, setNotesInputOpen, notesInputOpen, setNotes }) => {
+const Notes = ({
+  setDraftOpen,
+  song,
+  authUser,
+  setSongs,
+  handleSubmit,
+  notes,
+  setNotesInputOpen,
+  notesInputOpen,
+  setNotes,
+}) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
-  console.log('the notes:', notes);
+  console.log("the notes:", notes);
 
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
@@ -42,11 +52,6 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes, se
           <button onClick={handleCompleted} className="note-button">
             {!song.completed ? "Mark Completed" : "Mark Uncompleted"}
           </button>
-          {success && (
-            <div style={{ fontSize: ".8em", marginLeft: ".5em" }}>
-              Song upated!
-            </div>
-          )}
         </div>
         <button onClick={handDeleted} className="note-button">
           Delete Song
@@ -70,6 +75,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes, se
         <>
           <form onSubmit={handleSubmit} className="notes-buttons notes-notes">
             <textarea
+              rows={2}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
@@ -77,7 +83,7 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes, se
                 }
               }}
               onChange={(e) => setNotes(e.target.value)}
-              style={{ marginBottom: "0.7em" }}
+              style={{ marginBottom: "0.7em", width: "600px" }}
             ></textarea>
             <div
               style={{
@@ -97,6 +103,9 @@ const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes, se
           </form>
         </>
       ) : null}
+      {success && (
+        <div style={{ fontSize: ".8em", marginLeft: ".5em" }}>Song upated!</div>
+      )}
     </div>
   );
 };

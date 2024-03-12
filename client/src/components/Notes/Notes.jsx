@@ -4,7 +4,7 @@ import { deleteSong, completeSong, handleNotes } from "../../lib.js";
 import Completed from "../Completed/Completed.jsx";
 import Draft from "../Draft/Draft.jsx";
 
-const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit }) => {
+const Notes = ({ setDraftOpen, song, authUser, setSongs, handleSubmit, notes }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 

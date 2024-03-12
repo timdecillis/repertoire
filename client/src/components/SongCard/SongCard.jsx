@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { handleNotes } from "../../lib.js";
+
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 
@@ -29,6 +31,7 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
             </div>
           ) : (
             <Notes
+              setNotes={setNotes}
               notesInputOpen={notesInputOpen}
               setNotesInputOpen={setNotesInputOpen}
               notes={notes}

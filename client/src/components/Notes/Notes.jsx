@@ -75,7 +75,6 @@ const Notes = ({
         <>
           <form onSubmit={handleSubmit} className="notes-buttons notes-notes">
             <textarea
-              rows={2}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
@@ -83,7 +82,7 @@ const Notes = ({
                 }
               }}
               onChange={(e) => setNotes(e.target.value)}
-              style={{ marginBottom: "0.7em", width: "600px" }}
+              style={{ marginBottom: "0.7em", width: "99%" }}
             ></textarea>
             <div
               style={{

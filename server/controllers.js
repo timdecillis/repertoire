@@ -79,7 +79,9 @@ module.exports = {
   getSongs: (req, res) => {
     let { email } = req.query;
     getSongs(email)
-      .then(({ songs }) => {
+      .then((user) => {
+        console.log('user:', user);
+        const { songs } = user;
         res.status(200).send(songs);
       })
       .catch((err) => {

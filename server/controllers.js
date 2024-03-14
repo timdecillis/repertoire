@@ -80,9 +80,13 @@ module.exports = {
     let { email } = req.query;
     getSongs(email)
       .then((user) => {
-        console.log('user:', user);
-        const { songs } = user;
-        res.status(200).send(songs);
+        if (user) {
+          const { songs } = user;
+          res.status(200).send(songs);
+        } else {
+          console.log('controller user not found');
+          res.status(200).send();
+        }
       })
       .catch((err) => {
         console.log("Error retrieving songs:", err);

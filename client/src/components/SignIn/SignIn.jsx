@@ -40,7 +40,9 @@ const SignIn = ({
       setError("password");
       return;
     }
+    console.log('all good, getting songs?');
     getSongs(email).then((data) => {
+      console.log('got got');
       if (data) {
         console.log('found user');
         return setAuthUser(email);

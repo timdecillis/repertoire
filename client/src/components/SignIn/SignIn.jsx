@@ -113,7 +113,7 @@ const SignIn = ({
         >
           Create account
         </span>
-        <div>Sorry, that we don't have a user with that email in our records</div>
+        {userErrorOpen && <div>User not found!</div>}
       </div>
     </form>
   );

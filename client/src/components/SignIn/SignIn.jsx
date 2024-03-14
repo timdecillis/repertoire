@@ -18,15 +18,15 @@ const SignIn = ({
   const [error, setError] = useState(null);
   const [userErrorOpen, setUserErrorOpen] = useState(false);
 
-  useEffect(() => {
-    if (authUser !== null) {
-      setSignInOpen(false);
-      setSignedIn(true);
-      getSongs(authUser).then((songs) => {
-        setSongs(songs);
-      });
-    }
-  }, [authUser]);
+  // useEffect(() => {
+  //   if (authUser !== null) {
+  //     setSignInOpen(false);
+  //     setSignedIn(true);
+  //     getSongs(authUser).then((songs) => {
+  //       setSongs(songs);
+  //     });
+  //   }
+  // }, [authUser]);
 
   const handleSignIn = (e) => {
     e.preventDefault();

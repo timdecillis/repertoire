@@ -40,7 +40,10 @@ const SignIn = ({
       setError("password");
       return;
     }
-    setAuthUser(email);
+    if (verifyUser(email, password)) {
+      // move logic from useEffect here
+      setAuthUser(email);
+    }
   };
 
   const handleOpenCreate = () => {

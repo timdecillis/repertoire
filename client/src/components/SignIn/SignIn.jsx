@@ -16,6 +16,7 @@ const SignIn = ({
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = useState(null);
+  const [userErrorOpen, setUserErrorOpen] = useState(false);
 
   useEffect(() => {
     if (authUser !== null) {
@@ -39,7 +40,6 @@ const SignIn = ({
       setError("password");
       return;
     }
-
     setAuthUser(email);
   };
 

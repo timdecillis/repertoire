@@ -40,10 +40,14 @@ const SignIn = ({
       setError("password");
       return;
     }
-    if (verifyUser(email, password)) {
-      // move logic from useEffect here
-      setAuthUser(email);
-    }
+    getSongs(email).then((data) => {
+      if (data) {
+        console.log('found user');
+        return setAuthUser(email);
+      }
+      console.log('did not find user');
+      setUserErrorOpen(true);
+    });
   };
 
   const handleOpenCreate = () => {
@@ -109,6 +113,7 @@ const SignIn = ({
         >
           Create account
         </span>
+        <div>Sorry, that we don't have a user with that email in our records</div>
       </div>
     </form>
   );

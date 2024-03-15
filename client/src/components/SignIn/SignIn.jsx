@@ -40,7 +40,7 @@ const SignIn = ({
       setError("password");
       return;
     }
-    getSongs(email).then((data) => {
+    getSongs(email, password).then((data) => {
       if (data) {
         return setAuthUser(email);
       }

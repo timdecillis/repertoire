@@ -111,7 +111,7 @@ const SignIn = ({
         >
           Create account
         </span>
-        {userErrorOpen && <div>User not found!</div>}
+        {userErrorOpen && <div style={{textAlign: 'center'}}>User not found!</div>}
       </div>
     </form>
   );

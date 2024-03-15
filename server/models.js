@@ -38,9 +38,12 @@ module.exports = {
     });
   },
   getSongs: (email, password) => {
-    return User.findOne({ email, password })
+    return User.findOne({ email })
       .exec()
       .then((foundUser) => {
+        if (foundUser.password !== password) {
+          return 'Incorrect password';
+        }
         return foundUser;
       });
   },

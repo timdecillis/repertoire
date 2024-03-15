@@ -41,6 +41,9 @@ module.exports = {
     return User.findOne({ email })
       .exec()
       .then((foundUser) => {
+        if (!foundUser) {
+          return 'User not found';
+        }
         if (foundUser.password !== password) {
           return 'Incorrect password';
         }

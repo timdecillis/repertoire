@@ -45,6 +45,9 @@ const SignIn = ({
         return setAuthUser(email);
       }
       setUserErrorOpen(true);
+      setTimeout(() => {
+        setUserErrorOpen(false);
+      }, 1500);
     });
   };
 

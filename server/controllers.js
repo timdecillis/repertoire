@@ -77,8 +77,8 @@ module.exports = {
       });
   },
   getSongs: (req, res) => {
-    let { email } = req.query;
-    getSongs(email)
+    let { email, password } = req.query;
+    getSongs(email, password)
       .then((user) => {
         if (user) {
           const { songs } = user;

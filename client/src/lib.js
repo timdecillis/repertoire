@@ -1,9 +1,9 @@
 const axios = require("axios");
 
 module.exports = {
-  getSongs: (authUser) => {
+  getSongs: (authUser, password) => {
     return axios
-      .get("/getSongs", { params: { email: authUser } })
+      .get("/getSongs", { params: { email: authUser, password } })
       .then(({ data }) => {
         return data;
       });

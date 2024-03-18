@@ -8,6 +8,7 @@ const CreateUser = ({
   setSignedIn,
   createOpen,
   setCreateOpen,
+  setSignInOpen
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,15 +20,16 @@ const CreateUser = ({
     e.preventDefault();
     createUser(email, password).then((res) => {
       if (res.status === 200) {
-        return setUserErrorOpen(true);
+        setCreateErrorOpen(true);
         setTimeout(() => {
-          setUserErrorOpen(false);
+          setCreateErrorOpen(false);
         }, 1500);
+        return;
       }
-      // setCreateOpen(false);
-      // setSignedIn(true);
-      // setAuthUser(email);
-      // setSignInOpen(false);
+      setCreateOpen(false);
+      setSignedIn(true);
+      setAuthUser(email);
+      setSignInOpen(false);
     });
   };
 

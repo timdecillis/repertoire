@@ -25,6 +25,7 @@ const LandingPage = ({
           createOpen={createOpen}
           setOneOpen={setOneOpen}
           setSignedIn={setSignedIn}
+          setSignInOpen={setSignInOpen}
         />
       ) : (
         <SignIn

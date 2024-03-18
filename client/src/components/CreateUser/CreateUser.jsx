@@ -11,16 +11,24 @@ const CreateUser = ({
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [createErrorOpen, setCreateErrorOpen] = useState(false);
   // const [first, setFirst] = useState("");
   // const [last, setLast] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(email, password);
-    // setCreateOpen(false);
-    // setSignedIn(true);
-    // setAuthUser(email);
-    // setSignInOpen(false);
+    createUser(email, password).then((res) => {
+      if (res.status === 200) {
+        return setUserErrorOpen(true);
+        setTimeout(() => {
+          setUserErrorOpen(false);
+        }, 1500);
+      }
+      // setCreateOpen(false);
+      // setSignedIn(true);
+      // setAuthUser(email);
+      // setSignInOpen(false);
+    });
   };
 
   const handleBack = () => {
@@ -75,6 +83,9 @@ const CreateUser = ({
         >
           Back to Log In
         </span>
+        {createErrorOpen && (
+          <div style={{ textAlign: "center" }}>User already exists!</div>
+        )}
       </div>
     </form>
   );

@@ -81,13 +81,13 @@ module.exports = {
     getSongs(email, password)
       .then((user) => {
         console.log('user in controller:', user);
-        if (user) {
-          const { songs } = user;
-          res.status(200).send(songs);
-        } else {
-          console.log('controller user not found');
-          res.status(200).send();
-        }
+        // if (user) {
+        //   const { songs } = user;
+        //   res.status(200).send(songs);
+        // } else {
+        //   console.log('controller user not found');
+        //   res.status(200).send();
+        // }
       })
       .catch((err) => {
         console.log("Error retrieving songs:", err);

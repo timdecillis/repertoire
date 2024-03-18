@@ -45,4 +45,13 @@ module.exports = {
       completed,
     });
   },
+  createUser: (email, password) => {
+    return axios
+      .post("/users", { email: email, password: password })
+      .then(() => setCreateOpen(false))
+      .then(() => setSignedIn(true))
+      .then(() => setAuthUser(email))
+      .then(() => setSignInOpen(false))
+      .catch((err) => console.log(err));
+  },
 };

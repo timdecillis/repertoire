@@ -68,6 +68,7 @@ module.exports = {
   },
   createUser: (req, res) => {
     let { email, password } = req.body;
+    return console.log('user in controller:', email, 'password:', password);
     createUser(email, password)
       .then(() => {
         res.status(201).send();
@@ -80,7 +81,6 @@ module.exports = {
     let { email, password } = req.query;
     getSongs(email, password)
       .then((user) => {
-        console.log('user in controller:', user);
         // if (user) {
         //   const { songs } = user;
         //   res.status(200).send(songs);

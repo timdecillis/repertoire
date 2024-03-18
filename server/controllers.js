@@ -69,8 +69,12 @@ module.exports = {
   createUser: (req, res) => {
     let { email, password } = req.body;
     createUser(email, password)
-      .then(() => {
-        res.status(201).send();
+      .then((response) => {
+        if (response === 'User already exists') {
+          res.status(201).send('User already exists');
+        } else {
+          res.status(201).send('Added user');
+        }
       })
       .catch((err) => {
         console.log("Error adding user:", err);

@@ -71,7 +71,7 @@ module.exports = {
     createUser(email, password)
       .then((response) => {
         if (response === 'User already exists') {
-          res.status(201).send('User already exists');
+          res.status(200).send('User already exists');
         } else {
           res.status(201).send('Added user');
         }

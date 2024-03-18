@@ -22,7 +22,12 @@ const Song = mongoose.model("Song", songSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return new User({ email: email, password: password }).save();
+    return User.findOne({ email: email }).then((user) => {
+      if (user) {
+        return "User already exists";
+      }
+      return new User({ email: email, password: password }).save();
+    });
   },
   saveSong: (req) => {
     let { email, song, artist } = req;
@@ -42,10 +47,10 @@ module.exports = {
       .exec()
       .then((foundUser) => {
         if (!foundUser) {
-          return 'User not found';
+          return "User not found";
         }
         if (foundUser.password !== password) {
-          return 'Incorrect password';
+          return "Incorrect password";
         }
         return foundUser;
       });
@@ -79,9 +84,13 @@ module.exports = {
   updateNotes: (email, song, artist, notes) => {
     const query = { email: email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };
-    return User.findOneAndUpdate(query, update, { new: true }).then((updatedUser) => {
-      const updatedSong = updatedUser.songs.find(s => s.name === song && s.artist === artist);
-      return updatedSong.notes;
-    });
+    return User.findOneAndUpdate(query, update, { new: true }).then(
+      (updatedUser) => {
+        const updatedSong = updatedUser.songs.find(
+          (s) => s.name === song && s.artist === artist
+        );
+        return updatedSong.notes;
+      }
+    );
   },
 };

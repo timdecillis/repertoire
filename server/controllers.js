@@ -68,7 +68,6 @@ module.exports = {
   },
   createUser: (req, res) => {
     let { email, password } = req.body;
-    return console.log('user in controller:', email, 'password:', password);
     createUser(email, password)
       .then(() => {
         res.status(201).send();

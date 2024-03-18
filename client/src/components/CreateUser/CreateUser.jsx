@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const axios = require("axios");
+import { createUser } from '../../lib.js';
 
 import Button from "../Button/Button.jsx";
 
@@ -16,13 +16,7 @@ const CreateUser = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return axios
-      .post("/users", { email: email, password: password })
-      .then(() => setCreateOpen(false))
-      .then(() => setSignedIn(true))
-      .then(() => setAuthUser(email))
-      .then(() => setSignInOpen(false))
-      .catch((err) => console.log(err));
+    createUser(email, password);
   };
 
   const handleBack = () => {

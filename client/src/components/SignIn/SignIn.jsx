@@ -18,16 +18,6 @@ const SignIn = ({
   const [error, setError] = useState(null);
   const [userError, setUserError] = useState("");
 
-  useEffect(() => {
-    if (authUser !== null) {
-      setSignInOpen(false);
-      setSignedIn(true);
-      getSongs(authUser).then((songs) => {
-        setSongs(songs);
-      });
-    }
-  }, [authUser]);
-
   const handleSignIn = (e) => {
     e.preventDefault();
     if (!email) {

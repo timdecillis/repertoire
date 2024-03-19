@@ -16,7 +16,6 @@ const SignIn = ({
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = useState(null);
-  const [userError, setUserError] = useState("");
 
   const errors = {
     email: "Please enter your email",
@@ -115,7 +114,6 @@ const SignIn = ({
         >
           Create account
         </span>
-        {userError && <div style={{ textAlign: "center" }}>{userError}</div>}
       </div>
     </form>
   );

@@ -10,7 +10,7 @@ const Error = ({ error }) => {
         cursor: "pointer",
       }}
     >
-      Please enter your {error}
+      {error}
     </div>
   );
 };

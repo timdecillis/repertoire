@@ -18,29 +18,32 @@ const SignIn = ({
   const [error, setError] = useState(null);
   const [userError, setUserError] = useState("");
 
+  const errors = {
+    email: "Please enter your email",
+    password: "Please enter your password",
+    noUser: "User not found!",
+    wrongPassword: "Incorrect password!",
+  };
+
   const handleSignIn = (e) => {
     e.preventDefault();
     if (!email) {
       setErrorOpen(true);
-      setError("email");
+      setError(errors.email);
       return;
     }
     if (!password) {
       setErrorOpen(true);
-      setError("password");
+      setError(errors.password);
       return;
     }
     getSongs(email, password).then((response) => {
       if (response === "User not found") {
-        setUserError("User not found!");
-        setTimeout(() => {
-          setUserError("");
-        }, 1500);
+        setErrorOpen(true);
+        setError(errors.noUser);
       } else if (response === "Incorrect password") {
-        setUserError("Incorrect password!");
-        setTimeout(() => {
-          setUserError("");
-        }, 1500);
+        setErrorOpen(true);
+        setError(errors.wrongPassword);
       } else {
         setSignInOpen(false);
         setSignedIn(true);
@@ -112,9 +115,7 @@ const SignIn = ({
         >
           Create account
         </span>
-        {userError && (
-          <div style={{ textAlign: "center" }}>{userError}</div>
-        )}
+        {userError && <div style={{ textAlign: "center" }}>{userError}</div>}
       </div>
     </form>
   );

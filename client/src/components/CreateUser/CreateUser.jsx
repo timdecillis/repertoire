@@ -13,8 +13,6 @@ const CreateUser = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [createErrorOpen, setCreateErrorOpen] = useState(false);
-  // const [first, setFirst] = useState("");
-  // const [last, setLast] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,8 +41,6 @@ const CreateUser = ({
         <div className="first-input" htmlFor="email">
           Create Account
         </div>
-        {/* <input onChange={(e) => setFirst(e.target.value)} placeholder="first name" className="input" id="firstName" type="text" name="firstName" />
-        <input onChange={(e) => setLast(e.target.value)} placeholder="last name" className="input" id="lastName" type="text" name="lastName" /> */}
         <input
           onChange={(e) => setEmail(e.target.value)}
           placeholder="email"

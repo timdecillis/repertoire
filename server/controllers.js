@@ -70,10 +70,10 @@ module.exports = {
     let { email, password } = req.body;
     createUser(email, password)
       .then((response) => {
-        if (response === 'User already exists') {
-          res.status(200).send('User already exists');
+        if (response === "User already exists") {
+          res.status(200).send("User already exists");
         } else {
-          res.status(201).send('Added user');
+          res.status(201).send("Added user");
         }
       })
       .catch((err) => {
@@ -83,15 +83,8 @@ module.exports = {
   getSongs: (req, res) => {
     let { email, password } = req.query;
     getSongs(email, password)
-      .then((user) => {
-        console.log('controller:', user);
-        // if (user) {
-        //   const { songs } = user;
-        //   res.status(200).send(songs);
-        // } else {
-        //   console.log('controller user not found');
-        //   res.status(200).send();
-        // }
+      .then((response) => {
+        res.status(200).send(response);
       })
       .catch((err) => {
         console.log("Error retrieving songs:", err);

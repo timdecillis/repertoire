@@ -16,17 +16,17 @@ const SignIn = ({
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = useState(null);
-  const [userErrorOpen, setUserErrorOpen] = useState(false);
+  const [userError, setUserError] = useState("");
 
-  // useEffect(() => {
-  //   if (authUser !== null) {
-  //     setSignInOpen(false);
-  //     setSignedIn(true);
-  //     getSongs(authUser).then((songs) => {
-  //       setSongs(songs);
-  //     });
-  //   }
-  // }, [authUser]);
+  useEffect(() => {
+    if (authUser !== null) {
+      setSignInOpen(false);
+      setSignedIn(true);
+      getSongs(authUser).then((songs) => {
+        setSongs(songs);
+      });
+    }
+  }, [authUser]);
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -40,14 +40,22 @@ const SignIn = ({
       setError("password");
       return;
     }
-    getSongs(email, password).then((data) => {
-      // if (data) {
-      //   return setAuthUser(email);
-      // }
-      // setUserErrorOpen(true);
-      // setTimeout(() => {
-      //   setUserErrorOpen(false);
-      // }, 1500);
+    getSongs(email, password).then((response) => {
+      if (response === "User not found") {
+        setUserError("User not found!");
+        setTimeout(() => {
+          setUserError("");
+        }, 1500);
+      } else if (response === "Incorrect password") {
+        setUserError("Incorrect password!");
+        setTimeout(() => {
+          setUserError("");
+        }, 1500);
+      } else {
+        setSignInOpen(false);
+        setSignedIn(true);
+        setSongs(response.songs);
+      }
     });
   };
 
@@ -114,7 +122,9 @@ const SignIn = ({
         >
           Create account
         </span>
-        {userErrorOpen && <div style={{textAlign: 'center'}}>User not found!</div>}
+        {userError && (
+          <div style={{ textAlign: "center" }}>{userError}</div>
+        )}
       </div>
     </form>
   );

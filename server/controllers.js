@@ -84,6 +84,7 @@ module.exports = {
     let { email, password } = req.query;
     getSongs(email, password)
       .then((user) => {
+        console.log('controller:', user);
         // if (user) {
         //   const { songs } = user;
         //   res.status(200).send(songs);

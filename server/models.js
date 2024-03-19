@@ -44,7 +44,6 @@ module.exports = {
   },
   getSongs: (email, password) => {
     return User.findOne({ email })
-      .exec()
       .then((foundUser) => {
         if (!foundUser) {
           return "User not found";

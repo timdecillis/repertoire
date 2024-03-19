@@ -41,13 +41,13 @@ const SignIn = ({
       return;
     }
     getSongs(email, password).then((data) => {
-      if (data) {
-        return setAuthUser(email);
-      }
-      setUserErrorOpen(true);
-      setTimeout(() => {
-        setUserErrorOpen(false);
-      }, 1500);
+      // if (data) {
+      //   return setAuthUser(email);
+      // }
+      // setUserErrorOpen(true);
+      // setTimeout(() => {
+      //   setUserErrorOpen(false);
+      // }, 1500);
     });
   };
 

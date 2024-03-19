@@ -24,30 +24,29 @@ const SignIn = ({
     wrongPassword: "Incorrect password!",
   };
 
+  const handleError = (error) => {
+    setErrorOpen(true);
+    setError(error);
+    setTimeout(() => {
+      setErrorOpen(false);
+    }, 1500);
+  };
+
   const handleSignIn = (e) => {
     e.preventDefault();
     if (!email) {
-      setErrorOpen(true);
-      setError(errors.email);
-      return;
+      return handleError(errors.email);
     }
     if (!password) {
-      setErrorOpen(true);
-      setError(errors.password);
-      return;
+      return handleError(errors.password);
     }
     getSongs(email, password).then((response) => {
-      if (response === "User not found") {
-        setErrorOpen(true);
-        setError(errors.noUser);
-      } else if (response === "Incorrect password") {
-        setErrorOpen(true);
-        setError(errors.wrongPassword);
-      } else {
-        setSignInOpen(false);
-        setSignedIn(true);
-        setSongs(response.songs);
-      }
+      if (response === "User not found") return handleError(errors.noUser);
+      if (response === "Incorrect password")
+        return handleError(errors.wrongPassword);
+      setSignInOpen(false);
+      setSignedIn(true);
+      setSongs(response.songs);
     });
   };
 

@@ -21,6 +21,7 @@
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",
+    "ts-loader": "^9.5.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {

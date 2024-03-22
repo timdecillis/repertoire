@@ -1,7 +1,7 @@
 import React from "react";
 
 import HomeButtons from "../HomeButtons/HomeButtons.jsx";
-import SignIn from "../SignIn/SignIn.tsx";
+import SignIn from "../SignIn/SignIn.jsx";
 import CreateUser from "../CreateUser/CreateUser.jsx";
 
 const LandingPage = ({

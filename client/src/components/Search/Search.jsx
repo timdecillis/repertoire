@@ -14,7 +14,6 @@ const Search = ({ currentBand, setCurrentBand, loading }) => {
         disabled={loading}
         className="find-button"
         type="submit"
-        value="Search"
       />
     </div>
   );

@@ -47,9 +47,5 @@ module.exports = {
   },
   createUser: (email, password) => {
     return axios.post("/users", { email: email, password: password });
-    // .then((response) => {
-    //   console.log('response in lib:', response);
-    // })
-    // .catch((err) => console.log(err));
   },
 };

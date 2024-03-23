@@ -22,7 +22,7 @@ const Song = mongoose.model("Song", songSchema);
 
 module.exports = {
   createUser: (email, password) => {
-    return User.findOne({ email: email }).then((user) => {
+    return User.findOne({ email }).then((user) => {
       if (user) {
         return "User already exists";
       }
@@ -81,7 +81,7 @@ module.exports = {
   },
 
   updateNotes: (email, song, artist, notes) => {
-    const query = { email: email, "songs.name": song, "songs.artist": artist };
+    const query = { email, "songs.name": song, "songs.artist": artist };
     const update = { $set: { "songs.$.notes": notes } };
     return User.findOneAndUpdate(query, update, { new: true }).then(
       (updatedUser) => {

@@ -40,14 +40,14 @@ const SignIn = ({
     if (!password) {
       return handleError(errors.password);
     }
-    getSongs(email, password).then((response) => {
-      if (response === "User not found") return handleError(errors.noUser);
-      if (response === "Incorrect password")
+    getSongs(email, password).then(({ data }) => {
+      if (data === "User not found") return handleError(errors.noUser);
+      if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
       setAuthUser(email);
       setSignInOpen(false);
       setSignedIn(true);
-      setSongs(response.songs);
+      setSongs(data.songs);
     });
   };
 

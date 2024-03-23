@@ -3,10 +3,7 @@ const axios = require("axios");
 module.exports = {
   getSongs: (authUser, password) => {
     return axios
-      .get("/getSongs", { params: { email: authUser, password } })
-      .then(({ data }) => {
-        return data;
-      });
+      .get("/getSongs", { params: { email: authUser, password } });
   },
   addSong: (authUser, song, band) => {
     return axios.post("/addSong", {

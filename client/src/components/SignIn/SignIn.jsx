@@ -44,6 +44,7 @@ const SignIn = ({
       if (response === "User not found") return handleError(errors.noUser);
       if (response === "Incorrect password")
         return handleError(errors.wrongPassword);
+      setAuthUser(email);
       setSignInOpen(false);
       setSignedIn(true);
       setSongs(response.songs);

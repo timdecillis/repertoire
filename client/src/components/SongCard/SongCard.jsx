@@ -13,6 +13,7 @@ const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNotes(authUser, song.name, song.artist, notes).then((data) => {
+      console.log('data:', data)
       setNotes(data.data);
       setNotesInputOpen(false);
     });

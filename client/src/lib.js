@@ -21,8 +21,7 @@ module.exports = {
         band: band,
         instrument: instrument,
         difficulty: difficulty,
-      })
-      .then(({ data }) => data);
+      });
   },
   deleteSong: (authUser, song, artist) => {
     return axios.delete("/deleteSong", {

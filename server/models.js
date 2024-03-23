@@ -55,8 +55,7 @@ module.exports = {
       });
   },
   deleteSong: (email, song, artist) => {
-    return User.findOne({ email: email }).then((foundUser) => {
-      console.log('found user:', foundUser)
+    return User.findOne({ email }).then((foundUser) => {
       foundUser.songs = foundUser.songs.filter(
         (s) => !(s.name === song && s.artist === artist)
       );

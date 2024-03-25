@@ -21,5 +21,3 @@ const Search = ({ currentBand, setCurrentBand, loading }) => {
 };
 
 export default Search;
-
-//

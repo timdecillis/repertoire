@@ -24,6 +24,7 @@ const App = () => {
   const [errorOpen, setErrorOpen] = useState(false);
   const [songDuplicate, setSongDuplicate] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
+  const [listOpen, setListOpen] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -60,7 +61,6 @@ const App = () => {
   };
 
   const handleAccount = () => {
-    console.log('clicking')
     setAccountOpen(true);
     setDashOpen(false);
   };

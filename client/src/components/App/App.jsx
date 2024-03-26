@@ -60,6 +60,7 @@ const App = () => {
   };
 
   const handleAccount = () => {
+    console.log('clicking')
     setAccountOpen(true);
     setDashOpen(false);
   };

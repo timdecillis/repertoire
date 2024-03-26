@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 
-const Dashboard = ({}) => {};
+const Dashboard = () => {
+  return (
+    <div>
+      <h2>Account Options</h2>
+      <h4>Change email</h4>
+    </div>
+  );
+};
 
 export default Account;

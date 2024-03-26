@@ -61,6 +61,7 @@ const App = () => {
 
   const handleAccount = () => {
     setAccountOpen(true);
+    setDashOpen(false);
   };
 
   return (
@@ -94,6 +95,7 @@ const App = () => {
           setCreateOpen={setCreateOpen}
         />
       )}
+
       {dashOpen ? (
         <Dashboard
           setSongDuplicate={setSongDuplicate}
@@ -111,20 +113,20 @@ const App = () => {
           loading={loading}
           setLoading={setLoading}
         />
-      ) : (
-        signedIn && (
-          <SongList
-            songDuplicate={songDuplicate}
-            authUser={authUser}
-            signedIn={signedIn}
-            band={band}
-            songs={songs}
-            setSongs={setSongs}
-            dashOpen={dashOpen}
-            setDashOpen={setDashOpen}
-          />
-        )
-      )}
+      ) : signedIn ? (
+        <SongList
+          songDuplicate={songDuplicate}
+          authUser={authUser}
+          signedIn={signedIn}
+          band={band}
+          songs={songs}
+          setSongs={setSongs}
+          dashOpen={dashOpen}
+          setDashOpen={setDashOpen}
+        />
+      ) : accountOpen ? (
+        <Account />
+      ) : null}
     </div>
   );
 };

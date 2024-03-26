@@ -18,8 +18,6 @@ const Notes = ({
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
-  console.log("the notes:", notes);
-
   const handleCompleted = () => {
     completeSong(authUser, song.name, song.artist, song.completed).then(
       ({ data }) => {

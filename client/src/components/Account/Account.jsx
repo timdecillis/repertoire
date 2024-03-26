@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Dashboard = () => {
+const Account = () => {
   return (
     <div>
       <h2>Account Options</h2>

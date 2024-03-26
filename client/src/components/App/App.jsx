@@ -22,6 +22,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
   const [songDuplicate, setSongDuplicate] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
 
   const userSignOut = () => {
     setAuthUser(null);
@@ -55,6 +56,10 @@ const App = () => {
     setSignedIn(false);
     setAuthUser(null);
     setSongs([]);
+  };
+
+  const handleAccount = () => {
+
   };
 
   return (

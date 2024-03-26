@@ -59,7 +59,7 @@ const App = () => {
   };
 
   const handleAccount = () => {
-
+    setAccountOpen(true);
   };
 
   return (

@@ -16,6 +16,8 @@ const LandingPage = ({
   setAuthUser,
   setSongs
 }) => {
+
+  console.log('landing...why?');
   return (
     <div className="landing">
       {createOpen ? (

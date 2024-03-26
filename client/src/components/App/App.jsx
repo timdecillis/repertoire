@@ -70,7 +70,7 @@ const App = () => {
         <div className="header">Repertoire</div>
         {signedIn && (
           <div>
-            <span onClick={handleSignOut} className="sign-out-button">
+            <span onClick={handleAccount} className="sign-out-button">
               Account
             </span>
             <span onClick={handleSignOut} className="sign-out-button">

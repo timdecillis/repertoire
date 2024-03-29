@@ -81,7 +81,21 @@ const App = () => {
         )}
       </div>
 
-      {!signedIn && (
+      <LandingPage
+        setSignedIn={setSignedIn}
+        email={email}
+        setSongs={setSongs}
+        setAuthUser={setAuthUser}
+        authUser={authUser}
+        signInOpen={signInOpen}
+        oneOpen={oneOpen}
+        setOneOpen={setOneOpen}
+        setSignInOpen={setSignInOpen}
+        createOpen={createOpen}
+        setCreateOpen={setCreateOpen}
+      />
+
+      {/* {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
@@ -127,7 +141,7 @@ const App = () => {
         />
       ) : accountOpen ? (
         <Account />
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

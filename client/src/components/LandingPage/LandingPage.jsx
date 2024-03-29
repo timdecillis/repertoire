@@ -20,6 +20,7 @@ const LandingPage = ({
   return (
     <div className="landing">
       <Link
+        to="/signin"
         style={{
           backgroundColor: "darkcyan",
           color: "whitesmoke",

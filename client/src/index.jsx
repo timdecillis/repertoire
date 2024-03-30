@@ -7,13 +7,14 @@ import {
   Link,
 } from "react-router-dom";
 
+import LandingPage from './components/LandingPage/LandingPage.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
+        <LandingPage />
       </div>
     ),
   },
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     path: "about",
     element: <div>About</div>,
   },
+
 ]);
 
 createRoot(document.getElementById("root")).render(

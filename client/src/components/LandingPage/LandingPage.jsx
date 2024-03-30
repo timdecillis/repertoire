@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Routes from '../../Routes.js';
+import Routes from "../../Routes.js";
 import HomeButtons from "../HomeButtons/HomeButtons.jsx";
 import SignIn from "../SignIn/SignIn.jsx";
 import CreateUser from "../CreateUser/CreateUser.jsx";
@@ -20,21 +20,23 @@ const LandingPage = ({
 }) => {
   return (
     <div className="landing">
-      <Link
-        to="/signin"
-        style={{
-          backgroundColor: "darkcyan",
-          color: "whitesmoke",
-          marginBottom: ".7em",
-          borderStyle: "solid",
-          borderWidth: ".1em",
-        }}
-        className="input"
-        type="submit"
-        value="Log In"
-      >
-        Log In
-      </Link>
+      <Routes>
+        <Link
+          to="/signin"
+          style={{
+            backgroundColor: "darkcyan",
+            color: "whitesmoke",
+            marginBottom: ".7em",
+            borderStyle: "solid",
+            borderWidth: ".1em",
+          }}
+          className="input"
+          type="submit"
+          value="Log In"
+        >
+          Log In
+        </Link>
+      </Routes>
 
       {/* {createOpen ? (
         <CreateUser

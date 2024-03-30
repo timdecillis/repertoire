@@ -7,28 +7,27 @@ import {
   Link,
 } from "react-router-dom";
 
-import LandingPage from './components/LandingPage/LandingPage.jsx';
+import App from "./components/App/App.jsx";
+import SignIn from "./components/SignIn/SignIn.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <LandingPage />
+        <App />
       </div>
     ),
   },
   {
-    path: "about",
-    element: <div>About</div>,
+    path: "signin",
+    element: <SignIn />,
   },
-
 ]);
 
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
-
 
 // import { render, createRoot } from "react-dom/client";
 // import React from "react";

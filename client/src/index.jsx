@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="container">
         <Header />
         <App />
       </div>
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {
     path: "signin",
     element: (
-      <div>
+      <div className="container">
         <Header />
         <SignIn />
       </div>

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="banner">
       <div className="header">Repertoire</div>
-      {signedIn && (
+      {/* {signedIn && (
         <div>
           <span onClick={handleAccount} className="sign-out-button">
             Account
@@ -13,7 +13,7 @@ const Header = () => {
             Sign Out
           </span>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

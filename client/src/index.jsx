@@ -23,7 +23,12 @@ const router = createBrowserRouter([
   },
   {
     path: "signin",
-    element: <SignIn />,
+    element: (
+      <div>
+        <Header />
+        <SignIn />
+      </div>
+    ),
   },
 ]);
 

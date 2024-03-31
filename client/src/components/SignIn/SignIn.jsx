@@ -50,6 +50,7 @@ const SignIn = ({
       setSignInOpen(false);
       setSignedIn(true);
       setSongs(data.songs);
+      history.push('/songlist');
     });
   };
 

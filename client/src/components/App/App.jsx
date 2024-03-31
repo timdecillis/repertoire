@@ -67,19 +67,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="banner">
-        <div className="header">Repertoire</div>
-        {signedIn && (
-          <div>
-            <span onClick={handleAccount} className="sign-out-button">
-              Account
-            </span>
-            <span onClick={handleSignOut} className="sign-out-button">
-              Sign Out
-            </span>
-          </div>
-        )}
-      </div>
+
 
       <LandingPage
         setSignedIn={setSignedIn}

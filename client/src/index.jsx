@@ -9,6 +9,7 @@ import {
 
 import App from "./components/App/App.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
+import Header from "./components/Header/Header.jsx";
 
 const router = createBrowserRouter([
   {

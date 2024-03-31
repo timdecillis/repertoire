@@ -30,6 +30,15 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+  {
+    path: "songlist",
+    element: (
+      <div>
+        <Header />
+        <SongList />
+      </div>
+    ),
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

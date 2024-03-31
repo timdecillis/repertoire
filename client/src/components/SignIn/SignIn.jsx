@@ -13,6 +13,7 @@ const SignIn = ({
   setCreateOpen,
   setSongs,
 }) => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
@@ -14,6 +14,7 @@ const SignIn = ({
   setSongs,
 }) => {
   const history = useHistory();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
@@ -50,7 +51,7 @@ const SignIn = ({
       setSignInOpen(false);
       setSignedIn(true);
       setSongs(data.songs);
-      history.push('/songlist');
+      // history.push('/songlist');
     });
   };
 

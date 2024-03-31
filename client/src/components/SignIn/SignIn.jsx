@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
@@ -13,7 +13,7 @@ const SignIn = ({
   setCreateOpen,
   setSongs,
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,7 +51,7 @@ const SignIn = ({
       setSignInOpen(false);
       setSignedIn(true);
       setSongs(data.songs);
-      // history.push('/songlist');
+      navigate('/songlist');
     });
   };
 

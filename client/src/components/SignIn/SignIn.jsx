@@ -34,7 +34,7 @@ const SignIn = ({
       setErrorOpen(false);
     }, 1500);
   };
-// comment
+
   const handleSignIn = (e) => {
     e.preventDefault();
     if (!email) {

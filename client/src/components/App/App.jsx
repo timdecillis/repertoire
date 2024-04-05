@@ -54,8 +54,6 @@ const App = () => {
     });
   };
 
-  //
-
   const handleSignOut = () => {
     setSignedIn(false);
     setAuthUser(null);

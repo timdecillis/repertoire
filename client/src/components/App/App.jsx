@@ -33,8 +33,6 @@ const App = () => {
     setChoices([]);
   };
 
-  //
-
   const handleSearch = (band, instrument, difficulty) => {
     if (!band) {
       setErrorOpen(true);

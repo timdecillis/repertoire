@@ -67,21 +67,13 @@ const App = () => {
 
   return (
     <div className="container">
-
-
-      <LandingPage
-        setSignedIn={setSignedIn}
-        email={email}
-        setSongs={setSongs}
-        setAuthUser={setAuthUser}
-        authUser={authUser}
-        signInOpen={signInOpen}
-        oneOpen={oneOpen}
-        setOneOpen={setOneOpen}
-        setSignInOpen={setSignInOpen}
-        createOpen={createOpen}
-        setCreateOpen={setCreateOpen}
-      />
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          {/* Additional routes */}
+        </Switch>
+      </Router>
 
       {/* {!signedIn && (
         <LandingPage

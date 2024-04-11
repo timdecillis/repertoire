@@ -125,10 +125,9 @@ const SignIn = ({
             textDecoration: "underline",
             fontSize: ".7em",
             cursor: "pointer",
+            color:"black"
           }}
           className="input"
-          type="submit"
-          value="Create Account"
         >
           Create account
         </Link>

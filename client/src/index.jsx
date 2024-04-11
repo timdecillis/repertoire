@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -7,11 +7,15 @@ import {
   Link,
 } from "react-router-dom";
 
-import App from "./components/App/App.jsx";
+// import App from "./components/App/App.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import Header from "./components/Header/Header.jsx";
 import SongList from "./components/SongList/SongList.jsx";
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
+
+const App = () => {
+  const [songs, setSongs] = useState([]);
+};
 
 const router = createBrowserRouter([
   {
@@ -28,7 +32,7 @@ const router = createBrowserRouter([
     element: (
       <div className="landing">
         <Header />
-        <SignIn />
+        <SignIn setSongs={setSongs} />
       </div>
     ),
   },

@@ -47,9 +47,9 @@ const SignIn = ({
       if (data === "User not found") return handleError(errors.noUser);
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
-      setAuthUser(email);
-      setSignInOpen(false);
-      setSignedIn(true);
+      // setAuthUser(email);
+      // setSignInOpen(false);
+      // setSignedIn(true);
       setSongs(data.songs);
       navigate("/songlist");
     });

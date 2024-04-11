@@ -7,7 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 
-// import App from "./components/App/App.jsx";
+import App from "./components/App/App.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import Header from "./components/Header/Header.jsx";
 import SongList from "./components/SongList/SongList.jsx";
@@ -20,33 +20,6 @@ const router = createBrowserRouter([
       <div>
         <Header />
         <App />
-      </div>
-    ),
-  },
-  {
-    path: "signin",
-    element: (
-      <div className="landing">
-        <Header />
-        <SignIn setSongs={setSongs} />
-      </div>
-    ),
-  },
-  {
-    path: "songlist",
-    element: (
-      <div>
-        <Header />
-        <SongList />
-      </div>
-    ),
-  },
-  {
-    path: "create-account",
-    element: (
-      <div className="landing">
-        <Header />
-        <CreateUser />
       </div>
     ),
   },

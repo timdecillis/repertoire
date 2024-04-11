@@ -74,7 +74,14 @@ const App = () => {
         </Switch>
       </Router>
 
-      {/* {!signedIn && (
+
+    </div>
+  );
+};
+
+export default App;
+
+ /* {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
@@ -120,9 +127,4 @@ const App = () => {
         />
       ) : accountOpen ? (
         <Account />
-      ) : null} */}
-    </div>
-  );
-};
-
-export default App;
+      ) : null} */

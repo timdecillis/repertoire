@@ -121,11 +121,10 @@ const SignIn = ({
         <Link
           to="/create-account"
           style={{
-            backgroundColor: "darkcyan",
-            color: "whitesmoke",
-            marginBottom: ".7em",
-            borderStyle: "solid",
-            borderWidth: ".1em",
+            textAlign: "center",
+            textDecoration: "underline",
+            fontSize: ".7em",
+            cursor: "pointer",
           }}
           className="input"
           type="submit"

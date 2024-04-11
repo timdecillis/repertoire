@@ -79,6 +79,7 @@ const CreateUser = ({
             textDecoration: "underline",
             fontSize: ".7em",
             cursor: "pointer",
+            color: "black"
           }}
         >
           Back to Log In

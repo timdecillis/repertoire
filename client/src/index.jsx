@@ -40,6 +40,15 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+  {
+    path: "create-account",
+    element: (
+      <div>
+        <Header />
+        <SongList />
+      </div>
+    ),
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

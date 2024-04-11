@@ -70,9 +70,7 @@ const App = () => {
     <div className="container">
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <div>hello</div>
-          {/* Additional routes */}
+          <Route path="/" exact component={LandingPage} />
         </Switch>
       </Router>
 

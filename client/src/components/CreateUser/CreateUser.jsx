@@ -72,7 +72,7 @@ const CreateUser = ({
         />
         <Link
           // onClick={handleBack}
-          to="signin"
+          to="/signin"
           className="input"
           style={{
             textAlign: "center",

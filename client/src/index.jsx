@@ -11,6 +11,7 @@ import App from "./components/App/App.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import Header from "./components/Header/Header.jsx";
 import SongList from "./components/SongList/SongList.jsx";
+import CreateUser from "./components/CreateUser/CreateUser.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Header />
-        <SongList />
+        <CreateUser />
       </div>
     ),
   },

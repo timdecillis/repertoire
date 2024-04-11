@@ -73,15 +73,13 @@ const App = () => {
           <Route path="/" exact component={LandingPage} />
         </Switch>
       </Router>
-
-
     </div>
   );
 };
 
 export default App;
 
- /* {!signedIn && (
+/* {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}

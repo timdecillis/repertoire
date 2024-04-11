@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 
 import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
@@ -51,7 +51,7 @@ const SignIn = ({
       setSignInOpen(false);
       setSignedIn(true);
       setSongs(data.songs);
-      navigate('/songlist');
+      navigate("/songlist");
     });
   };
 
@@ -106,7 +106,7 @@ const SignIn = ({
         >
           Not a member?
         </div>
-        <span
+        {/* <span
           onClick={handleOpenCreate}
           className="input"
           style={{
@@ -117,7 +117,22 @@ const SignIn = ({
           }}
         >
           Create account
-        </span>
+        </span> */}
+        <Link
+          to="/create-account"
+          style={{
+            backgroundColor: "darkcyan",
+            color: "whitesmoke",
+            marginBottom: ".7em",
+            borderStyle: "solid",
+            borderWidth: ".1em",
+          }}
+          className="input"
+          type="submit"
+          value="Create Account"
+        >
+          Create account
+        </Link>
       </div>
     </form>
   );

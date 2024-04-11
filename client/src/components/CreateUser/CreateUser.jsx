@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createUser } from "../../lib.js";
+import { Link } from "react-router-dom";
 
 import Button from "../Button/Button.jsx";
 
@@ -69,8 +70,9 @@ const CreateUser = ({
           type="submit"
           value="Submit"
         />
-        <span
-          onClick={handleBack}
+        <Link
+          // onClick={handleBack}
+          to="signin"
           className="input"
           style={{
             textAlign: "center",
@@ -80,7 +82,7 @@ const CreateUser = ({
           }}
         >
           Back to Log In
-        </span>
+        </Link>
         {createErrorOpen && (
           <div style={{ textAlign: "center" }}>User already exists!</div>
         )}

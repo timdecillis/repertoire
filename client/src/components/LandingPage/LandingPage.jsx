@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import HomeButtons from "../HomeButtons/HomeButtons.jsx";
 import SignIn from "../SignIn/SignIn.jsx";
@@ -19,7 +18,7 @@ const LandingPage = ({
 }) => {
   return (
     <div className="landing">
-      {/* <Link
+      <Link
         to="/signin"
         style={{
           backgroundColor: "darkcyan",
@@ -54,7 +53,7 @@ const LandingPage = ({
           setSignInOpen={setSignInOpen}
           setCreateOpen={setCreateOpen}
         />
-      )} */}
+      )}
 
       <img
         className="painting"

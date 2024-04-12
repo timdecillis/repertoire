@@ -12,7 +12,6 @@ const SignIn = ({
   setCreateOpen,
   setSongs,
 }) => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
@@ -103,7 +102,7 @@ const SignIn = ({
         >
           Not a member?
         </div>
-        {/* <span
+        <span
           onClick={handleOpenCreate}
           className="input"
           style={{
@@ -112,18 +111,6 @@ const SignIn = ({
             fontSize: ".7em",
             cursor: "pointer",
           }}
-        >
-          Create account
-        </span> */}
-        <span
-          style={{
-            textAlign: "center",
-            textDecoration: "underline",
-            fontSize: ".7em",
-            cursor: "pointer",
-            color:"black"
-          }}
-          className="input"
         >
           Create account
         </span>

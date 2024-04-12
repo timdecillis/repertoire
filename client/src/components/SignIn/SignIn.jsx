@@ -45,11 +45,10 @@ const SignIn = ({
       if (data === "User not found") return handleError(errors.noUser);
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
-      // setAuthUser(email);
-      // setSignInOpen(false);
-      // setSignedIn(true);
+      setAuthUser(email);
+      setSignInOpen(false);
+      setSignedIn(true);
       setSongs(data.songs);
-      navigate("/songlist");
     });
   };
 
@@ -116,8 +115,7 @@ const SignIn = ({
         >
           Create account
         </span> */}
-        <Link
-          to="/create-account"
+        <span
           style={{
             textAlign: "center",
             textDecoration: "underline",
@@ -128,7 +126,7 @@ const SignIn = ({
           className="input"
         >
           Create account
-        </Link>
+        </span>
       </div>
     </form>
   );

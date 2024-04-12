@@ -66,12 +66,9 @@ const App = () => {
     setDashOpen(false);
   };
 
-  return <div className="container"></div>;
-};
-
-export default App;
-
-/* {!signedIn && (
+  return (
+    <div className="container">
+      {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
@@ -117,4 +114,9 @@ export default App;
         />
       ) : accountOpen ? (
         <Account />
-      ) : null} */
+      ) : null}
+    </div>
+  );
+};
+
+export default App;

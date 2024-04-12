@@ -66,15 +66,7 @@ const App = () => {
     setDashOpen(false);
   };
 
-  return (
-    <Router>
-      <div className="container">
-        <Switch>
-          <Route path="/" exact component={LandingPage} />
-        </Switch>
-      </div>
-    </Router>
-  );
+  return <div className="container"></div>;
 };
 
 export default App;

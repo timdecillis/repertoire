@@ -67,13 +67,13 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <Router>
+    <Router>
+      <div className="container">
         <Switch>
           <Route path="/" exact component={LandingPage} />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };
 

@@ -29,11 +29,22 @@
 //   <RouterProvider router={router} />
 // );
 
-import { render, createRoot } from "react-dom/client";
-import React from "react";
-import App from "./components/App/App.jsx";
-import { BrowserRouter } from "react-router-dom";
+// import { render, createRoot } from "react-dom/client";
+// import React from "react";
+// import App from "./components/App/App.jsx";
+// import { BrowserRouter } from "react-router-dom";
 
-const domNode = document.getElementById("root");
-const root = createRoot(domNode);
-root.render(<App />);
+// const domNode = document.getElementById("root");
+// const root = createRoot(domNode);
+// root.render(<App />);
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from "./components/App/App.jsx";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

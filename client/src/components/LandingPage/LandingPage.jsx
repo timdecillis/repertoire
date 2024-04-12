@@ -18,22 +18,6 @@ const LandingPage = ({
 }) => {
   return (
     <div className="landing">
-      <Link
-        to="/signin"
-        style={{
-          backgroundColor: "darkcyan",
-          color: "whitesmoke",
-          marginBottom: ".7em",
-          borderStyle: "solid",
-          borderWidth: ".1em",
-        }}
-        className="input"
-        type="submit"
-        value="Log In"
-      >
-        Log In
-      </Link>
-
       {createOpen ? (
         <CreateUser
           setAuthUser={setAuthUser}

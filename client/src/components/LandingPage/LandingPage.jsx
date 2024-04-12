@@ -19,7 +19,7 @@ const LandingPage = ({
 }) => {
   return (
     <div className="landing">
-      <Link
+      {/* <Link
         to="/signin"
         style={{
           backgroundColor: "darkcyan",
@@ -35,7 +35,7 @@ const LandingPage = ({
         Log In
       </Link>
 
-      {/* {createOpen ? (
+      {createOpen ? (
         <CreateUser
           setAuthUser={setAuthUser}
           setCreateOpen={setCreateOpen}

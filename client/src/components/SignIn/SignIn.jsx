@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 
 import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
@@ -13,7 +12,6 @@ const SignIn = ({
   setCreateOpen,
   setSongs,
 }) => {
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

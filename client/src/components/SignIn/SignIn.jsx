@@ -29,7 +29,7 @@ const SignIn = ({
     setError(error);
     setTimeout(() => {
       setErrorOpen(false);
-    }, 1000);
+    }, 1400);
   };
 
   const handleSignIn = (e) => {

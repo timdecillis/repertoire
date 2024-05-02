@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
@@ -102,7 +103,8 @@ const SignIn = ({
         >
           Not a member?
         </div>
-        <span
+        <Link
+          to="/create"
           onClick={handleOpenCreate}
           className="input"
           style={{
@@ -113,7 +115,7 @@ const SignIn = ({
           }}
         >
           Create account
-        </span>
+        </Link>
       </div>
     </form>
   );

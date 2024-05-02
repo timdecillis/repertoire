@@ -8,6 +8,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <div>This is an error</div>,
+    children: []
   },
 ]);
 

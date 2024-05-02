@@ -7,6 +7,7 @@ import HomeButtons from "../HomeButtons/HomeButtons.jsx";
 import LandingPage from "../LandingPage/LandingPage.jsx";
 import Account from "../Account/Account.jsx";
 import { searchSongs } from "../../lib.js";
+import { Link } from "react-router-dom";
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -67,7 +68,71 @@ const App = () => {
 
   return (
     <div className="container">
-      {!signedIn && (
+      <div className="landing">
+        <form className="sign-in">
+          <div className="inputs">
+            <div className="first-input" htmlFor="email">
+              Account Login
+            </div>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email"
+              className="input"
+              id="email"
+              type="text"
+              name="email"
+            />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="password"
+              className="input"
+              id="password"
+              type="password"
+              name="password"
+            />
+            <input
+              style={{
+                backgroundColor: "darkcyan",
+                color: "whitesmoke",
+                marginBottom: ".7em",
+                borderStyle: "solid",
+                borderWidth: ".1em",
+              }}
+              className="input"
+              type="submit"
+              value="Log In"
+            />
+            {errorOpen && <Error error={error} />}
+
+            <div
+              style={{
+                textAlign: "center",
+                margin: 0,
+                padding: 0,
+                fontSize: ".7em",
+              }}
+              className="input"
+            >
+              Not a member?
+            </div>
+            <Link
+              to={`create`}
+              // onClick={handleOpenCreate}
+              className="input"
+              style={{
+                textAlign: "center",
+                textDecoration: "underline",
+                fontSize: ".7em",
+                cursor: "pointer",
+                color: "black",
+              }}
+            >
+              Create account
+            </Link>
+          </div>
+        </form>
+      </div>
+      {/* {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}
           email={email}
@@ -113,7 +178,7 @@ const App = () => {
         />
       ) : accountOpen ? (
         <Account />
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

@@ -105,13 +105,14 @@ const SignIn = ({
         </div>
         <Link
           to="/create"
-          onClick={handleOpenCreate}
+          // onClick={handleOpenCreate}
           className="input"
           style={{
             textAlign: "center",
             textDecoration: "underline",
             fontSize: ".7em",
             cursor: "pointer",
+            color: "black"
           }}
         >
           Create account

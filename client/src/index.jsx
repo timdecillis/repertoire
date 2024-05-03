@@ -11,8 +11,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <Header />
-
+        <NewApp />
       </>
     ),
     errorElement: <div>This is an error</div>,

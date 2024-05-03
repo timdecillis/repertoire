@@ -7,7 +7,7 @@ import HomeButtons from "../HomeButtons/HomeButtons.jsx";
 import LandingPage from "../LandingPage/LandingPage.jsx";
 import Account from "../Account/Account.jsx";
 import { searchSongs } from "../../lib.js";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -132,6 +132,7 @@ const App = () => {
           </div>
         </form>
       </div>
+      <Outlet />
       {/* {!signedIn && (
         <LandingPage
           setSignedIn={setSignedIn}

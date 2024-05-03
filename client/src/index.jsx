@@ -24,10 +24,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/create",
-    element: <CreateUser />,
-  },
 ]);
 
 createRoot(document.getElementById("root")).render(

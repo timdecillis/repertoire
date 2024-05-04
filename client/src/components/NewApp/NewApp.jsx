@@ -10,7 +10,6 @@ const NewApp = () => {
           <div className="header">Repertoire</div>
         </div>
         <SignIn />
-
       </div>
     </div>
   );

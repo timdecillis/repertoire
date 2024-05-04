@@ -57,68 +57,75 @@ const SignIn = ({
   };
 
   return (
-    <form onSubmit={handleSignIn} className="sign-in">
-      <div className="inputs">
-        <div className="first-input" htmlFor="email">
-          Account Login
-        </div>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email"
-          className="input"
-          id="email"
-          type="text"
-          name="email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
-          className="input"
-          id="password"
-          type="password"
-          name="password"
-        />
-        <input
-          style={{
-            backgroundColor: "darkcyan",
-            color: "whitesmoke",
-            marginBottom: ".7em",
-            borderStyle: "solid",
-            borderWidth: ".1em",
-          }}
-          className="input"
-          type="submit"
-          value="Log In"
-        />
-        {errorOpen && <Error error={error} />}
+    <div>
+      <form onSubmit={handleSignIn} className="sign-in">
+        <div className="inputs">
+          <div className="first-input" htmlFor="email">
+            Account Login
+          </div>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="email"
+            className="input"
+            id="email"
+            type="text"
+            name="email"
+          />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+            className="input"
+            id="password"
+            type="password"
+            name="password"
+          />
+          <input
+            style={{
+              backgroundColor: "darkcyan",
+              color: "whitesmoke",
+              marginBottom: ".7em",
+              borderStyle: "solid",
+              borderWidth: ".1em",
+            }}
+            className="input"
+            type="submit"
+            value="Log In"
+          />
+          {errorOpen && <Error error={error} />}
 
-        <div
-          style={{
-            textAlign: "center",
-            margin: 0,
-            padding: 0,
-            fontSize: ".7em",
-          }}
-          className="input"
-        >
-          Not a member?
+          <div
+            style={{
+              textAlign: "center",
+              margin: 0,
+              padding: 0,
+              fontSize: ".7em",
+            }}
+            className="input"
+          >
+            Not a member?
+          </div>
+          <Link
+            to="/create"
+            // onClick={handleOpenCreate}
+            className="input"
+            style={{
+              textAlign: "center",
+              textDecoration: "underline",
+              fontSize: ".7em",
+              cursor: "pointer",
+              color: "black",
+            }}
+          >
+            Create account
+          </Link>
         </div>
-        <Link
-          to="/create"
-          // onClick={handleOpenCreate}
-          className="input"
-          style={{
-            textAlign: "center",
-            textDecoration: "underline",
-            fontSize: ".7em",
-            cursor: "pointer",
-            color: "black",
-          }}
-        >
-          Create account
-        </Link>
-      </div>
-    </form>
+      </form>
+      <img
+        className="painting"
+        src="https://media.istockphoto.com/id/1220009855/vector/a-young-man-playing-guitar-at-home-guitarist-musician-is-sitting-in-quarantine-alone-flat.jpg?s=612x612&w=0&k=20&c=p9bINE_TxSd4G4VRkvaHffh5vZjUdVUQvXGcqBlDrSs="
+        alt="a man playing guitar with his cat"
+      ></img>
+    </div>
   );
 };
 

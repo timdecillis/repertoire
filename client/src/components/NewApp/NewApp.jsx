@@ -9,7 +9,7 @@ const NewApp = () => {
         <div className="banner">
           <div className="header">Repertoire</div>
         </div>
-        <SignIn />
+        <Outlet/>
       </div>
     </div>
   );

@@ -15,7 +15,10 @@ const router = createBrowserRouter([
       </>
     ),
     errorElement: <div>This is an error</div>,
-    children: [{ index: true, element: <SignIn /> }],
+    children: [
+      { index: true, element: <SignIn /> },
+      { path: "create", element: <CreateUser /> },
+    ],
   },
 ]);
 

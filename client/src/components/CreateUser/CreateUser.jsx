@@ -7,7 +7,6 @@ import Button from "../Button/Button.jsx";
 const CreateUser = ({
   setAuthUser,
   setSignedIn,
-  createOpen,
   setSignInOpen,
 }) => {
   const [email, setEmail] = useState("");

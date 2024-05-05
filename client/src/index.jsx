@@ -1,9 +1,7 @@
 import { render, createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./components/App/App.jsx";
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
-import Header from "./components/Header/Header.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
 
 const router = createBrowserRouter([
@@ -18,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <SignIn /> },
       { path: "create", element: <CreateUser /> },
+      {path: " home", element: <div>Welcome!</div>}
     ],
   },
 ]);

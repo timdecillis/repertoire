@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       </>
     ),
     errorElement: <div>This is an error</div>,
-    children: [{ index: true, element: <div>foobar</div> }],
+    children: [{ index: true, element: <SignIn /> }],
   },
 ]);
 

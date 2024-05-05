@@ -8,7 +8,6 @@ const CreateUser = ({
   setAuthUser,
   setSignedIn,
   createOpen,
-  setCreateOpen,
   setSignInOpen,
 }) => {
   const [email, setEmail] = useState("");
@@ -25,15 +24,10 @@ const CreateUser = ({
         }, 1500);
         return;
       }
-      setCreateOpen(false);
       setSignedIn(true);
       setAuthUser(email);
       setSignInOpen(false);
     });
-  };
-
-  const handleBack = () => {
-    setCreateOpen(false);
   };
 
   return (

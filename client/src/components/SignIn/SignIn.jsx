@@ -105,7 +105,7 @@ const SignIn = ({
             Not a member?
           </div>
           <Link
-            to="/create"
+            to="create"
             // onClick={handleOpenCreate}
             className="input"
             style={{

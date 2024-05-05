@@ -7,7 +7,6 @@ import Button from "../Button/Button.jsx";
 const CreateUser = ({
   setAuthUser,
   setSignedIn,
-  setSignInOpen,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +24,6 @@ const CreateUser = ({
       }
       setSignedIn(true);
       setAuthUser(email);
-      setSignInOpen(false);
     });
   };
 

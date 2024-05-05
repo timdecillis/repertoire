@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createUser } from "../../lib.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Button from "../Button/Button.jsx";
 
@@ -12,19 +12,22 @@ const CreateUser = ({
   const [password, setPassword] = useState("");
   const [createErrorOpen, setCreateErrorOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(email, password).then((res) => {
-      if (res.status === 200) {
-        setCreateErrorOpen(true);
-        setTimeout(() => {
-          setCreateErrorOpen(false);
-        }, 1500);
-        return;
-      }
-      setSignedIn(true);
-      setAuthUser(email);
-    });
+    navigate("/home");
+    // createUser(email, password).then((res) => {
+    //   if (res.status === 200) {
+    //     setCreateErrorOpen(true);
+    //     setTimeout(() => {
+    //       setCreateErrorOpen(false);
+    //     }, 1500);
+    //     return;
+    //   }
+    //   setSignedIn(true);
+    //   setAuthUser(email);
+    // });
   };
 
   return (
@@ -63,7 +66,6 @@ const CreateUser = ({
             value="Submit"
           />
           <Link
-            // onClick={handleBack}
             to="/"
             className="input"
             style={{

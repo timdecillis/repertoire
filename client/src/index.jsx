@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <SignIn /> },
       { path: "create", element: <CreateUser /> },
-      {path: " home", element: <div>Welcome!</div>}
     ],
   },
+  { path: "home", element: <div>Welcome!</div> },
 ]);
 
 createRoot(document.getElementById("root")).render(

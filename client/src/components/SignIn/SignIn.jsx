@@ -10,7 +10,6 @@ const SignIn = ({
   signInOpen,
   setAuthUser,
   authUser,
-  setCreateOpen,
   setSongs,
 }) => {
   const [email, setEmail] = useState("");
@@ -50,10 +49,6 @@ const SignIn = ({
       setSignedIn(true);
       setSongs(data.songs);
     });
-  };
-
-  const handleOpenCreate = () => {
-    setCreateOpen(true);
   };
 
   return (
@@ -106,7 +101,6 @@ const SignIn = ({
           </div>
           <Link
             to="create"
-            // onClick={handleOpenCreate}
             className="input"
             style={{
               textAlign: "center",

@@ -26,7 +26,7 @@ const SongList = ({
         <div className="your-song">Songbook</div>
         {songDuplicate && <div>Song already exists on list, skipping...</div>}
         <Link
-          onClick={() => setDashOpen(true)}
+          to="search"
           style={{
             textDecoration: "underline",
             cursor: "pointer",
@@ -36,6 +36,7 @@ const SongList = ({
           +Add Song
         </Link>
       </div>
+      <Outlet/>
 
       {/* {songs.length > 0 && (
         <div>

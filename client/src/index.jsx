@@ -20,10 +20,18 @@ const router = createBrowserRouter([
       { path: "create", element: <CreateUser /> },
     ],
   },
-  { path: "home", element: <div>
-    <Dashboard/>
-    <SongList/>
-  </div> },
+  {
+    path: "home",
+    element: (
+      <div>
+        <Dashboard />
+        <SongList />
+      </div>
+    ),
+    children: [
+      { path: "search", element: <div>Search</div>}
+    ],
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -36,7 +36,7 @@ const SongList = ({
         </span>
       </div>
 
-      {songs.length > 0 && (
+      {/* {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
             <SongCard
@@ -48,7 +48,7 @@ const SongList = ({
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -34,9 +34,7 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
     if (!password) return handleError(errors.password);
     createUser(email, password).then((res) => {
       if (res.status === 200) return handleError(errors.incorrect);
-
-      // setSignedIn(true);
-      // setAuthUser(email);
+      navigate(`/home/${email}/${password}`);
     });
   };
 

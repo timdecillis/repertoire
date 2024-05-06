@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
@@ -24,7 +25,7 @@ const SongList = ({
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
         {songDuplicate && <div>Song already exists on list, skipping...</div>}
-        <span
+        <Link
           onClick={() => setDashOpen(true)}
           style={{
             textDecoration: "underline",
@@ -33,7 +34,7 @@ const SongList = ({
           }}
         >
           +Add Song
-        </span>
+        </Link>
       </div>
 
       {/* {songs.length > 0 && (

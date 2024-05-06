@@ -53,7 +53,7 @@ const Dashboard = ({
         {/*
          */}
 
-        {loading ? (
+        {/* {loading ? (
           <div>Please wait a moment...</div>
         ) : errorOpen ? (
           <div>Please enter a band or artist</div>
@@ -68,7 +68,7 @@ const Dashboard = ({
             authUser={authUser}
             setDashOpen={setDashOpen}
           />
-        )}
+        )} */}
       </div>
     </>
   );

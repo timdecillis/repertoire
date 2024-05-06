@@ -22,6 +22,7 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
     e.preventDefault();
     createUser(email, password).then((res) => {
       if (res.status === 200) {
+        setError(errors.existing);
         setCreateErrorOpen(true);
         setTimeout(() => {
           setCreateErrorOpen(false);
@@ -82,7 +83,7 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
             Back to Log In
           </Link>
           {createErrorOpen && (
-            <div style={{ textAlign: "center" }}>User already exists!</div>
+            <div style={{ textAlign: "center" }}>{error}</div>
           )}
         </div>
       </form>

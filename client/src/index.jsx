@@ -4,7 +4,7 @@ import CreateUser from "./components/CreateUser/CreateUser.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
-import SongList from "./components/SongList/SongList.jsx";
+import SongList, { loader as songlistLoader } from "./components/SongList/SongList.jsx";
 import Search from "./components/Search/Search.jsx";
 
 const router = createBrowserRouter([
@@ -28,9 +28,8 @@ const router = createBrowserRouter([
         <SongList />
       </div>
     ),
-    children: [
-      { path: "search", element: <Dashboard/>}
-    ],
+    loader: songlistLoader,
+    children: [{ path: "search", element: <Dashboard /> }],
   },
 ]);
 

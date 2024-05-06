@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import SongList from "./components/SongList/SongList.jsx";
 
 const router = createBrowserRouter([
   {

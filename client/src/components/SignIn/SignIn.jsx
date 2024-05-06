@@ -14,6 +14,8 @@ const SignIn = ({
   const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   const errors = {
     email: "Please enter your email",
     password: "Please enter your password",
@@ -41,6 +43,7 @@ const SignIn = ({
       if (data === "User not found") return handleError(errors.noUser);
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
+      navigate("home");
       setAuthUser(email);
       setSongs(data.songs);
     });

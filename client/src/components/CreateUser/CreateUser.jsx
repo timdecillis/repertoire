@@ -13,24 +13,28 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
   const errors = {
     email: "Please enter your email",
     password: "Please enter your password",
-    existing: "User already exists!"
+    existing: "User already exists!",
   };
 
   const navigate = useNavigate();
 
+  const handleError = (error) => {
+    setErrorOpen(true);
+    setError(error);
+    setTimeout(() => {
+      setErrorOpen(false);
+    }, 1400);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email) return handleError(errors.email);
+    if (!password) return handleError(errors.password);
     createUser(email, password).then((res) => {
-      if (res.status === 200) {
-        setError(errors.existing);
-        setCreateErrorOpen(true);
-        setTimeout(() => {
-          setCreateErrorOpen(false);
-        }, 1500);
-        return;
-      }
-      setSignedIn(true);
-      setAuthUser(email);
+      if (res.status === 200) return handleError(errors.existing);
+
+      // setSignedIn(true);
+      // setAuthUser(email);
     });
   };
 

@@ -43,7 +43,7 @@ const SignIn = ({
       if (data === "User not found") return handleError(errors.noUser);
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
-      navigate("home");
+      navigate(`home/${email}/${password}`);
     });
   };
 

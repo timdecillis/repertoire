@@ -10,6 +10,12 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
   const [createErrorOpen, setCreateErrorOpen] = useState(false);
   const [error, setError] = useState(null);
 
+  const errors = {
+    email: "Please enter your email",
+    password: "Please enter your password",
+    existing: "User already exists!"
+  };
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {

@@ -3,17 +3,19 @@ import { createUser } from "../../lib.js";
 import { Link, useNavigate } from "react-router-dom";
 
 import Button from "../Button/Button.jsx";
+import Error from "../Error/Error.jsx";
 
 const CreateUser = ({ setAuthUser, setSignedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [createErrorOpen, setCreateErrorOpen] = useState(false);
   const [error, setError] = useState(null);
+  const [errorOpen, setErrorOpen] = useState(false);
 
   const errors = {
     email: "Please enter your email",
     password: "Please enter your password",
-    existing: "User already exists!",
+    incorrect: "Incorrect password",
   };
 
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
     if (!email) return handleError(errors.email);
     if (!password) return handleError(errors.password);
     createUser(email, password).then((res) => {
-      if (res.status === 200) return handleError(errors.existing);
+      if (res.status === 200) return handleError(errors.incorrect);
 
       // setSignedIn(true);
       // setAuthUser(email);
@@ -73,6 +75,7 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
             type="submit"
             value="Submit"
           />
+          {errorOpen && <Error error={error} />}
           <Link
             to="/"
             className="input"
@@ -86,9 +89,6 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
           >
             Back to Log In
           </Link>
-          {createErrorOpen && (
-            <div style={{ textAlign: "center" }}>{error}</div>
-          )}
         </div>
       </form>
       <img

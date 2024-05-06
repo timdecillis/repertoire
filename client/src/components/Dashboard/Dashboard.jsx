@@ -25,10 +25,6 @@ const Dashboard = ({
   const [difficulty, setDifficulty] = useState("");
   const [currentBand, setCurrentBand] = useState("");
 
-  if (!signedIn) {
-    return null;
-  }
-
   return (
     <>
       <div className="dashboard">

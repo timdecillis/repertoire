@@ -5,8 +5,6 @@ import { getSongs } from "../../lib.js";
 import Error from "../Error/Error.jsx";
 
 const SignIn = ({
-  setSignInOpen,
-  signInOpen,
   setAuthUser,
   authUser,
   setSongs,
@@ -44,7 +42,6 @@ const SignIn = ({
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
       setAuthUser(email);
-      setSignInOpen(false);
       setSongs(data.songs);
     });
   };

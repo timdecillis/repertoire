@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
@@ -25,6 +26,8 @@ const Dashboard = ({
   const [difficulty, setDifficulty] = useState("");
   const [currentBand, setCurrentBand] = useState("");
 
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="dashboard">
@@ -46,7 +49,7 @@ const Dashboard = ({
             setCurrentBand={setCurrentBand}
           />
         </form>
-        <button className="back-button" onClick={() => setDashOpen(false)}>
+        <button className="back-button" onClick={() => navigate(-1)}>
           Back
         </button>
 

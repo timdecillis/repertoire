@@ -1,27 +1,20 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
-import { getSongs} from "../../lib.js";
+import { getSongs } from "../../lib.js";
 import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
 
 export const loader = async ({ params }) => {
-  console.log('params:', params);
-  // const contact = await getContact(params.contactId);
-  // if (!contact) {
-  //   throw new Response("", {
-  //     status: 404,
-  //     statusText: "Not Found",
-  //   });
-  // }
-  // return { contact };
+  const songs = await getSongs(params.email, params.password);
+  const theseSongs = songs.data.songs;
+  return theseSongs;
 };
 
 const SongList = ({
   songDuplicate,
-  songs,
   setSongs,
   band,
   signedIn,
@@ -32,6 +25,10 @@ const SongList = ({
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
+
+  const songs = useLoaderData();
+
+  console.log("songs:", songs);
 
   return (
     <div className="songlist">

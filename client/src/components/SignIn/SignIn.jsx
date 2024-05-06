@@ -44,8 +44,6 @@ const SignIn = ({
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
       navigate("home");
-      setAuthUser(email);
-      setSongs(data.songs);
     });
   };
 

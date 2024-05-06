@@ -26,7 +26,6 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Dashboard />
-        <SongList />
       </div>
     ),
     children: [

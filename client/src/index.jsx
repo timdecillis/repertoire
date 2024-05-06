@@ -5,6 +5,7 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import SongList from "./components/SongList/SongList.jsx";
+import Search from "./components/Search/Search.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       </div>
     ),
     children: [
-      { path: "search", element: <div>Search</div>}
+      { path: "search", element: <Search/>}
     ],
   },
 ]);

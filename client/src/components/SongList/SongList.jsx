@@ -10,7 +10,7 @@ import SongCard from "../SongCard/SongCard.jsx";
 export const loader = async ({ params }) => {
   const songs = await getSongs(params.email, params.password);
   const theseSongs = songs.data.songs;
-  return theseSongs;
+  return theseSongs || [];
 };
 
 const SongList = ({
@@ -27,8 +27,6 @@ const SongList = ({
   const [draft, setDraft] = useState("");
 
   const songs = useLoaderData();
-
-  console.log("songs:", songs);
 
   return (
     <div className="songlist">
@@ -49,7 +47,7 @@ const SongList = ({
       </div>
       <Outlet />
 
-      {/* {songs.length > 0 && (
+      {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
             <SongCard
@@ -61,7 +59,7 @@ const SongList = ({
             />
           ))}
         </div>
-      )} */}
+      )}
     </div>
   );
 };

@@ -12,7 +12,6 @@ const Dashboard = ({
   loading,
   setChoices,
   setLoading,
-  handleSearch,
   choices,
   songs,
   setSongs,
@@ -23,7 +22,7 @@ const Dashboard = ({
   setDashOpen,
   errorOpen,
 }) => {
-  const [instrument, setInstrument] = useState("");
+  const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("");
   const [currentBand, setCurrentBand] = useState("");
 

@@ -11,6 +11,7 @@ const Instrument = ({ instrument, setInstrument }) => {
           name="instrument"
           value="guitar"
           className="radio"
+          defaultChecked
         ></input>
         <label className="radio-button" htmlFor="instrument">
           Guitar

@@ -10,6 +10,7 @@ const Choices = ({
   setChoices,
   authUser,
   band,
+  password
 }) => {
   const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const Choices = ({
           setSongDuplicate(false);
         }, 2000);
       }
-      navigate(-1);
+      navigate(`/home/${authUser}/${password}`);
     });
   };
 

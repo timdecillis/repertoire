@@ -84,6 +84,7 @@ const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
             choices={choices}
             band={currentBand}
             authUser={user}
+            password={password}
           />
         )}
       </div>

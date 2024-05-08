@@ -6,6 +6,7 @@ import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 import Error from "../Error/Error.jsx";
+import { searchSongs } from "../../lib.js";
 
 const Dashboard = ({
   setSongDuplicate,
@@ -25,7 +26,6 @@ const Dashboard = ({
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
-
 
   const handleSearch = (band, instrument, difficulty) => {
     if (!band) {
@@ -71,7 +71,7 @@ const Dashboard = ({
             setCurrentBand={setCurrentBand}
           />
         </form>
-        {errorOpen && <Error error="Please enter a band or artist"/>}
+        {errorOpen && <Error error="Please enter a band or artist" />}
         <button className="back-button" onClick={() => navigate(-1)}>
           Back
         </button>

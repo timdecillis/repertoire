@@ -11,9 +11,7 @@ import { searchSongs } from "../../lib.js";
 const Dashboard = ({
   setSongDuplicate,
   loading,
-  setChoices,
   setLoading,
-  choices,
   songs,
   setSongs,
   band,
@@ -26,6 +24,7 @@ const Dashboard = ({
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
+  const [choices, setChoices] = useState([]);
 
   const handleSearch = (band, instrument, difficulty) => {
     if (!band) {
@@ -75,9 +74,6 @@ const Dashboard = ({
         <button className="back-button" onClick={() => navigate(-1)}>
           Back
         </button>
-
-        {/*
-         */}
 
         {/* {loading ? (
           <div>Please wait a moment...</div>

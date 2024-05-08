@@ -24,7 +24,7 @@ const Dashboard = ({
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
-  const [errorOpen, seterrorOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
 
 
   const handleSearch = (band, instrument, difficulty) => {
@@ -71,6 +71,7 @@ const Dashboard = ({
             setCurrentBand={setCurrentBand}
           />
         </form>
+        {errorOpen && <Error error="Please enter a band or artist"/>}
         <button className="back-button" onClick={() => navigate(-1)}>
           Back
         </button>

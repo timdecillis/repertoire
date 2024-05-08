@@ -34,27 +34,6 @@ const App = () => {
     setChoices([]);
   };
 
-  const handleSearch = (band, instrument, difficulty) => {
-    if (!band) {
-      setErrorOpen(true);
-      return setTimeout(() => {
-        setErrorOpen(false);
-      }, 1500);
-    }
-
-    setLoading(true);
-    searchSongs(band, instrument, difficulty).then(({ data }) => {
-      if (data.songs[0] === "song 1") {
-        setLoading(false);
-        setChoices(["Your search did not match any results :("]);
-      } else {
-        setChoices(data.songs);
-        setBand(data.artist);
-        setLoading(false);
-      }
-    });
-  };
-
   const handleSignOut = () => {
     setSignedIn(false);
     setAuthUser(null);

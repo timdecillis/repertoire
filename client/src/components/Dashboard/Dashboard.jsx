@@ -7,6 +7,7 @@ import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 import { handleSearch } from "../../lib.js";
 
+
 const Dashboard = ({
   setSongDuplicate,
   loading,
@@ -26,6 +27,7 @@ const Dashboard = ({
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
 
+  console.log('search:', handleSearch)
   const navigate = useNavigate();
 
   return (

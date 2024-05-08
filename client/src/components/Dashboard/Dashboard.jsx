@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
 
 import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
@@ -27,6 +27,8 @@ const Dashboard = ({
   const [errorOpen, setErrorOpen] = useState(false);
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const user = useLoaderData();
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {
@@ -87,7 +89,7 @@ const Dashboard = ({
             choices={choices}
             setSongs={setSongs}
             band={currentBand}
-            authUser={authUser}
+            authUser={user}
           />
         )}
       </div>

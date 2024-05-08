@@ -8,7 +8,7 @@ import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
 
 export const loader = async ({ params }) => {
-  console.log('loading SongList');
+  console.log("loading SongList");
   const songs = await getSongs(params.email, params.password);
   const theseSongs = songs.data.songs;
   return theseSongs || [];
@@ -26,8 +26,6 @@ const SongList = ({
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
-
-  const songs = useLoaderData();
 
   return (
     <div className="songlist">

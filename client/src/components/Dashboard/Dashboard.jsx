@@ -20,11 +20,11 @@ const Dashboard = ({
   signedIn,
   authUser,
   setDashOpen,
-  errorOpen,
 }) => {
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
+  const [errorOpen, seterrorOpen] = useState(false);
 
 
   const handleSearch = (band, instrument, difficulty) => {

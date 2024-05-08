@@ -10,10 +10,6 @@ import { searchSongs } from "../../lib.js";
 
 const Dashboard = ({
   setSongDuplicate,
-  songs,
-  setSongs,
-  band,
-  setBand,
   signedIn,
   authUser,
   setDashOpen,
@@ -25,8 +21,8 @@ const Dashboard = ({
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleSearch = (band, instrument, difficulty) => {
-    if (!band) {
+  const handleSearch = (currentBand, instrument, difficulty) => {
+    if (!currentBand) {
       setErrorOpen(true);
       return setTimeout(() => {
         setErrorOpen(false);
@@ -34,13 +30,13 @@ const Dashboard = ({
     }
 
     setLoading(true);
-    searchSongs(band, instrument, difficulty).then(({ data }) => {
+    searchSongs(currentBand, instrument, difficulty).then(({ data }) => {
       if (data.songs[0] === "song 1") {
         setLoading(false);
         setChoices(["Your search did not match any results :("]);
       } else {
         setChoices(data.songs);
-        setBand(data.artist);
+        setCurrentBand(data.artist);
         setLoading(false);
       }
     });

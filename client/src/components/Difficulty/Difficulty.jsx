@@ -11,6 +11,7 @@ const Difficulty = ({ difficulty, setDifficulty }) => {
           name="difficulty"
           value="beginner"
           className="radio"
+          defaultChecked
         ></input>
         <label className="radio-button" htmlFor="difficulty">
           Beginner

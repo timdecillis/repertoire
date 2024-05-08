@@ -10,12 +10,10 @@ const Choices = ({
   setSongs,
   authUser,
   band,
-  setDashOpen,
 }) => {
 
   const handleChoice = () => {
     addSong(authUser, choice, band).then(({ data }) => {
-      setDashOpen(false);
       setChoices([]);
       if (data.length === songs.length) {
         setSongDuplicate(true);

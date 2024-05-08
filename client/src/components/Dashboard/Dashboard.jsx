@@ -83,7 +83,6 @@ const Dashboard = ({
             setSongs={setSongs}
             band={currentBand}
             authUser={authUser}
-            setDashOpen={setDashOpen}
           />
         )}
       </div>

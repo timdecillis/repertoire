@@ -18,7 +18,6 @@ const Dashboard = ({
   songs,
   setSongs,
   signedIn,
-  authUser,
   setDashOpen,
 }) => {
   const [instrument, setInstrument] = useState("guitar");

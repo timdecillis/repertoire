@@ -15,8 +15,8 @@ const Choices = ({
   const navigate = useNavigate();
 
   const handleChoice = (choice) => {
-    console.log("user:", authUser, "choice:", choice, "band:", band);
     addSong(authUser, choice, band).then(({ data }) => {
+      console.log('data', data);
       setChoices([]);
       if (data.length === songs.length) {
         setSongDuplicate(true);

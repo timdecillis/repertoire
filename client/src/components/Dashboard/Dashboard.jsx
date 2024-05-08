@@ -48,7 +48,6 @@ const Dashboard = ({
     });
   };
 
-  console.log('search:', handleSearch)
   const navigate = useNavigate();
 
   return (
@@ -58,7 +57,6 @@ const Dashboard = ({
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(currentBand, instrument, difficulty)
             handleSearch(currentBand, instrument, difficulty);
             setCurrentBand("");
           }}

@@ -8,6 +8,11 @@ import Choices from "../Choices/Choices.jsx";
 import Error from "../Error/Error.jsx";
 import { searchSongs } from "../../lib.js";
 
+export const loader = async ({ params }) => {
+  const user = params.email;
+  return user;
+};
+
 const Dashboard = ({
   setSongDuplicate,
   songs,

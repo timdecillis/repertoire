@@ -5,6 +5,7 @@ import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
+import Error from "../Error/Error.jsx";
 
 const Dashboard = ({
   setSongDuplicate,

@@ -10,8 +10,6 @@ import { searchSongs } from "../../lib.js";
 
 const Dashboard = ({
   setSongDuplicate,
-  loading,
-  setLoading,
   songs,
   setSongs,
   band,
@@ -25,6 +23,7 @@ const Dashboard = ({
   const [currentBand, setCurrentBand] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [choices, setChoices] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = (band, instrument, difficulty) => {
     if (!band) {

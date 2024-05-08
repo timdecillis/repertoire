@@ -14,7 +14,7 @@ const Choices = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleChoice = () => {
+  const handleChoice = (choice) => {
     addSong(authUser, choice, band).then(({ data }) => {
       setChoices([]);
       if (data.length === songs.length) {
@@ -24,6 +24,7 @@ const Choices = ({
         }, 2000);
       }
       setSongs(data);
+      navigate(-1);
     });
   };
 
@@ -32,7 +33,7 @@ const Choices = ({
       {choices.length > 0 && (
         <div>
           {choices.map((choice, i) => (
-            <div className="choice" onClick={handleChoice} key={i}>
+            <div className="choice" onClick={() => handleChoice(choice)} key={i}>
               {choice}
             </div>
           ))}

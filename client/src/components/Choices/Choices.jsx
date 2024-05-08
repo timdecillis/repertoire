@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { addSong } from "../../lib.js";
 
@@ -11,6 +12,7 @@ const Choices = ({
   authUser,
   band,
 }) => {
+  const navigate = useNavigate();
 
   const handleChoice = () => {
     addSong(authUser, choice, band).then(({ data }) => {
@@ -30,11 +32,7 @@ const Choices = ({
       {choices.length > 0 && (
         <div>
           {choices.map((choice, i) => (
-            <div
-              className="choice"
-              onClick={handleChoice}
-              key={i}
-            >
+            <div className="choice" onClick={handleChoice} key={i}>
               {choice}
             </div>
           ))}

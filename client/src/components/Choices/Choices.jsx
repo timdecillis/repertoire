@@ -12,6 +12,21 @@ const Choices = ({
   band,
   setDashOpen,
 }) => {
+
+  const handleChoice = () => {
+    addSong(authUser, choice, band).then(({ data }) => {
+      setDashOpen(false);
+      setChoices([]);
+      if (data.length === songs.length) {
+        setSongDuplicate(true);
+        return setTimeout(() => {
+          setSongDuplicate(false);
+        }, 2000);
+      }
+      setSongs(data);
+    });
+  };
+
   return (
     <div className="choices">
       {choices.length > 0 && (
@@ -19,19 +34,7 @@ const Choices = ({
           {choices.map((choice, i) => (
             <div
               className="choice"
-              onClick={() => {
-                addSong(authUser, choice, band).then(({ data }) => {
-                  setDashOpen(false);
-                  setChoices([]);
-                  if (data.length === songs.length) {
-                    setSongDuplicate(true);
-                    return setTimeout(() => {
-                      setSongDuplicate(false);
-                    }, 2000);
-                  }
-                  setSongs(data);
-                });
-              }}
+              onClick={handleChoice}
               key={i}
             >
               {choice}

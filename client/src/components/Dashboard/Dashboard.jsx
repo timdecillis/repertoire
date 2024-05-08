@@ -10,6 +10,8 @@ import { searchSongs } from "../../lib.js";
 
 const Dashboard = ({
   setSongDuplicate,
+  songs,
+  setSongs,
   signedIn,
   authUser,
   setDashOpen,
@@ -70,10 +72,8 @@ const Dashboard = ({
           Back
         </button>
 
-        {/* {loading ? (
+        {loading ? (
           <div>Please wait a moment...</div>
-        ) : errorOpen ? (
-          <div>Please enter a band or artist</div>
         ) : (
           <Choices
             songs={songs}
@@ -81,11 +81,11 @@ const Dashboard = ({
             setChoices={setChoices}
             choices={choices}
             setSongs={setSongs}
-            band={band}
+            band={currentBand}
             authUser={authUser}
             setDashOpen={setDashOpen}
           />
-        )} */}
+        )}
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
+import { handleSearch } from "../../lib.js";
 
 const Dashboard = ({
   setSongDuplicate,
@@ -35,6 +36,7 @@ const Dashboard = ({
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            console.log(currentBand, instrument, difficulty)
             handleSearch(currentBand, instrument, difficulty);
             setCurrentBand("");
           }}

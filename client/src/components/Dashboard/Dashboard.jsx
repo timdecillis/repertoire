@@ -6,20 +6,16 @@ import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 import Error from "../Error/Error.jsx";
-import { searchSongs } from "../../lib.js";
+import { searchSongs, getSongs } from "../../lib.js";
 
 export const loader = async ({ params }) => {
   const user = params.email;
-  return user;
+  const password = params.password;
+  const songs = await getSongs(user, password);
+  return { songs, user };
 };
 
-const Dashboard = ({
-  setSongDuplicate,
-  songs,
-  setSongs,
-  signedIn,
-  setDashOpen,
-}) => {
+const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
@@ -27,7 +23,7 @@ const Dashboard = ({
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const user = useLoaderData();
+  const {user, songs} = useLoaderData();
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {
@@ -86,7 +82,6 @@ const Dashboard = ({
             setSongDuplicate={setSongDuplicate}
             setChoices={setChoices}
             choices={choices}
-            setSongs={setSongs}
             band={currentBand}
             authUser={user}
           />

@@ -8,7 +8,6 @@ const Choices = ({
   setSongDuplicate,
   choices,
   setChoices,
-  setSongs,
   authUser,
   band,
 }) => {
@@ -16,7 +15,6 @@ const Choices = ({
 
   const handleChoice = (choice) => {
     addSong(authUser, choice, band).then(({ data }) => {
-      console.log('data', data);
       setChoices([]);
       if (data.length === songs.length) {
         setSongDuplicate(true);
@@ -24,7 +22,6 @@ const Choices = ({
           setSongDuplicate(false);
         }, 2000);
       }
-      setSongs(data);
       navigate(-1);
     });
   };

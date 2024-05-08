@@ -5,8 +5,6 @@ import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
-import { handleSearch } from "../../lib.js";
-
 
 const Dashboard = ({
   setSongDuplicate,
@@ -26,6 +24,28 @@ const Dashboard = ({
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
+
+
+  const handleSearch = (band, instrument, difficulty) => {
+    if (!band) {
+      setErrorOpen(true);
+      return setTimeout(() => {
+        setErrorOpen(false);
+      }, 1500);
+    }
+
+    setLoading(true);
+    searchSongs(band, instrument, difficulty).then(({ data }) => {
+      if (data.songs[0] === "song 1") {
+        setLoading(false);
+        setChoices(["Your search did not match any results :("]);
+      } else {
+        setChoices(data.songs);
+        setBand(data.artist);
+        setLoading(false);
+      }
+    });
+  };
 
   console.log('search:', handleSearch)
   const navigate = useNavigate();

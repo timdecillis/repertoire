@@ -12,10 +12,10 @@ import SongList, {
 } from "./components/SongList/SongList.jsx";
 import Search from "./components/Search/Search.jsx";
 
-const DataContext = createContext(null);
+export const DataContext = createContext(null);
 
 const DataProvider = ({ children }) => {
-  const [data, setData] = useState(null);
+  const [dupe, setDupe] = useState(false);
 
   return (
     <DataContext.Provider value={{ data, setData }}>

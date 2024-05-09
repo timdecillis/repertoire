@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 import { getSongs } from "../../lib.js";
@@ -6,6 +6,7 @@ import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
+import { DataContext } from "../../index.js";
 
 export const loader = async ({ params }) => {
   const user = params.email;
@@ -18,9 +19,9 @@ const SongList = ({ band, signedIn, authUser }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
-  const [dupe, setDupe] = useState(false);
 
-  const {songs, user} = useLoaderData();
+  const { songs, user } = useLoaderData();
+  const { dupe } = useContext(DataContext);
 
   return (
     <div className="songlist">
@@ -44,11 +45,7 @@ const SongList = ({ band, signedIn, authUser }) => {
       {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
-            <SongCard
-              authUser={authUser}
-              key={i}
-              song={song}
-            />
+            <SongCard authUser={authUser} key={i} song={song} />
           ))}
         </div>
       )}

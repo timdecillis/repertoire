@@ -7,7 +7,7 @@ import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 import Error from "../Error/Error.jsx";
 import { searchSongs, getSongs } from "../../lib.js";
-import { DataContext } from "../../index.jsx";
+import { DataContext } from "../../context.js";
 
 export const loader = async ({ params }) => {
   const user = params.email;

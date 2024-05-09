@@ -6,7 +6,7 @@ import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
-import { DataContext } from "../../index.jsx";
+import { DataContext } from "../../context.js";
 
 export const loader = async ({ params }) => {
   const user = params.email;

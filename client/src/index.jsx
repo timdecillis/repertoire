@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { render, createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
@@ -11,18 +12,7 @@ import SongList, {
   loader as songlistLoader,
 } from "./components/SongList/SongList.jsx";
 import Search from "./components/Search/Search.jsx";
-
-export const DataContext = createContext(null);
-
-const DataProvider = ({ children }) => {
-  const [dupe, setDupe] = useState(false);
-
-  return (
-    <DataContext.Provider value={{ dupe, setDupe }}>
-      {children}
-    </DataContext.Provider>
-  );
-};
+import { DataContext, DataProvider} from './context.js';
 
 const router = createBrowserRouter([
   {

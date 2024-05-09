@@ -39,7 +39,7 @@ const SongList = ({ band, signedIn, authUser }) => {
           +Add Song
         </Link>
       </div>
-      <Outlet />
+      <Outlet dupe={dupe} />
 
       {songs.length > 0 && (
         <div>

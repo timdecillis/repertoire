@@ -11,11 +11,12 @@ import { searchSongs, getSongs } from "../../lib.js";
 export const loader = async ({ params }) => {
   const user = params.email;
   const password = params.password;
-  const songs = await getSongs(user, password);
+  const data = await getSongs(params.email, params.password);
+  const songs = data.data.songs;
   return { songs, user, password };
 };
 
-const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
+const Dashboard = ({ dupe, signedIn, setDashOpen }) => {
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
@@ -24,6 +25,7 @@ const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
   const [loading, setLoading] = useState(false);
 
   const { user, songs, password } = useLoaderData();
+  console.log('user:', user, 'password:', password, 'songs:', songs);
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {
@@ -47,6 +49,8 @@ const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
   };
 
   const navigate = useNavigate();
+
+  console.log('dupr:', dupe);
 
   return (
     <>
@@ -79,7 +83,7 @@ const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
         ) : (
           <Choices
             songs={songs}
-            setSongDuplicate={setSongDuplicate}
+            setSongDuplicate={dupe}
             setChoices={setChoices}
             choices={choices}
             band={currentBand}

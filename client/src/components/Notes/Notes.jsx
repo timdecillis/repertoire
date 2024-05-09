@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { deleteSong, completeSong, handleNotes } from "../../lib.js";
 import Completed from "../Completed/Completed.jsx";
 import Draft from "../Draft/Draft.jsx";
+import { DataContext } from "../../context.js";
 
 const Notes = ({
   setDraftOpen,
   song,
-  authUser,
-  setSongs,
   handleSubmit,
   notes,
   setNotesInputOpen,
@@ -18,8 +17,10 @@ const Notes = ({
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
 
+  const {user, password, setSongs} = useContext(DataContext);
+
   const handleCompleted = () => {
-    completeSong(authUser, song.name, song.artist, song.completed).then(
+    completeSong(user, song.name, song.artist, song.completed).then(
       ({ data }) => {
         setSongs(data);
         setSuccess(true);
@@ -31,7 +32,7 @@ const Notes = ({
   };
 
   const handDeleted = () => {
-    deleteSong(authUser, song.name, song.artist).then(({ data }) => {
+    deleteSong(user, song.name, song.artist).then(({ data }) => {
       setDraftOpen(false);
       setSongs(data);
     });

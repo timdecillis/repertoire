@@ -14,10 +14,11 @@ export const loader = async ({ params }) => {
   return { songs: songs || [], user };
 };
 
-const SongList = ({ songDuplicate, band, signedIn, authUser }) => {
+const SongList = ({ band, signedIn, authUser }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
+  const [dupe, setDupe] = useState(false);
 
   const {songs, user} = useLoaderData();
 
@@ -44,7 +45,6 @@ const SongList = ({ songDuplicate, band, signedIn, authUser }) => {
         <div>
           {songs.map((song, i) => (
             <SongCard
-              setSongs={setSongs}
               authUser={authUser}
               key={i}
               song={song}

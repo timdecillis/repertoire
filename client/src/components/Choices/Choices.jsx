@@ -17,6 +17,7 @@ const Choices = ({
   const handleChoice = (choice) => {
     addSong(authUser, choice, band).then(({ data }) => {
       setChoices([]);
+      console.log("datalength:", data.length, 'songlength:', songs.length);
       if (data.length === songs.length) {
         setSongDuplicate(true);
         return setTimeout(() => {

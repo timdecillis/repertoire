@@ -12,7 +12,7 @@ export const loader = async ({ params }) => {
   const user = params.email;
   const password = params.password;
   const songs = await getSongs(user, password);
-  return { songs, user };
+  return { songs, user, password };
 };
 
 const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
@@ -23,7 +23,7 @@ const Dashboard = ({ setSongDuplicate, signedIn, setDashOpen }) => {
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const {user, songs} = useLoaderData();
+  const { user, songs, password } = useLoaderData();
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {

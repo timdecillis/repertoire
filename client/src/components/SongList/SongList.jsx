@@ -26,7 +26,7 @@ const SongList = ({ band, signedIn, authUser }) => {
     <div className="songlist">
       <div className="songlist-heading">
         <div className="your-song">Songbook</div>
-        {songDuplicate && <div>Song already exists on list, skipping...</div>}
+        {dupe && <div>Song already exists on list, skipping...</div>}
         <Link
           to="search"
           style={{

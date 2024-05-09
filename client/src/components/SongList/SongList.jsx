@@ -8,7 +8,6 @@ import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
 
 export const loader = async ({ params }) => {
-  console.log("loading SongList");
   const songs = await getSongs(params.email, params.password);
   const theseSongs = songs.data.songs;
   return theseSongs || [];

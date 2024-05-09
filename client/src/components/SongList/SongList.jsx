@@ -1,18 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 import SongCard from "../SongCard/SongCard.jsx";
 import { DataContext } from "../../context.js";
-
-export const loader = async ({ params }) => {
-  const user = params.email;
-  const data = await getSongs(params.email, params.password);
-  const songs = data.data.songs;
-  return { songs: songs || [], user };
-};
 
 const SongList = () => {
   const [notes, setNotes] = useState("");

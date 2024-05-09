@@ -1,23 +1,15 @@
 import React, { useState, useContext } from "react";
-import { useNavigate, useLoaderData } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Instrument from "../Instrument/Instrument.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";
 import Error from "../Error/Error.jsx";
-import { searchSongs, getSongs } from "../../lib.js";
+import { searchSongs } from "../../lib.js";
 import { DataContext } from "../../context.js";
 
-export const loader = async ({ params }) => {
-  const user = params.email;
-  const password = params.password;
-  const data = await getSongs(params.email, params.password);
-  const songs = data.data.songs;
-  return { songs, user, password };
-};
-
-const Dashboard = ({ signedIn, setDashOpen }) => {
+const Dashboard = () => {
   const [instrument, setInstrument] = useState("guitar");
   const [difficulty, setDifficulty] = useState("beginner");
   const [currentBand, setCurrentBand] = useState("");
@@ -25,9 +17,7 @@ const Dashboard = ({ signedIn, setDashOpen }) => {
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const { user, songs, password } = useLoaderData();
-
-  const { dupe, setDupe} = useContext(DataContext);
+  const { dupe, setDupe, user, songs, password} = useContext(DataContext);
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {

@@ -5,14 +5,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
 import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
-import Dashboard, {
-  loader as dashLoader,
-} from "./components/Dashboard/Dashboard.jsx";
-import SongList, {
-  loader as songlistLoader,
-} from "./components/SongList/SongList.jsx";
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import SongList from "./components/SongList/SongList.jsx";
 import Search from "./components/Search/Search.jsx";
-import { DataContext, DataProvider} from './context.js';
+import { DataContext, DataProvider } from "./context.js";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +27,7 @@ const router = createBrowserRouter([
   {
     path: "home/:email/:password",
     element: <SongList />,
-    loader: songlistLoader,
-    children: [{ path: "search", element: <Dashboard />, loader: dashLoader }],
+    children: [{ path: "search", element: <Dashboard /> }],
   },
 ]);
 

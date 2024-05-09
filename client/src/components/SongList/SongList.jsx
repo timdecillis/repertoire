@@ -9,21 +9,17 @@ import SongCard from "../SongCard/SongCard.jsx";
 
 export const loader = async ({ params }) => {
   const user = params.email;
-  const songs = await getSongs(params.email, params.password);
-  const theseSongs = songs.data.songs;
-  return theseSongs || [];
+  const data = await getSongs(params.email, params.password);
+  const songs = data.data.songs;
+  return { songs: songs || [], user };
 };
 
-const SongList = ({
-  songDuplicate,
-  setSongs,
-  band,
-  signedIn,
-  authUser,
-}) => {
+const SongList = ({ songDuplicate, band, signedIn, authUser }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
+
+  const {songs, user} = useLoaderData();
 
   return (
     <div className="songlist">

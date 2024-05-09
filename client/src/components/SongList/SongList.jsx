@@ -20,8 +20,6 @@ const SongList = ({
   band,
   signedIn,
   authUser,
-  dashOpen,
-  setDashOpen,
 }) => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
@@ -54,7 +52,6 @@ const SongList = ({
               authUser={authUser}
               key={i}
               song={song}
-              setDashOpen={setDashOpen}
             />
           ))}
         </div>

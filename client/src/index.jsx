@@ -1,4 +1,4 @@
-import { createContext, useState} from "react";
+import { createContext, useState } from "react";
 import { render, createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateUser from "./components/CreateUser/CreateUser.jsx";
@@ -11,6 +11,18 @@ import SongList, {
   loader as songlistLoader,
 } from "./components/SongList/SongList.jsx";
 import Search from "./components/Search/Search.jsx";
+
+const DataContext = createContext(null);
+
+const DataProvider = ({ children }) => {
+  const [data, setData] = useState(null);
+
+  return (
+    <DataContext.Provider value={{ data, setData }}>
+      {children}
+    </DataContext.Provider>
+  );
+};
 
 const router = createBrowserRouter([
   {

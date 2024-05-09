@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { getSongs } from "../../lib.js";
+import { DataContext } from "../../context.js";
 import Error from "../Error/Error.jsx";
 
-const SignIn = ({
-  setAuthUser,
-  authUser,
-  setSongs,
-}) => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [error, setError] = useState(null);
+
+  const { setUser, setUserPassword, setSongs } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -43,6 +42,8 @@ const SignIn = ({
       if (data === "User not found") return handleError(errors.noUser);
       if (data === "Incorrect password")
         return handleError(errors.wrongPassword);
+      setUser(email);
+      setUserPassword(password);
       navigate(`home/${email}/${password}`);
     });
   };

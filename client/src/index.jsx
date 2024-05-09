@@ -18,7 +18,7 @@ const DataProvider = ({ children }) => {
   const [dupe, setDupe] = useState(false);
 
   return (
-    <DataContext.Provider value={{ data, setData }}>
+    <DataContext.Provider value={{ dupe, setDupe }}>
       {children}
     </DataContext.Provider>
   );

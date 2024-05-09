@@ -85,7 +85,7 @@ const Dashboard = ({ signedIn, setDashOpen }) => {
         ) : (
           <Choices
             songs={songs}
-            setSongDuplicate={dupe}
+            setSongDuplicate={setDupe}
             setChoices={setChoices}
             choices={choices}
             band={currentBand}

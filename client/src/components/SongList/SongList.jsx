@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 
-import { getSongs } from "../../lib.js";
 import Draft from "../Draft/Draft.jsx";
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
@@ -15,13 +14,12 @@ export const loader = async ({ params }) => {
   return { songs: songs || [], user };
 };
 
-const SongList = ({ band, signedIn, authUser }) => {
+const SongList = () => {
   const [notes, setNotes] = useState("");
   const [draftOpen, setDraftOpen] = useState(false);
   const [draft, setDraft] = useState("");
 
-  const { songs, user } = useLoaderData();
-  const { dupe } = useContext(DataContext);
+  const { dupe, user, password, songs } = useContext(DataContext);
 
   return (
     <div className="songlist">
@@ -45,7 +43,7 @@ const SongList = ({ band, signedIn, authUser }) => {
       {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
-            <SongCard authUser={authUser} key={i} song={song} />
+            <SongCard user={user} key={i} song={song} />
           ))}
         </div>
       )}

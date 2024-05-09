@@ -44,6 +44,7 @@ const SignIn = () => {
         return handleError(errors.wrongPassword);
       setUser(email);
       setUserPassword(password);
+      setSongs(data.songs);
       navigate(`home/${email}/${password}`);
     });
   };

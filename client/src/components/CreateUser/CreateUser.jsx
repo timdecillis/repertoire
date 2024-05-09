@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { createUser } from "../../lib.js";
 import { Link, useNavigate } from "react-router-dom";
+import { DataContext } from "../../context.js";
 
 import Button from "../Button/Button.jsx";
 import Error from "../Error/Error.jsx";
 
-const CreateUser = ({ setAuthUser, setSignedIn }) => {
+const CreateUser = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [createErrorOpen, setCreateErrorOpen] = useState(false);
   const [error, setError] = useState(null);
   const [errorOpen, setErrorOpen] = useState(false);
+
+  const { setUser, setUserPassword } = useContext(DataContext);
 
   const errors = {
     email: "Please enter your email",
@@ -34,6 +36,8 @@ const CreateUser = ({ setAuthUser, setSignedIn }) => {
     if (!password) return handleError(errors.password);
     createUser(email, password).then((res) => {
       if (res.status === 200) return handleError(errors.incorrect);
+      setUser(email);
+      setUserPassword(password);
       navigate(`/home/${email}/${password}`);
     });
   };

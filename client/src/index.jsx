@@ -27,11 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: "home/:email/:password",
-    element: (
-      <div>
-        <SongList />
-      </div>
-    ),
+    element: <SongList />,
     loader: songlistLoader,
     children: [{ path: "search", element: <Dashboard />, loader: dashLoader }],
   },

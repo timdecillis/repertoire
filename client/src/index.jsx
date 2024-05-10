@@ -22,13 +22,14 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <SignIn /> },
       { path: "create", element: <CreateUser /> },
+      {
+        path: "home",
+        element: <SongList />,
+        children: [{ path: "search", element: <Dashboard /> }],
+      }
     ],
-  },
-  {
-    path: "home",
-    element: <SongList />,
-    children: [{ path: "search", element: <Dashboard /> }],
-  },
+  }
+
 ]);
 
 createRoot(document.getElementById("root")).render(

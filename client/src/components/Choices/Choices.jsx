@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { addSong } from "../../lib.js";
+import {DataContext} from "../../context.js";
 
 const Choices = ({
   songs,

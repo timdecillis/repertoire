@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { addSong } from "../../lib.js";
 import { DataContext } from "../../context.js";
 
-const Choices = ({ setSongDuplicate, choices, setChoices, band }) => {
+const Choices = ({ setSongDuplicate, choices, setChoices, band, authUser }) => {
   const navigate = useNavigate();
 
-  const { setSongs } = useContext(DataContext);
+  const { setSongs, songs } = useContext(DataContext);
 
   const handleChoice = (choice) => {
     addSong(authUser, choice, band).then(({ data }) => {
@@ -19,8 +19,8 @@ const Choices = ({ setSongDuplicate, choices, setChoices, band }) => {
           navigate(-1);
         }, 2000);
       }
-      console.log("data:", data);
-      navigate(`/home/${authUser}/${password}`);
+      setSongs(data);
+      navigate(-1);
     });
   };
 

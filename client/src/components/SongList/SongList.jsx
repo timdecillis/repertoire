@@ -36,7 +36,7 @@ const SongList = () => {
       {songs.length > 0 && (
         <div>
           {songs.map((song, i) => (
-            <SongCard user={user} key={i} song={song} />
+            <SongCard authUser={user} key={i} song={song} />
           ))}
         </div>
       )}

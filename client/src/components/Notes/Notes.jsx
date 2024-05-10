@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 
 import { deleteSong, completeSong, handleNotes } from "../../lib.js";
 import Completed from "../Completed/Completed.jsx";
@@ -16,8 +16,15 @@ const Notes = ({
 }) => {
   const [draft, setDraft] = useState("");
   const [success, setSuccess] = useState(false);
+  const textareaRef = useRef(null);
 
-  const {user, password, setSongs} = useContext(DataContext);
+  const { user, password, setSongs } = useContext(DataContext);
+
+  useEffect(() => {
+    if (notesInputOpen && textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  }, [notesInputOpen]);
 
   const handleCompleted = () => {
     completeSong(user, song.name, song.artist, song.completed).then(
@@ -67,13 +74,16 @@ const Notes = ({
           className="notes-notes"
           style={{ display: "flex", flexDirection: "column" }}
         >
-          <div style={{borderBottom: 'solid', borderBottomWidth: '.1em'}} >Notes</div>
+          <div style={{ borderBottom: "solid", borderBottomWidth: ".1em" }}>
+            Notes
+          </div>
           <div>{notes}</div>
         </div>
       ) : notesInputOpen ? (
         <>
           <form onSubmit={handleSubmit} className="notes-buttons notes-notes">
             <textarea
+              ref={textareaRef}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();

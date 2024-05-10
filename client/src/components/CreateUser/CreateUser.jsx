@@ -38,7 +38,7 @@ const CreateUser = () => {
       if (res.status === 200) return handleError(errors.incorrect);
       setUser(email);
       setUserPassword(password);
-      navigate(`/home/${email}/${password}`);
+      navigate("/home");
     });
   };
 

@@ -45,7 +45,7 @@ const SignIn = () => {
       setUser(email);
       setUserPassword(password);
       setSongs(data.songs);
-      navigate(`home/${email}/${password}`);
+      navigate("/home");
     });
   };
 

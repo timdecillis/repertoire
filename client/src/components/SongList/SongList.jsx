@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import Draft from "../Draft/Draft.jsx";
@@ -13,10 +13,6 @@ const SongList = () => {
   const [draft, setDraft] = useState("");
 
   const { dupe, user, password, songs } = useContext(DataContext);
-
-  // useEffect(() => {
-
-  // }, [songs]);
 
   return (
     <div className="songlist">

@@ -42,8 +42,6 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
-  console.log("dupr:", dupe);
-
   return (
     <>
       <div className="dashboard">

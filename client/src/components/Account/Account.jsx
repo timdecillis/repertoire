@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Account = () => {
-  console.log('account open');
   return (
     <div>
       <h2>Account Options</h2>

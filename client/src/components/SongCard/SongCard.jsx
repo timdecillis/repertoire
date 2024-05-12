@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 import { handleNotes } from "../../lib.js";
-
 import Notes from "../Notes/Notes.jsx";
 import Completed from "../Completed/Completed.jsx";
 
-const SongCard = ({ song, authUser, setSongs, setDashOpen }) => {
+const SongCard = ({ song, authUser, setSongs }) => {
   const [draftOpen, setDraftOpen] = useState(false);
   const [notesInputOpen, setNotesInputOpen] = useState(false);
   const [notes, setNotes] = useState(song.notes || null);

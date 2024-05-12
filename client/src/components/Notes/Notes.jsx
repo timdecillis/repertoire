@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 
 import { deleteSong, completeSong, handleNotes } from "../../lib.js";
-import Completed from "../Completed/Completed.jsx";
 import Draft from "../Draft/Draft.jsx";
 import { DataContext } from "../../context.js";
 

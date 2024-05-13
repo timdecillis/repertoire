@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Instrument from "../Instrument/Instrument.jsx";
+import RadioOptions from "../RadioOptions/RadioOptions.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import Search from "../Search/Search.jsx";
 import Choices from "../Choices/Choices.jsx";

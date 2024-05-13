@@ -11,12 +11,12 @@ const RadioOptions = ({ setter, options, title }) => {
               <input
                 onClick={(e) => setter(e.target.value)}
                 type="radio"
-                name="instrument"
+                name={title}
                 value={value}
                 className="radio"
                 defaultChecked={i === 0}
               ></input>
-              <label className="radio-button" htmlFor="instrument">
+              <label className="radio-button" htmlFor={title}>
                 {value}
               </label>
             </div>

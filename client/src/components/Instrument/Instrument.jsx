@@ -5,14 +5,18 @@ const Instrument = ({ instrument, setInstrument, options, title }) => {
     <div className="instrument">
       <div className="dash-option">Select {title}</div>
       <div className="radios">
-        <input
-          onClick={(e) => setInstrument(e.target.value)}
-          type="radio"
-          name="instrument"
-          value="guitar"
-          className="radio"
-          defaultChecked
-        ></input>
+        {options.map((value) => {
+          return (
+            <input
+              onClick={(e) => setInstrument(e.target.value)}
+              type="radio"
+              name="instrument"
+              value={value}
+              className="radio"
+              defaultChecked={index === 0}
+            ></input>
+          );
+        })}
         <label className="radio-button" htmlFor="instrument">
           Guitar
         </label>

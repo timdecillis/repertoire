@@ -53,9 +53,8 @@ const Dashboard = () => {
             setCurrentBand("");
           }}
         >
-          <Instrument title="Instrument" options={["Guitar", "Drums", "Piano"]} setter={setInstrument} />
-
-          <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
+          <RadioOptions title="Instrument" options={["Guitar", "Drums", "Piano"]} setter={setInstrument} />
+          <RadioOptions title="Difficulty" options={["Beginner", "Intermediate", "Advanced"]} setter={setDifficulty} />
 
           <Search
             loading={loading}

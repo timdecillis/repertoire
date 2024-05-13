@@ -3,7 +3,7 @@ import { useState } from "react";
 const Instrument = ({ instrument, setInstrument, options, title }) => {
   return (
     <div className="instrument">
-      <div className="dash-option">Instrument</div>
+      <div className="dash-option">Select {title}</div>
       <div className="radios">
         <input
           onClick={(e) => setInstrument(e.target.value)}

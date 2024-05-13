@@ -53,7 +53,7 @@ const Dashboard = () => {
             setCurrentBand("");
           }}
         >
-          <Instrument title="Foo" instrument={instrument} setInstrument={setInstrument} />
+          <Instrument title="Instrument" options={["Guitar", "Drums", "Piano"]} instrument={instrument} setInstrument={setInstrument} />
 
           <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
 

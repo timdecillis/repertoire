@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Instrument = ({ instrument, setInstrument }) => {
+const Instrument = ({ instrument, setInstrument, options, title }) => {
   return (
     <div className="instrument">
       <div className="dash-option">Instrument</div>

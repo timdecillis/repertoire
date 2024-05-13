@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Instrument = ({ instrument, setInstrument }) => {
   return (

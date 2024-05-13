@@ -7,7 +7,7 @@ const Instrument = ({ instrument, setter, options, title }) => {
       <div className="radios">
         {options.map((value, i) => {
           return (
-            <>
+            <div key={i}>
               <input
                 onClick={(e) => setter(e.target.value)}
                 type="radio"
@@ -19,7 +19,7 @@ const Instrument = ({ instrument, setter, options, title }) => {
               <label className="radio-button" htmlFor="instrument">
                 {value}
               </label>
-            </>
+            </div>
           );
         })}
         {/* <input

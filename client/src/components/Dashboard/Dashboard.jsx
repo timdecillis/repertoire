@@ -10,8 +10,8 @@ import { searchSongs } from "../../lib.js";
 import { DataContext } from "../../context.js";
 
 const Dashboard = () => {
-  const [instrument, setInstrument] = useState("guitar");
-  const [difficulty, setDifficulty] = useState("beginner");
+  const [instrument, setInstrument] = useState("Guitar");
+  const [difficulty, setDifficulty] = useState("Beginner");
   const [currentBand, setCurrentBand] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [choices, setChoices] = useState([]);
@@ -53,7 +53,7 @@ const Dashboard = () => {
             setCurrentBand("");
           }}
         >
-          <Instrument title="Instrument" options={["Guitar", "Drums", "Piano"]} instrument={instrument} setInstrument={setInstrument} />
+          <Instrument title="Instrument" options={["Guitar", "Drums", "Piano"]} setter={setInstrument} />
 
           <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
 

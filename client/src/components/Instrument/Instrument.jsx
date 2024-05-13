@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Instrument = ({ instrument, setInstrument, options, title }) => {
+const Instrument = ({ instrument, setter, options, title }) => {
   return (
     <div className="instrument">
       <div className="dash-option">Select {title}</div>
@@ -9,7 +9,7 @@ const Instrument = ({ instrument, setInstrument, options, title }) => {
           return (
             <>
               <input
-                onClick={(e) => setInstrument(e.target.value)}
+                onClick={(e) => setter(e.target.value)}
                 type="radio"
                 name="instrument"
                 value={value}
@@ -22,7 +22,7 @@ const Instrument = ({ instrument, setInstrument, options, title }) => {
             </>
           );
         })}
-        <input
+        {/* <input
           onClick={(e) => setInstrument(e.target.value)}
           type="radio"
           name="instrument"
@@ -41,7 +41,7 @@ const Instrument = ({ instrument, setInstrument, options, title }) => {
         ></input>
         <label className="radio-button" htmlFor="instrument">
           Piano
-        </label>
+        </label> */}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import Draft from "../Draft/Draft.jsx";

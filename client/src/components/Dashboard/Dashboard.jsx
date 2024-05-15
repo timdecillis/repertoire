@@ -66,8 +66,12 @@ const Dashboard = () => {
           }}
         >
           {radioOptions.map((option) => {
-            return(
-              <RadioOptions title={option.title} options={option.options} setter={option.setter}/>
+            return (
+              <RadioOptions
+                title={option.title}
+                options={option.options}
+                setter={option.setter}
+              />
             );
           })}
 

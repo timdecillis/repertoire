@@ -70,16 +70,6 @@ const Dashboard = () => {
               <RadioOptions title={option.title} options={option.options} setter={option.setter}/>
             );
           })}
-          <RadioOptions
-            title="Instrument"
-            options={["Guitar", "Drums", "Piano"]}
-            setter={setInstrument}
-          />
-          <RadioOptions
-            title="Difficulty"
-            options={["Beginner", "Intermediate", "Advanced"]}
-            setter={setDifficulty}
-          />
 
           <Search
             loading={loading}

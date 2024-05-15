@@ -65,9 +65,10 @@ const Dashboard = () => {
             setCurrentBand("");
           }}
         >
-          {radioOptions.map((option) => {
+          {radioOptions.map((option, i) => {
             return (
               <RadioOptions
+                key={i}
                 title={option.title}
                 options={option.options}
                 setter={option.setter}

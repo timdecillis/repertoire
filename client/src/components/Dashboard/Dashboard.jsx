@@ -21,8 +21,13 @@ const Dashboard = () => {
   const radioOptions = [
     {
       title: "Instrument",
-      options: [["Guitar", "Drums", "Piano"]],
+      options: ["Guitar", "Drums", "Piano"],
       setter: setInstrument,
+    },
+    {
+      title: "Difficulty",
+      options: ["Beginner", "Intermediate", "Advanced"],
+      setter: setDifficulty,
     },
   ];
 

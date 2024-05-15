@@ -18,6 +18,8 @@ const Dashboard = () => {
 
   const { dupe, setDupe, user, songs, password} = useContext(DataContext);
 
+  const radioOptions = [];
+
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {
       setErrorOpen(true);

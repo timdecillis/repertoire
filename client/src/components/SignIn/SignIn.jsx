@@ -67,6 +67,7 @@ const SignIn = () => {
           <input
             onChange={(e) => setPassword(e.target.value)}
             placeholder="password"
+            autoComplete="on"
             className="input"
             id="password"
             type="password"

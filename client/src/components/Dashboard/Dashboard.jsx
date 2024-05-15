@@ -16,9 +16,15 @@ const Dashboard = () => {
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const { dupe, setDupe, user, songs, password} = useContext(DataContext);
+  const { dupe, setDupe, user, songs, password } = useContext(DataContext);
 
-  const radioOptions = [];
+  const radioOptions = [
+    {
+      title: "Instrument",
+      options: [["Guitar", "Drums", "Piano"]],
+      setter: setInstrument,
+    },
+  ];
 
   const handleSearch = (currentBand, instrument, difficulty) => {
     if (!currentBand) {
@@ -54,8 +60,16 @@ const Dashboard = () => {
             setCurrentBand("");
           }}
         >
-          <RadioOptions title="Instrument" options={["Guitar", "Drums", "Piano"]} setter={setInstrument} />
-          <RadioOptions title="Difficulty" options={["Beginner", "Intermediate", "Advanced"]} setter={setDifficulty} />
+          <RadioOptions
+            title="Instrument"
+            options={["Guitar", "Drums", "Piano"]}
+            setter={setInstrument}
+          />
+          <RadioOptions
+            title="Difficulty"
+            options={["Beginner", "Intermediate", "Advanced"]}
+            setter={setDifficulty}
+          />
 
           <Search
             loading={loading}

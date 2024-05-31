@@ -15,7 +15,6 @@ const LandingPage = ({
   setSongs,
 }) => {
   return (
-
     <div className="landing">
       {createOpen ? (
         <CreateUser

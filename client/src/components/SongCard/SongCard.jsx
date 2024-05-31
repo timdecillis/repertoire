@@ -17,7 +17,6 @@ const SongCard = ({ song, authUser, setSongs }) => {
     });
   };
 
-
   return (
     <div>
       {song && (

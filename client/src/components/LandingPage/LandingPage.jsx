@@ -11,7 +11,6 @@ const LandingPage = ({
   setSignInOpen,
   setCreateOpen,
   signInOpen,
-
   setAuthUser,
   setSongs,
 }) => {

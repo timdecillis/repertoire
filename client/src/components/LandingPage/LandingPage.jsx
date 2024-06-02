@@ -39,6 +39,5 @@ const LandingPage = ({
     </div>
   );
 };
-//comment
 
 export default LandingPage;

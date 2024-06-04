@@ -40,11 +40,6 @@ const App = () => {
     setSongs([]);
   };
 
-  const handleAccount = () => {
-    setAccountOpen(true);
-    setDashOpen(false);
-  };
-
   return (
     <div className="container">
       <div className="landing">

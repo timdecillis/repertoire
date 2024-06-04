@@ -111,53 +111,6 @@ const App = () => {
         </form>
       </div>
       <Outlet />
-      {/* {!signedIn && (
-        <LandingPage
-          setSignedIn={setSignedIn}
-          email={email}
-          setSongs={setSongs}
-          setAuthUser={setAuthUser}
-          authUser={authUser}
-          signInOpen={signInOpen}
-          oneOpen={oneOpen}
-          setOneOpen={setOneOpen}
-          setSignInOpen={setSignInOpen}
-          createOpen={createOpen}
-          setCreateOpen={setCreateOpen}
-        />
-      )}
-
-      {dashOpen ? (
-        <Dashboard
-          setSongDuplicate={setSongDuplicate}
-          errorOpen={errorOpen}
-          handleSearch={handleSearch}
-          choices={choices}
-          setChoices={setChoices}
-          songs={songs}
-          setSongs={setSongs}
-          band={band}
-          setBand={setBand}
-          signedIn={signedIn}
-          authUser={authUser}
-          setDashOpen={setDashOpen}
-          loading={loading}
-          setLoading={setLoading}
-        />
-      ) : signedIn ? (
-        <SongList
-          songDuplicate={songDuplicate}
-          authUser={authUser}
-          signedIn={signedIn}
-          band={band}
-          songs={songs}
-          setSongs={setSongs}
-          dashOpen={dashOpen}
-          setDashOpen={setDashOpen}
-        />
-      ) : accountOpen ? (
-        <Account />
-      ) : null} */}
     </div>
   );
 };

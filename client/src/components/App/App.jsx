@@ -96,7 +96,6 @@ const App = () => {
             </div>
             <Link
               to={`create`}
-              // onClick={handleOpenCreate}
               className="input"
               style={{
                 textAlign: "center",

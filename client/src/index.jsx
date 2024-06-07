@@ -27,8 +27,13 @@ const router = createBrowserRouter([
         children: [{ path: "search", element: <Dashboard /> }],
       }
     ],
+  },
+  {
+    path: "/account",
+    element: (
+      <div>Account</div>
+    )
   }
-
 ]);
 
 createRoot(document.getElementById("root")).render(

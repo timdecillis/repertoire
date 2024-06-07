@@ -5,10 +5,21 @@ const NewApp = () => {
     <div className="container">
       <div className="landing">
         <div className="banner">
-          <Link to={'account'}>Account</Link>
           <div className="header">Repertoire</div>
+          <Link
+            to={"account"}
+            style={{
+              textAlign: "center",
+              textDecoration: "underline",
+              fontSize: ".7em",
+              cursor: "pointer",
+              color: "black",
+            }}
+          >
+            Account
+          </Link>
         </div>
-        <Outlet/>
+        <Outlet />
       </div>
     </div>
   );

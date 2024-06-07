@@ -7,6 +7,7 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 import NewApp from "./components/NewApp/NewApp.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import SongList from "./components/SongList/SongList.jsx";
+import Account from "./components/Account/Account.jsx";
 import { DataContext, DataProvider } from "./context.js";
 
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/account",
     element: (
-      <div>Account</div>
+      <Account/>
     )
   }
 ]);

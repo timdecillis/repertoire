@@ -7,8 +7,9 @@ const Account = () => {
     <div>
       <h2>Account Options</h2>
       <h4>Change email</h4>
-      <input></input>
+      <input/>
       <h4>Change password</h4>
+      <input/>
     </div>
   );
 };

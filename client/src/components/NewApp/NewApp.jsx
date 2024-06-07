@@ -8,6 +8,7 @@ const NewApp = () => {
           <div className="header">Repertoire</div>
           <Link
             to={"account"}
+            className="input"
             style={{
               textAlign: "center",
               textDecoration: "underline",

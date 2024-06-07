@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const Account = () => {
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setInput] = useState("");
   return (
     <div>
       <h2>Account Options</h2>

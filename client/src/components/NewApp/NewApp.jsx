@@ -5,6 +5,7 @@ const NewApp = () => {
     <div className="container">
       <div className="landing">
         <div className="banner">
+          <Link to={'account'}>Account</Link>
           <div className="header">Repertoire</div>
         </div>
         <Outlet/>

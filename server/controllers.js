@@ -7,6 +7,7 @@ const {
   updateSong,
   updateNotes,
   createUser,
+  updateUser
 } = require("./models.js");
 
 const configuration = new Configuration({
@@ -133,6 +134,7 @@ module.exports = {
   },
   updateUser: (req, res) => {
     const { updateType, data } = req.body;
+    updateUser(updateType, data);
   },
 };
 

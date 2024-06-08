@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { updateUser } from "../lib.js";
 
 const Account = () => {
   const [emailInput, setEmailInput] = useState("");

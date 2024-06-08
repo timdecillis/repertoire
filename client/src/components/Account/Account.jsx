@@ -10,6 +10,7 @@ const Account = () => {
       <div>{emailInput}</div>
       <input/>
       <h4>Change password</h4>
+      <div>{passwordInput}</div>
       <input/>
     </div>
   );

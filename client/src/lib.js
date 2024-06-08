@@ -45,6 +45,7 @@ module.exports = {
     return axios.post("/users", { email: email, password: password });
   },
   updateUser: (updateType, data) => {
-    return null;
+    console.log(updateType, ':', data);
+    return data;
   }
 };

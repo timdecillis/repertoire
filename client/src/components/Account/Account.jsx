@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { updateUser } from "../lib.js";
+import { updateUser } from "../../lib.js";
 
 const Account = () => {
   const [emailInput, setEmailInput] = useState("");
@@ -7,11 +7,11 @@ const Account = () => {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    updateUser('email', emailInput);
+    updateUser("email", emailInput);
   };
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    updateUser('password', passwordInput);
+    updateUser("password", passwordInput);
   };
   return (
     <div>

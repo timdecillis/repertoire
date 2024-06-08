@@ -131,6 +131,9 @@ module.exports = {
         console.log("Error updating notes:", err);
       });
   },
+  updateUser: (req, res) => {
+    console.log(req.body);
+  }
 };
 
 const generatePrompt = (

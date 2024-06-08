@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Account = () => {
   const [emailInput, setEmailInput] = useState("");
-  const [passwordInput, setInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,8 @@ const Account = () => {
         <input type="submit" value="foo" />
       </form>
       <h4>Change password</h4>
-      <form onSubmit={handleEmailSubmit}>
-        <input onChange={(e) => setEmailInput(e.target.value)} />
+      <form onSubmit={handlePasswordSubmit}>
+        <input onChange={(e) => setPasswordInput(e.target.value)} />
         <input type="submit" value="foo" />
       </form>
     </div>

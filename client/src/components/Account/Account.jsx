@@ -10,20 +10,21 @@ const Account = () => {
   };
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    console.log(emailInput);
+    console.log(passwordInput);
   };
   return (
     <div>
       <h2>Account Options</h2>
       <h4>Change email</h4>
-      <form onSubmit={handleEmailSubmit} >
+      <form onSubmit={handleEmailSubmit}>
         <input onChange={(e) => setEmailInput(e.target.value)} />
         <input type="submit" value="foo" />
       </form>
-      <div>{emailInput}</div>
       <h4>Change password</h4>
-      <div>{passwordInput}</div>
-      <input />
+      <form onSubmit={handleEmailSubmit}>
+        <input onChange={(e) => setEmailInput(e.target.value)} />
+        <input type="submit" value="foo" />
+      </form>
     </div>
   );
 };

@@ -7,11 +7,11 @@ const Account = () => {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    console.log(emailInput);
+    updateUser('email', emailInput);
   };
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    console.log(passwordInput);
+    updateUser('password', passwordInput);
   };
   return (
     <div>

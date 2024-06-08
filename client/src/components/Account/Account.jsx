@@ -7,8 +7,8 @@ const Account = () => {
     <div>
       <h2>Account Options</h2>
       <h4>Change email</h4>
+      <input onChange={(e) => setEmailInput(e.target.value)}/>
       <div>{emailInput}</div>
-      <input/>
       <h4>Change password</h4>
       <div>{passwordInput}</div>
       <input/>

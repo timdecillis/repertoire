@@ -2,8 +2,7 @@ const axios = require("axios");
 
 module.exports = {
   getSongs: (authUser, password) => {
-    return axios
-      .get("/getSongs", { params: { email: authUser, password } });
+    return axios.get("/getSongs", { params: { email: authUser, password } });
   },
   addSong: (authUser, song, band) => {
     return axios.post("/addSong", {
@@ -13,12 +12,11 @@ module.exports = {
     });
   },
   searchSongs: (band, instrument, difficulty) => {
-    return axios
-      .post("/findBand", {
-        band: band,
-        instrument: instrument,
-        difficulty: difficulty,
-      });
+    return axios.post("/findBand", {
+      band: band,
+      instrument: instrument,
+      difficulty: difficulty,
+    });
   },
   deleteSong: (authUser, song, artist) => {
     return axios.delete("/deleteSong", {
@@ -45,7 +43,6 @@ module.exports = {
     return axios.post("/users", { email: email, password: password });
   },
   updateUser: (updateType, data) => {
-    console.log(updateType, ':', data);
-    return data;
-  }
+    return axios.post("/updateUser", { updateType, data });
+  },
 };

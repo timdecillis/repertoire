@@ -92,4 +92,7 @@ module.exports = {
       }
     );
   },
+  updateUser: (type, data) => {
+    console.log('model:', type, ':', data);
+  }
 };

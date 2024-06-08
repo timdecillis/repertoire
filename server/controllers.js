@@ -132,8 +132,8 @@ module.exports = {
       });
   },
   updateUser: (req, res) => {
-    console.log(req.body);
-  }
+    const { updateType, data } = req.body;
+  },
 };
 
 const generatePrompt = (

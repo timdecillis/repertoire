@@ -9,8 +9,19 @@ export const DataProvider = ({ children }) => {
   const [dupe, setDupe] = useState(false);
 
   return (
-    <DataContext.Provider value={{ dupe, setDupe, songs, setSongs, user, setUser, userPassword, setUserPassword }}>
+    <DataContext.Provider
+      value={{
+        dupe,
+        setDupe,
+        songs,
+        setSongs,
+        user,
+        setUser,
+        userPassword,
+        setUserPassword,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
-}
+};

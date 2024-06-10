@@ -11,7 +11,7 @@ const Account = () => {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    updateUser("email", emailInput);
+    updateUser(user, "email", emailInput);
   };
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
@@ -23,12 +23,12 @@ const Account = () => {
       <h4>Change email</h4>
       <form onSubmit={handleEmailSubmit}>
         <input onChange={(e) => setEmailInput(e.target.value)} />
-        <input type="submit" value="foo" />
+        <input type="submit" value="Submit" />
       </form>
       <h4>Change password</h4>
       <form onSubmit={handlePasswordSubmit}>
         <input onChange={(e) => setPasswordInput(e.target.value)} />
-        <input type="submit" value="foo" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

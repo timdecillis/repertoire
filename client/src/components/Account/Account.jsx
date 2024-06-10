@@ -4,30 +4,36 @@ import { DataContext } from "../../context.js";
 import { updateUser } from "../../lib.js";
 
 const Account = () => {
-  const [emailInput, setEmailInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
+  const [inputs, setInputs] = useState({ email: "", password: "" });
 
   const { user } = useContext(DataContext);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUser(user, "email", emailInput);
+    const formType = e.target.name;
+    updateUser(user, formType, inputs[formType]);
   };
-  const handlePasswordSubmit = (e) => {
-    e.preventDefault();
-    updateUser(user, "password", passwordInput);
-  };
+
   return (
     <div>
       <h2>Account Options</h2>
       <h4>Change email</h4>
-      <form onSubmit={handleEmailSubmit}>
-        <input name="email" onChange={handleSubmit} />
+      <form name="email" onSubmit={handleSubmit}>
+        <input name="email" value={inputs.email} onChange={handleChange} />
         <input type="submit" value="Submit" />
       </form>
       <h4>Change password</h4>
-      <form onSubmit={handlePasswordSubmit}>
-        <input name="password" onChange={handleSubmit} />
+      <form name="password" onSubmit={handleSubmit}>
+        <input
+          name="password"
+          value={inputs.password}
+          onChange={handleChange}
+        />
         <input type="submit" value="Submit" />
       </form>
     </div>

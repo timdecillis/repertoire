@@ -43,16 +43,15 @@ module.exports = {
     });
   },
   getSongs: (email, password) => {
-    return User.findOne({ email })
-      .then((foundUser) => {
-        if (!foundUser) {
-          return "User not found";
-        }
-        if (foundUser.password !== password) {
-          return "Incorrect password";
-        }
-        return foundUser;
-      });
+    return User.findOne({ email }).then((foundUser) => {
+      if (!foundUser) {
+        return "User not found";
+      }
+      if (foundUser.password !== password) {
+        return "Incorrect password";
+      }
+      return foundUser;
+    });
   },
   deleteSong: (email, song, artist) => {
     return User.findOne({ email }).then((foundUser) => {
@@ -92,7 +91,7 @@ module.exports = {
       }
     );
   },
-  updateUser: (type, data) => {
-    console.log('model:', type, ':', data);
-  }
+  updateUser: (user, type, data) => {
+    console.log("model:", user, type, ":", data);
+  },
 };

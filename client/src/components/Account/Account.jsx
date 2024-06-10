@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 
-import {DataContext} from "../../context.js";
+import { DataContext } from "../../context.js";
 import { updateUser } from "../../lib.js";
 
 const Account = () => {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
+
+  const { user } = useContext(DataContext);
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();

@@ -1,4 +1,3 @@
-import { createContext } from "react";
 import { render, createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -8,7 +7,7 @@ import NewApp from "./components/NewApp/NewApp.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import SongList from "./components/SongList/SongList.jsx";
 import Account from "./components/Account/Account.jsx";
-import { DataContext, DataProvider } from "./context.js";
+import { DataProvider } from "./context.js";
 
 const router = createBrowserRouter([
   {

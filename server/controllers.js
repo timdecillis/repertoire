@@ -133,8 +133,8 @@ module.exports = {
       });
   },
   updateUser: (req, res) => {
-    const { updateType, data } = req.body;
-    updateUser(updateType, data);
+    const { user, updateType, data } = req.body;
+    updateUser(user, updateType, data);
   },
 };
 

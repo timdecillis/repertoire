@@ -42,7 +42,7 @@ module.exports = {
   createUser: (email, password) => {
     return axios.post("/users", { email: email, password: password });
   },
-  updateUser: (updateType, data) => {
-    return axios.post("/updateUser", { updateType, data });
+  updateUser: (user, updateType, data) => {
+    return axios.post("/updateUser", { user, updateType, data });
   },
 };

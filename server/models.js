@@ -92,6 +92,7 @@ module.exports = {
     );
   },
   updateUser: (user, type, data) => {
+    const query = { email };
     console.log("model:", user, type, ":", data);
   },
 };

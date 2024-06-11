@@ -17,7 +17,12 @@ const Account = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formType = e.target.name;
-    updateUser(user, formType, inputs[formType]);
+    updateUser(user, formType, inputs[formType]).then((response) => {
+      if (response === 202) {
+        return setFeedback("Update successful!");
+        setFeedback("Error handling update");
+      }
+    });
   };
 
   return (

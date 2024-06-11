@@ -92,7 +92,8 @@ module.exports = {
     );
   },
   updateUser: (user, type, data) => {
-    const query = { email };
+    const query = { email: email };
+    const update = { $set: {}};
     console.log("model:", user, type, ":", data);
   },
 };

@@ -30,6 +30,7 @@ const Account = () => {
       <h4>Change password</h4>
       <form name="password" onSubmit={handleSubmit}>
         <input
+          type="password"
           name="password"
           value={inputs.password}
           onChange={handleChange}

@@ -19,9 +19,13 @@ const Account = () => {
     const formType = e.target.name;
     updateUser(user, formType, inputs[formType]).then((response) => {
       if (response === 202) {
-        return setFeedback("Update successful!");
+        setFeedback("Update successful!");
+      } else {
         setFeedback("Error handling update");
       }
+      setTimeout(() => {
+        setFeedback("");
+      }, 1500);
     });
   };
 
@@ -43,6 +47,7 @@ const Account = () => {
         />
         <input type="submit" value="Submit" />
       </form>
+      {feedback.length > 0 && <div>{feedback}</div>}
     </div>
   );
 };

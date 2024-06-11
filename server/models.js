@@ -94,6 +94,15 @@ module.exports = {
   updateUser: (user, type, data) => {
     const query = { email: email };
     const update = { $set: { [type]: data } };
-    console.log("model:", user, type, ":", data);
+    return User.findOneAndUpdate(query, update, { new: true })
+      .then((updatedUser) => {
+        if (!updatedUser) {
+          return "User not found";
+        }
+        return updatedUser;
+      })
+      .catch((error) => {
+        throw error;
+      });
   },
 };

@@ -91,7 +91,7 @@ module.exports = {
       }
     );
   },
-  updateUser: (user, type, data) => {
+  updateUser: (email, type, data) => {
     const query = { email: email };
     const update = { $set: { [type]: data } };
     return User.findOneAndUpdate(query, update, { new: true })

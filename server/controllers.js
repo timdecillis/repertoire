@@ -7,7 +7,7 @@ const {
   updateSong,
   updateNotes,
   createUser,
-  updateUser
+  updateUser,
 } = require("./models.js");
 
 const configuration = new Configuration({
@@ -134,7 +134,13 @@ module.exports = {
   },
   updateUser: (req, res) => {
     const { user, updateType, data } = req.body;
-    updateUser(user, updateType, data);
+    updateUser(user, updateType, data)
+      .then(() => {
+        res.status(202).end();
+      })
+      .catch((err) => {
+        console.log("Error changing user information", err);
+      });
   },
 };
 

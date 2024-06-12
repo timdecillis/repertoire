@@ -33,7 +33,7 @@ const Account = () => {
   return (
     <div>
       <h2>Account Options</h2>
-      <h4>Change email</h4>
+      <button>Change email</button>
       <form name="email" onSubmit={handleSubmit}>
         <input name="email" value={inputs.email} onChange={handleChange} />
         <input type="submit" value="Submit" />

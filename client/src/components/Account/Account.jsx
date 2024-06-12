@@ -5,7 +5,7 @@ import { updateUser } from "../../lib.js";
 
 const Account = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState(null);
 
   const { user } = useContext(DataContext);
 
@@ -24,7 +24,7 @@ const Account = () => {
         setFeedback("Error handling update");
       }
       setTimeout(() => {
-        setFeedback("");
+        setFeedback(null);
       }, 1500);
     });
   };
@@ -47,7 +47,7 @@ const Account = () => {
         />
         <input type="submit" value="Submit" />
       </form>
-      {feedback.length > 0 && <div>{feedback}</div>}
+      {feedback && <div>{feedback}</div>}
     </div>
   );
 };

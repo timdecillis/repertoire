@@ -41,15 +41,17 @@ const Account = () => {
         </form>
       )}
       <button onClick={() => setInputOpen("password")}>Change password</button>
-      <form name="password" onSubmit={handleSubmit}>
-        <input
-          type="password"
-          name="password"
-          value={inputs.password}
-          onChange={handleChange}
-        />
-        <input type="submit" value="Submit" />
-      </form>
+      {inputOpen === "password" && (
+        <form name="password" onSubmit={handleSubmit}>
+          <input
+            type="password"
+            name="password"
+            value={inputs.password}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      )}
       {feedback && <div>{feedback}</div>}
     </div>
   );

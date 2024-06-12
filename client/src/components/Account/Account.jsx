@@ -34,10 +34,12 @@ const Account = () => {
     <div>
       <h2>Account Options</h2>
       <button onClick={() => setInputOpen("email")}>Change email</button>
-      <form name="email" onSubmit={handleSubmit}>
-        <input name="email" value={inputs.email} onChange={handleChange} />
-        <input type="submit" value="Submit" />
-      </form>
+      {inputOpen === "email" && (
+        <form name="email" onSubmit={handleSubmit}>
+          <input name="email" value={inputs.email} onChange={handleChange} />
+          <input type="submit" value="Submit" />
+        </form>
+      )}
       <button onClick={() => setInputOpen("password")}>Change password</button>
       <form name="password" onSubmit={handleSubmit}>
         <input

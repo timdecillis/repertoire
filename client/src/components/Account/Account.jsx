@@ -38,7 +38,7 @@ const Account = () => {
         <input name="email" value={inputs.email} onChange={handleChange} />
         <input type="submit" value="Submit" />
       </form>
-      <button>Change password</button>
+      <button onClick={() => setInputOpen("password")}>Change password</button>
       <form name="password" onSubmit={handleSubmit}>
         <input
           type="password"

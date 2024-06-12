@@ -15,6 +15,7 @@ const Account = () => {
       <>
         <form name={type} onSubmit={handleSubmit}>
           <input
+            type={type === "password" ? "password" : "text"}
             placeholder={`enter new ${type}`}
             name={type}
             value={inputs[type]}
@@ -43,6 +44,7 @@ const Account = () => {
       } else {
         setFeedback("Error handling update");
       }
+      setInputOpen(null);
       setTimeout(() => {
         setFeedback(null);
       }, 1500);
@@ -60,7 +62,8 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" && changeForm()}
+      {inputOpen === "email" && changeForm("email")}
+      {inputOpen === "password" && changeForm("password")}
       {feedback && <div>{feedback}</div>}
     </div>
   );

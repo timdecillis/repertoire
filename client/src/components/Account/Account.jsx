@@ -10,6 +10,23 @@ const Account = () => {
 
   const backButton = <button onClick={() => setInputOpen(null)}>Back</button>;
 
+  const changeForm = (type) => {
+    return (
+      <>
+        <form name={type} onSubmit={handleSubmit}>
+          <input
+            placeholder={`enter new ${type}`}
+            name={type}
+            value={inputs[type]}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+        {backButton}
+      </>
+    );
+  };
+
   const { user } = useContext(DataContext);
 
   const handleChange = (e) => {
@@ -43,35 +60,7 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" && (
-        <>
-          <form name="email" onSubmit={handleSubmit}>
-            <input
-              placeholder="enter new email"
-              name="email"
-              value={inputs.email}
-              onChange={handleChange}
-            />
-            <input type="submit" value="Submit" />
-          </form>
-          {backButton}
-        </>
-      )}
-      {inputOpen === "password" && (
-        <>
-          <form name="password" onSubmit={handleSubmit}>
-            <input
-              placeholder="enter new password"
-              type="password"
-              name="password"
-              value={inputs.password}
-              onChange={handleChange}
-            />
-            <input type="submit" value="Submit" />
-          </form>
-          {backButton}
-        </>
-      )}
+      {inputOpen === "email" && changeForm()}
       {feedback && <div>{feedback}</div>}
     </div>
   );

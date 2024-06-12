@@ -36,7 +36,12 @@ const Account = () => {
       <button onClick={() => setInputOpen("email")}>Change email</button>
       {inputOpen === "email" && (
         <form name="email" onSubmit={handleSubmit}>
-          <input name="email" value={inputs.email} onChange={handleChange} />
+          <input
+            placeholder="enter new email"
+            name="email"
+            value={inputs.email}
+            onChange={handleChange}
+          />
           <input type="submit" value="Submit" />
         </form>
       )}
@@ -44,6 +49,7 @@ const Account = () => {
       {inputOpen === "password" && (
         <form name="password" onSubmit={handleSubmit}>
           <input
+            placeholder="enter new password"
             type="password"
             name="password"
             value={inputs.password}

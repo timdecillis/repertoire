@@ -8,6 +8,8 @@ const Account = () => {
   const [feedback, setFeedback] = useState(null);
   const [inputOpen, setInputOpen] = useState(null);
 
+  const button = <button onClick={() => setInputOpen(null)} >Back</button>;
+
   const { user } = useContext(DataContext);
 
   const handleChange = (e) => {
@@ -35,15 +37,18 @@ const Account = () => {
       <h2>Account Options</h2>
       <button onClick={() => setInputOpen("email")}>Change email</button>
       {inputOpen === "email" && (
-        <form name="email" onSubmit={handleSubmit}>
-          <input
-            placeholder="enter new email"
-            name="email"
-            value={inputs.email}
-            onChange={handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <>
+          <form name="email" onSubmit={handleSubmit}>
+            <input
+              placeholder="enter new email"
+              name="email"
+              value={inputs.email}
+              onChange={handleChange}
+            />
+            <input type="submit" value="Submit" />
+          </form>
+          {button}
+        </>
       )}
       <button onClick={() => setInputOpen("password")}>Change password</button>
       {inputOpen === "password" && (

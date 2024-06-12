@@ -6,6 +6,7 @@ import { updateUser } from "../../lib.js";
 const Account = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
   const [feedback, setFeedback] = useState(null);
+  const [inputOpen, setInputOpen] = useState(null);
 
   const { user } = useContext(DataContext);
 

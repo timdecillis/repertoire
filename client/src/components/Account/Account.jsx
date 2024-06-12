@@ -8,7 +8,7 @@ const Account = () => {
   const [feedback, setFeedback] = useState(null);
   const [inputOpen, setInputOpen] = useState(null);
 
-  const button = <button onClick={() => setInputOpen(null)} >Back</button>;
+  const backButton = <button onClick={() => setInputOpen(null)}>Back</button>;
 
   const { user } = useContext(DataContext);
 
@@ -35,7 +35,14 @@ const Account = () => {
   return (
     <div>
       <h2>Account Options</h2>
-      <button onClick={() => setInputOpen("email")}>Change email</button>
+      {!inputOpen && (
+        <>
+          <button onClick={() => setInputOpen("email")}>Change email</button>
+          <button onClick={() => setInputOpen("password")}>
+            Change password
+          </button>
+        </>
+      )}
       {inputOpen === "email" && (
         <>
           <form name="email" onSubmit={handleSubmit}>
@@ -47,21 +54,23 @@ const Account = () => {
             />
             <input type="submit" value="Submit" />
           </form>
-          {button}
+          {backButton}
         </>
       )}
-      <button onClick={() => setInputOpen("password")}>Change password</button>
       {inputOpen === "password" && (
-        <form name="password" onSubmit={handleSubmit}>
-          <input
-            placeholder="enter new password"
-            type="password"
-            name="password"
-            value={inputs.password}
-            onChange={handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <>
+          <form name="password" onSubmit={handleSubmit}>
+            <input
+              placeholder="enter new password"
+              type="password"
+              name="password"
+              value={inputs.password}
+              onChange={handleChange}
+            />
+            <input type="submit" value="Submit" />
+          </form>
+          {backButton}
+        </>
       )}
       {feedback && <div>{feedback}</div>}
     </div>

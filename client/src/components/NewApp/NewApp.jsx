@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-import { DataContext } from "../../context.js";
+import { DataContext } from "../../context.js"
 
 const NewApp = () => {
   const { user } = useContext(DataContext);

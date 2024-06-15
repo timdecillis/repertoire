@@ -32,4 +32,4 @@ const NewApp = () => {
   );
 };
 
-export default NewApp;
+export default NewApp

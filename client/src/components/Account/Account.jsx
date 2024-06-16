@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 
 import { DataContext } from "../../context.js";
 import { updateUser } from "../../lib.js";
+import BackButton from './BackButton.jsx';
 
 const Account = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
@@ -62,8 +63,8 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" && changeForm("email", backButton)}
-      {inputOpen === "password" && changeForm("password", backButton)}
+      {inputOpen === "email" && changeForm("email", BackButton)}
+      {inputOpen === "password" && changeForm("password", BackButton)}
       {feedback && <div>{feedback}</div>}
     </div>
   );

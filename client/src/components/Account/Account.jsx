@@ -9,7 +9,7 @@ const Account = () => {
   const [feedback, setFeedback] = useState(null);
   const [inputOpen, setInputOpen] = useState(null);
 
-  const backButton = <button onClick={() => setInputOpen(null)}>Back</button>;
+  const handleBack = () => setInputOpen(null);
 
   const changeForm = (type, button) => {
     return (
@@ -63,7 +63,7 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" && changeForm("email", BackButton)}
+      {inputOpen === "email" && changeForm("email", <BackButton handler={})}
       {inputOpen === "password" && changeForm("password", BackButton)}
       {feedback && <div>{feedback}</div>}
     </div>

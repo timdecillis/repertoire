@@ -62,8 +62,8 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" && changeForm("email")}
-      {inputOpen === "password" && changeForm("password")}
+      {inputOpen === "email" && changeForm("email", backButton)}
+      {inputOpen === "password" && changeForm("password", backButton)}
       {feedback && <div>{feedback}</div>}
     </div>
   );

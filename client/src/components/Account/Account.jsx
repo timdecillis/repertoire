@@ -10,7 +10,7 @@ const Account = () => {
 
   const backButton = <button onClick={() => setInputOpen(null)}>Back</button>;
 
-  const changeForm = (type) => {
+  const changeForm = (type, button) => {
     return (
       <>
         <form name={type} onSubmit={handleSubmit}>

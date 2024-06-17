@@ -46,10 +46,10 @@ const Account = () => {
           </button>
         </>
       )}
-      {inputOpen === "email" &&
-        changeForm("email", <BackButton handler={handleBack} />)}
-      {inputOpen === "password" &&
-        changeForm("password", <BackButton handler={handleBack} />)}
+      {inputOpen === "email" && (
+        <ChangeForm type="email" button={<BackButton handler={handleBack} />} />
+      )}
+
       {feedback && <div>{feedback}</div>}
     </div>
   );

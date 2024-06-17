@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import { DataContext } from "../../context.js";
 import { updateUser } from "../../lib.js";
 import BackButton from "./BackButton.jsx";
+import ChangeForm from "./ChangeForm.jsx";
 
 const Account = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
@@ -10,24 +11,6 @@ const Account = () => {
   const [inputOpen, setInputOpen] = useState(null);
 
   const handleBack = () => setInputOpen(null);
-
-  const changeForm = (type, button) => {
-    return (
-      <>
-        <form name={type} onSubmit={handleSubmit}>
-          <input
-            type={type === "password" ? "password" : "text"}
-            placeholder={`enter new ${type}`}
-            name={type}
-            value={inputs[type]}
-            onChange={handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
-        {button}
-      </>
-    );
-  };
 
   const { user } = useContext(DataContext);
 

@@ -14,4 +14,4 @@ export default ({ type, button, handler, inputs }) => {
       {button}
     </>
   );
-};
+}

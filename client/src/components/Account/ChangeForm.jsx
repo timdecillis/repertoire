@@ -13,5 +13,5 @@ export default ({ type, button, handler, inputs }) => {
       </form>
       {button}
     </>
-  )
+  );
 };

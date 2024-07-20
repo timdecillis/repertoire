@@ -58,11 +58,7 @@ module.exports = {
       ) {
         responseContent = responseContent.slice(7, -3).trim();
       }
-      console.log("content:", responseContent);
-      console.log("conjsontent:", JSON.parse(responseContent));
-      res
-        .status(200)
-        .json(JSON.parse(responseContent));
+      res.status(200).json(JSON.parse(responseContent));
     } catch (error) {
       if (error.response) {
         console.error(error.response.status, error.response.data);

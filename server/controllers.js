@@ -40,7 +40,7 @@ module.exports = {
     }
     try {
       const completion = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [
           { role: "system", content: "You are a helpful assistant." },
           {
@@ -50,9 +50,19 @@ module.exports = {
         ],
         temperature: 0,
       });
+      let responseContent = completion.data.choices[0].message.content;
+
+      if (
+        responseContent.startsWith("```json") &&
+        responseContent.endsWith("```")
+      ) {
+        responseContent = responseContent.slice(7, -3).trim();
+      }
+      console.log("content:", responseContent);
+      console.log("conjsontent:", JSON.parse(responseContent));
       res
         .status(200)
-        .json(JSON.parse(completion.data.choices[0].message.content));
+        .json(JSON.parse(responseContent));
     } catch (error) {
       if (error.response) {
         console.error(error.response.status, error.response.data);

@@ -51,7 +51,6 @@ module.exports = {
         temperature: 0,
       });
       let responseContent = completion.data.choices[0].message.content;
-
       if (
         responseContent.startsWith("```json") &&
         responseContent.endsWith("```")

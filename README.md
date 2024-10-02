@@ -1,5 +1,5 @@
 # Repertoire
-A web application for musicians to build their own personal songbook. 
+A web application for musicians to build their own personal songbook.
 
 > # Table of Contents
 1. [Overview](#overview)
@@ -15,27 +15,21 @@ This fullstack web application was part of a 2-day sprint to create a minimum vi
 
 ![repertoire](https://github.com/timdecillis/repertoire/assets/120437574/e29325ef-a1fb-440d-aa56-c4113a86aa03)
 
-![jamuary](https://github.com/timdecillis/repertoire/assets/120437574/84a6ae0d-8b5f-4ce6-ad76-d85766bf0c90)
-
-
-
-https://github.com/timdecillis/repertoire/assets/120437574/29b06ca8-5b1a-4761-be66-8b9f1951aefe
-
 ## Features
 * Landing Page
 
   From this page, the user can -
-  
-   Create a new account, initiating an axios POST request to relay their user information to the 
+
+   Create a new account, initiating an axios POST request to relay their user information to the
    database.
 
-   Sign in to a previously created account, initializing an axios GET request to retrieve their 
-    songbook and info for each song.  
-  
+   Sign in to a previously created account, initializing an axios GET request to retrieve their
+    songbook and info for each song.
+
 * Dashboard
 
   Here users can input an instrument, difficulty, and artist name, initializing a call to the OpenAI API to present the user with three different song choices. They can then click on any of the song titles and these will be added to the database via a POST request, and subsequently displayed in the songbook below.
-  
+
 * Songbook
 
   Any songs that the user has chosen are rendered here, where the user has the option to add performance notes, mark the song completed, or delete the song from the list.
